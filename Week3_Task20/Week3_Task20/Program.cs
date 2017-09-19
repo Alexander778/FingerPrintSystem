@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace Week3_Task20
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Alex!");
+            Console.WriteLine("I learn how to add project to GitHub!");
         }
     }
 }
