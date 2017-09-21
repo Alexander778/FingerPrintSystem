@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace Week3_Task20
 {
@@ -8,5 +7,4 @@ namespace Week3_Task20
             [DllImport("user32.dll")]
             public static extern void LockWorkStation();
         }
-    
 }
