@@ -1,3 +1,0 @@
-﻿CREATE LOGIN [BUILTIN\Пользователи]
-    FROM WINDOWS WITH DEFAULT_LANGUAGE = [русский];
-

@@ -1,3 +1,0 @@
-﻿CREATE LOGIN [ALEXPC\Alexander]
-    FROM WINDOWS WITH DEFAULT_LANGUAGE = [русский];
-
