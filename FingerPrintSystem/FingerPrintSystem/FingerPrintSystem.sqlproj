@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>FingerPrintDB</Name>
+    <Name>FingerPrintSystem</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{2f0f0bd8-767d-4934-a631-1059c65d795e}</ProjectGuid>
+    <ProjectGuid>{7d0bb377-5c4a-4422-9794-6316af292edf}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>FingerPrintDB</RootNamespace>
-    <AssemblyName>FingerPrintDB</AssemblyName>
+    <RootNamespace>FingerPrintSystem</RootNamespace>
+    <AssemblyName>FingerPrintSystem</AssemblyName>
     <ModelCollation>1049,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
