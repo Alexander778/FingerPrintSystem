@@ -50,17 +50,7 @@ namespace Forms_FingerPrint
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
             }
-            else
-            {
-                //заполняем таблицу DB
-                f1.FormBorderStyle = FormBorderStyle.Sizable;
-                f1.Height = 491;
-                f1.Width = 964;
-                f1.FormBorderStyle = FormBorderStyle.FixedDialog;
-
-             
-                
-            }
+            
         }
     }
 }
