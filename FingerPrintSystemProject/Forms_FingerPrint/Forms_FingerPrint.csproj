@@ -58,6 +58,12 @@
     <Compile Include="Form_Create_Company.Designer.cs">
       <DependentUpon>Form_Create_Company.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Create_Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Create_Department.Designer.cs">
+      <DependentUpon>Form_Create_Department.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_FINGERPRINTDB_MDFDataSet.Designer.cs">
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Create_Company.resx">
       <DependentUpon>Form_Create_Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Create_Department.resx">
+      <DependentUpon>Form_Create_Department.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

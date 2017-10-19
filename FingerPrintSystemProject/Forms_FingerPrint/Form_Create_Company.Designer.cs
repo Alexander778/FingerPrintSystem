@@ -32,10 +32,6 @@
             System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label nameLabel;
             System.Windows.Forms.Label сompanyLogoLabel;
-            System.Windows.Forms.Label iDLabel1;
-            System.Windows.Forms.Label nameLabel1;
-            System.Windows.Forms.Label companyIDLabel;
-            System.Windows.Forms.Label regimeLabel;
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_CompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
@@ -48,17 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.b_CreateCompany = new System.Windows.Forms.Button();
             this.tbo_DepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDTextBox1 = new System.Windows.Forms.TextBox();
-            this.nameTextBox1 = new System.Windows.Forms.TextBox();
-            this.companyIDTextBox = new System.Windows.Forms.TextBox();
-            this.regimeTextBox = new System.Windows.Forms.TextBox();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             сompanyLogoLabel = new System.Windows.Forms.Label();
-            iDLabel1 = new System.Windows.Forms.Label();
-            nameLabel1 = new System.Windows.Forms.Label();
-            companyIDLabel = new System.Windows.Forms.Label();
-            regimeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).BeginInit();
@@ -91,42 +79,6 @@
             сompanyLogoLabel.Size = new System.Drawing.Size(120, 20);
             сompanyLogoLabel.TabIndex = 4;
             сompanyLogoLabel.Text = "Сompany Logo:";
-            // 
-            // iDLabel1
-            // 
-            iDLabel1.AutoSize = true;
-            iDLabel1.Location = new System.Drawing.Point(622, 37);
-            iDLabel1.Name = "iDLabel1";
-            iDLabel1.Size = new System.Drawing.Size(30, 20);
-            iDLabel1.TabIndex = 9;
-            iDLabel1.Text = "ID:";
-            // 
-            // nameLabel1
-            // 
-            nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(622, 69);
-            nameLabel1.Name = "nameLabel1";
-            nameLabel1.Size = new System.Drawing.Size(55, 20);
-            nameLabel1.TabIndex = 11;
-            nameLabel1.Text = "Name:";
-            // 
-            // companyIDLabel
-            // 
-            companyIDLabel.AutoSize = true;
-            companyIDLabel.Location = new System.Drawing.Point(622, 101);
-            companyIDLabel.Name = "companyIDLabel";
-            companyIDLabel.Size = new System.Drawing.Size(101, 20);
-            companyIDLabel.TabIndex = 13;
-            companyIDLabel.Text = "Company ID:";
-            // 
-            // regimeLabel
-            // 
-            regimeLabel.AutoSize = true;
-            regimeLabel.Location = new System.Drawing.Point(622, 133);
-            regimeLabel.Name = "regimeLabel";
-            regimeLabel.Size = new System.Drawing.Size(68, 20);
-            regimeLabel.TabIndex = 15;
-            regimeLabel.Text = "Regime:";
             // 
             // _FINGERPRINTDB_MDFDataSet
             // 
@@ -214,51 +166,11 @@
             this.tbo_DepartmentBindingSource.DataMember = "tbo_Department";
             this.tbo_DepartmentBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // iDTextBox1
-            // 
-            this.iDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "ID", true));
-            this.iDTextBox1.Location = new System.Drawing.Point(729, 34);
-            this.iDTextBox1.Name = "iDTextBox1";
-            this.iDTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.iDTextBox1.TabIndex = 10;
-            // 
-            // nameTextBox1
-            // 
-            this.nameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
-            this.nameTextBox1.Location = new System.Drawing.Point(729, 66);
-            this.nameTextBox1.Name = "nameTextBox1";
-            this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
-            this.nameTextBox1.TabIndex = 12;
-            // 
-            // companyIDTextBox
-            // 
-            this.companyIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.companyIDTextBox.Location = new System.Drawing.Point(729, 98);
-            this.companyIDTextBox.Name = "companyIDTextBox";
-            this.companyIDTextBox.Size = new System.Drawing.Size(100, 26);
-            this.companyIDTextBox.TabIndex = 14;
-            // 
-            // regimeTextBox
-            // 
-            this.regimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Regime", true));
-            this.regimeTextBox.Location = new System.Drawing.Point(729, 130);
-            this.regimeTextBox.Name = "regimeTextBox";
-            this.regimeTextBox.Size = new System.Drawing.Size(100, 26);
-            this.regimeTextBox.TabIndex = 16;
-            // 
             // Form_Create_Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 436);
-            this.Controls.Add(iDLabel1);
-            this.Controls.Add(this.iDTextBox1);
-            this.Controls.Add(nameLabel1);
-            this.Controls.Add(this.nameTextBox1);
-            this.Controls.Add(companyIDLabel);
-            this.Controls.Add(this.companyIDTextBox);
-            this.Controls.Add(regimeLabel);
-            this.Controls.Add(this.regimeTextBox);
+            this.ClientSize = new System.Drawing.Size(430, 436);
             this.Controls.Add(this.b_CreateCompany);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.b_LoadLogo);
@@ -295,9 +207,5 @@
         private System.Windows.Forms.Button b_CreateCompany;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter;
         private System.Windows.Forms.BindingSource tbo_DepartmentBindingSource;
-        private System.Windows.Forms.TextBox iDTextBox1;
-        private System.Windows.Forms.TextBox nameTextBox1;
-        private System.Windows.Forms.TextBox companyIDTextBox;
-        private System.Windows.Forms.TextBox regimeTextBox;
     }
 }
