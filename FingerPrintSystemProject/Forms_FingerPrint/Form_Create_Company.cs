@@ -43,16 +43,15 @@ namespace Forms_FingerPrint
         private void button1_Click(object sender, EventArgs e) //Createbutton_Company_Form
         {
             Form_Create_Company f1 = new Form_Create_Company();
-            if (iDTextBox.Text.Length == 0 || nameTextBox.Text.Length == 0) //установить проверка на отсутвие картинки !
-            {
-                //вывожу сообщение, что пропущены строки
-                string message = "You did not enter all string.Please enter all information!";
-                string caption = "Error Detected in Input";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
-                result = MessageBox.Show(message, caption, buttons);
-            }
             
+            
+                tbo_CompanyBindingSource.AddNew();
+            
+
+
+
+
+
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -66,6 +65,17 @@ namespace Forms_FingerPrint
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tbo_CompanyBindingSource.EndEdit();
+            tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tbo_CompanyBindingSource.RemoveCurrent();
         }
     }
 }

@@ -53,6 +53,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             сompanyLogoLabel = new System.Windows.Forms.Label();
@@ -67,7 +69,7 @@
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(26, 100);
+            iDLabel.Location = new System.Drawing.Point(28, 162);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(30, 20);
             iDLabel.TabIndex = 0;
@@ -76,7 +78,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(26, 132);
+            nameLabel.Location = new System.Drawing.Point(28, 194);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(55, 20);
             nameLabel.TabIndex = 2;
@@ -85,7 +87,7 @@
             // сompanyLogoLabel
             // 
             сompanyLogoLabel.AutoSize = true;
-            сompanyLogoLabel.Location = new System.Drawing.Point(26, 185);
+            сompanyLogoLabel.Location = new System.Drawing.Point(28, 247);
             сompanyLogoLabel.Name = "сompanyLogoLabel";
             сompanyLogoLabel.Size = new System.Drawing.Size(120, 20);
             сompanyLogoLabel.TabIndex = 4;
@@ -122,7 +124,7 @@
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(152, 97);
+            this.iDTextBox.Location = new System.Drawing.Point(154, 159);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(100, 26);
             this.iDTextBox.TabIndex = 1;
@@ -130,7 +132,7 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(152, 129);
+            this.nameTextBox.Location = new System.Drawing.Point(154, 191);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 26);
             this.nameTextBox.TabIndex = 3;
@@ -139,7 +141,7 @@
             // 
             this.сompanyLogoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.сompanyLogoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_CompanyBindingSource, "СompanyLogo", true));
-            this.сompanyLogoPictureBox.Location = new System.Drawing.Point(152, 185);
+            this.сompanyLogoPictureBox.Location = new System.Drawing.Point(154, 247);
             this.сompanyLogoPictureBox.Name = "сompanyLogoPictureBox";
             this.сompanyLogoPictureBox.Size = new System.Drawing.Size(100, 90);
             this.сompanyLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -148,7 +150,7 @@
             // 
             // b_LoadLogo
             // 
-            this.b_LoadLogo.Location = new System.Drawing.Point(302, 240);
+            this.b_LoadLogo.Location = new System.Drawing.Point(304, 302);
             this.b_LoadLogo.Name = "b_LoadLogo";
             this.b_LoadLogo.Size = new System.Drawing.Size(76, 35);
             this.b_LoadLogo.TabIndex = 7;
@@ -158,7 +160,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 307);
+            this.label2.Location = new System.Drawing.Point(26, 356);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(215, 20);
             this.label2.TabIndex = 8;
@@ -166,9 +168,9 @@
             // 
             // b_CreateCompany
             // 
-            this.b_CreateCompany.Location = new System.Drawing.Point(30, 373);
+            this.b_CreateCompany.Location = new System.Drawing.Point(32, 48);
             this.b_CreateCompany.Name = "b_CreateCompany";
-            this.b_CreateCompany.Size = new System.Drawing.Size(183, 43);
+            this.b_CreateCompany.Size = new System.Drawing.Size(133, 43);
             this.b_CreateCompany.TabIndex = 9;
             this.b_CreateCompany.Text = "Add Company";
             this.b_CreateCompany.UseVisualStyleBackColor = true;
@@ -224,7 +226,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 46);
+            this.label1.Location = new System.Drawing.Point(28, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 20);
             this.label1.TabIndex = 10;
@@ -248,11 +250,33 @@
             this.button1.Text = "Save and go to next step";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(30, 379);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(183, 41);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(276, 181);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 33);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Remove company";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form_Create_Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 601);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -304,5 +328,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
