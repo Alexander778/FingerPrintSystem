@@ -156,6 +156,7 @@
             this.b_LoadLogo.TabIndex = 7;
             this.b_LoadLogo.Text = "Load";
             this.b_LoadLogo.UseVisualStyleBackColor = true;
+            this.b_LoadLogo.Click += new System.EventHandler(this.b_LoadLogo_Click);
             // 
             // label2
             // 

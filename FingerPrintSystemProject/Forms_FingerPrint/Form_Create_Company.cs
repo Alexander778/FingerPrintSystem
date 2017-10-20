@@ -77,5 +77,28 @@ namespace Forms_FingerPrint
         {
             tbo_CompanyBindingSource.RemoveCurrent();
         }
+
+        private void b_LoadLogo_Click(object sender, EventArgs e)
+        {
+            Bitmap image; 
+
+            OpenFileDialog open_dialog = new OpenFileDialog(); 
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*"; 
+            if (open_dialog.ShowDialog() == DialogResult.OK) 
+            {
+                try
+                {
+                    image = new Bitmap(open_dialog.FileName);
+                    this.сompanyLogoPictureBox.Size = image.Size;
+                    сompanyLogoPictureBox.Image = image;
+                    сompanyLogoPictureBox.Invalidate();
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
