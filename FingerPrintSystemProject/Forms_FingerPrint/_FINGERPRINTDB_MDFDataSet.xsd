@@ -56,7 +56,16 @@ SELECT ID, Name, СompanyLogo FROM tbo_Company WHERE (ID = @ID)</CommandText>
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
               <Mapping SourceColumn="СompanyLogo" DataSetColumn="СompanyLogo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="FINGERPRINTDB_DB (Settings)" DbObjectName="[FINGERPRINTDB.MDF].dbo.tbo_Company" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, Name, СompanyLogo FROM dbo.tbo_Company</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbo_DepartmentTableAdapter" GeneratorDataComponentClassName="tbo_DepartmentTableAdapter" Name="tbo_Department" UserDataComponentName="tbo_DepartmentTableAdapter">
             <MainSource>
@@ -313,7 +322,7 @@ SELECT ID, Name FROM tbo_Role WHERE (ID = @ID)</CommandText>
   <xs:element name="_FINGERPRINTDB_MDFDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_FINGERPRINTDB_MDFDataSet" msprop:Generator_UserDSName="_FINGERPRINTDB_MDFDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbo_Company" msprop:Generator_TableClassName="tbo_CompanyDataTable" msprop:Generator_TableVarName="tabletbo_Company" msprop:Generator_TablePropName="tbo_Company" msprop:Generator_RowDeletingName="tbo_CompanyRowDeleting" msprop:Generator_RowChangingName="tbo_CompanyRowChanging" msprop:Generator_RowEvHandlerName="tbo_CompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_CompanyRowDeleted" msprop:Generator_UserTableName="tbo_Company" msprop:Generator_RowChangedName="tbo_CompanyRowChanged" msprop:Generator_RowEvArgName="tbo_CompanyRowChangeEvent" msprop:Generator_RowClassName="tbo_CompanyRow">
+        <xs:element name="tbo_Company" msprop:Generator_TableClassName="tbo_CompanyDataTable" msprop:Generator_TableVarName="tabletbo_Company" msprop:Generator_RowChangedName="tbo_CompanyRowChanged" msprop:Generator_TablePropName="tbo_Company" msprop:Generator_RowDeletingName="tbo_CompanyRowDeleting" msprop:Generator_RowChangingName="tbo_CompanyRowChanging" msprop:Generator_RowEvHandlerName="tbo_CompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_CompanyRowDeleted" msprop:Generator_RowClassName="tbo_CompanyRow" msprop:Generator_UserTableName="tbo_Company" msprop:Generator_RowEvArgName="tbo_CompanyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -328,7 +337,7 @@ SELECT ID, Name FROM tbo_Role WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbo_Department" msprop:Generator_TableClassName="tbo_DepartmentDataTable" msprop:Generator_TableVarName="tabletbo_Department" msprop:Generator_TablePropName="tbo_Department" msprop:Generator_RowDeletingName="tbo_DepartmentRowDeleting" msprop:Generator_RowChangingName="tbo_DepartmentRowChanging" msprop:Generator_RowEvHandlerName="tbo_DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_DepartmentRowDeleted" msprop:Generator_UserTableName="tbo_Department" msprop:Generator_RowChangedName="tbo_DepartmentRowChanged" msprop:Generator_RowEvArgName="tbo_DepartmentRowChangeEvent" msprop:Generator_RowClassName="tbo_DepartmentRow">
+        <xs:element name="tbo_Department" msprop:Generator_TableClassName="tbo_DepartmentDataTable" msprop:Generator_TableVarName="tabletbo_Department" msprop:Generator_RowChangedName="tbo_DepartmentRowChanged" msprop:Generator_TablePropName="tbo_Department" msprop:Generator_RowDeletingName="tbo_DepartmentRowDeleting" msprop:Generator_RowChangingName="tbo_DepartmentRowChanging" msprop:Generator_RowEvHandlerName="tbo_DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_DepartmentRowDeleted" msprop:Generator_RowClassName="tbo_DepartmentRow" msprop:Generator_UserTableName="tbo_Department" msprop:Generator_RowEvArgName="tbo_DepartmentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -350,7 +359,7 @@ SELECT ID, Name FROM tbo_Role WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbo_LinkDepartmentUser" msprop:Generator_TableClassName="tbo_LinkDepartmentUserDataTable" msprop:Generator_TableVarName="tabletbo_LinkDepartmentUser" msprop:Generator_TablePropName="tbo_LinkDepartmentUser" msprop:Generator_RowDeletingName="tbo_LinkDepartmentUserRowDeleting" msprop:Generator_RowChangingName="tbo_LinkDepartmentUserRowChanging" msprop:Generator_RowEvHandlerName="tbo_LinkDepartmentUserRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_LinkDepartmentUserRowDeleted" msprop:Generator_UserTableName="tbo_LinkDepartmentUser" msprop:Generator_RowChangedName="tbo_LinkDepartmentUserRowChanged" msprop:Generator_RowEvArgName="tbo_LinkDepartmentUserRowChangeEvent" msprop:Generator_RowClassName="tbo_LinkDepartmentUserRow">
+        <xs:element name="tbo_LinkDepartmentUser" msprop:Generator_TableClassName="tbo_LinkDepartmentUserDataTable" msprop:Generator_TableVarName="tabletbo_LinkDepartmentUser" msprop:Generator_RowChangedName="tbo_LinkDepartmentUserRowChanged" msprop:Generator_TablePropName="tbo_LinkDepartmentUser" msprop:Generator_RowDeletingName="tbo_LinkDepartmentUserRowDeleting" msprop:Generator_RowChangingName="tbo_LinkDepartmentUserRowChanging" msprop:Generator_RowEvHandlerName="tbo_LinkDepartmentUserRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_LinkDepartmentUserRowDeleted" msprop:Generator_RowClassName="tbo_LinkDepartmentUserRow" msprop:Generator_UserTableName="tbo_LinkDepartmentUser" msprop:Generator_RowEvArgName="tbo_LinkDepartmentUserRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DepartmentID" msprop:Generator_ColumnVarNameInTable="columnDepartmentID" msprop:Generator_ColumnPropNameInRow="DepartmentID" msprop:Generator_ColumnPropNameInTable="DepartmentIDColumn" msprop:Generator_UserColumnName="DepartmentID" type="xs:int" />
@@ -365,7 +374,7 @@ SELECT ID, Name FROM tbo_Role WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbo_Profile" msprop:Generator_TableClassName="tbo_ProfileDataTable" msprop:Generator_TableVarName="tabletbo_Profile" msprop:Generator_TablePropName="tbo_Profile" msprop:Generator_RowDeletingName="tbo_ProfileRowDeleting" msprop:Generator_RowChangingName="tbo_ProfileRowChanging" msprop:Generator_RowEvHandlerName="tbo_ProfileRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_ProfileRowDeleted" msprop:Generator_UserTableName="tbo_Profile" msprop:Generator_RowChangedName="tbo_ProfileRowChanged" msprop:Generator_RowEvArgName="tbo_ProfileRowChangeEvent" msprop:Generator_RowClassName="tbo_ProfileRow">
+        <xs:element name="tbo_Profile" msprop:Generator_TableClassName="tbo_ProfileDataTable" msprop:Generator_TableVarName="tabletbo_Profile" msprop:Generator_RowChangedName="tbo_ProfileRowChanged" msprop:Generator_TablePropName="tbo_Profile" msprop:Generator_RowDeletingName="tbo_ProfileRowDeleting" msprop:Generator_RowChangingName="tbo_ProfileRowChanging" msprop:Generator_RowEvHandlerName="tbo_ProfileRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_ProfileRowDeleted" msprop:Generator_RowClassName="tbo_ProfileRow" msprop:Generator_UserTableName="tbo_Profile" msprop:Generator_RowEvArgName="tbo_ProfileRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -423,7 +432,7 @@ SELECT ID, Name FROM tbo_Role WHERE (ID = @ID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbo_Role" msprop:Generator_TableClassName="tbo_RoleDataTable" msprop:Generator_TableVarName="tabletbo_Role" msprop:Generator_TablePropName="tbo_Role" msprop:Generator_RowDeletingName="tbo_RoleRowDeleting" msprop:Generator_RowChangingName="tbo_RoleRowChanging" msprop:Generator_RowEvHandlerName="tbo_RoleRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_RoleRowDeleted" msprop:Generator_UserTableName="tbo_Role" msprop:Generator_RowChangedName="tbo_RoleRowChanged" msprop:Generator_RowEvArgName="tbo_RoleRowChangeEvent" msprop:Generator_RowClassName="tbo_RoleRow">
+        <xs:element name="tbo_Role" msprop:Generator_TableClassName="tbo_RoleDataTable" msprop:Generator_TableVarName="tabletbo_Role" msprop:Generator_RowChangedName="tbo_RoleRowChanged" msprop:Generator_TablePropName="tbo_Role" msprop:Generator_RowDeletingName="tbo_RoleRowDeleting" msprop:Generator_RowChangingName="tbo_RoleRowChanging" msprop:Generator_RowEvHandlerName="tbo_RoleRowChangeEventHandler" msprop:Generator_RowDeletedName="tbo_RoleRowDeleted" msprop:Generator_RowClassName="tbo_RoleRow" msprop:Generator_UserTableName="tbo_Role" msprop:Generator_RowEvArgName="tbo_RoleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -463,10 +472,10 @@ SELECT ID, Name FROM tbo_Role WHERE (ID = @ID)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_tbo_Department_tbo_Company" msdata:parent="tbo_Company" msdata:child="tbo_Department" msdata:parentkey="ID" msdata:childkey="CompanyID" msprop:Generator_UserChildTable="tbo_Department" msprop:Generator_ChildPropName="Gettbo_DepartmentRows" msprop:Generator_UserRelationName="FK_tbo_Department_tbo_Company" msprop:Generator_ParentPropName="tbo_CompanyRow" msprop:Generator_RelationVarName="relationFK_tbo_Department_tbo_Company" msprop:Generator_UserParentTable="tbo_Company" />
-      <msdata:Relationship name="FK_tbo_LinkDepartmentUser_tbo_Department" msdata:parent="tbo_Department" msdata:child="tbo_LinkDepartmentUser" msdata:parentkey="ID" msdata:childkey="DepartmentID" msprop:Generator_UserChildTable="tbo_LinkDepartmentUser" msprop:Generator_ChildPropName="Gettbo_LinkDepartmentUserRows" msprop:Generator_UserRelationName="FK_tbo_LinkDepartmentUser_tbo_Department" msprop:Generator_ParentPropName="tbo_DepartmentRow" msprop:Generator_RelationVarName="relationFK_tbo_LinkDepartmentUser_tbo_Department" msprop:Generator_UserParentTable="tbo_Department" />
-      <msdata:Relationship name="FK_tbo_LinkDepartmentUser_tbo_Profile" msdata:parent="tbo_Profile" msdata:child="tbo_LinkDepartmentUser" msdata:parentkey="ID" msdata:childkey="UserID" msprop:Generator_UserChildTable="tbo_LinkDepartmentUser" msprop:Generator_ChildPropName="Gettbo_LinkDepartmentUserRows" msprop:Generator_UserRelationName="FK_tbo_LinkDepartmentUser_tbo_Profile" msprop:Generator_RelationVarName="relationFK_tbo_LinkDepartmentUser_tbo_Profile" msprop:Generator_UserParentTable="tbo_Profile" msprop:Generator_ParentPropName="tbo_ProfileRow" />
-      <msdata:Relationship name="FK_tbo_Profile_tbo_Role" msdata:parent="tbo_Role" msdata:child="tbo_Profile" msdata:parentkey="ID" msdata:childkey="RoleID" msprop:Generator_UserChildTable="tbo_Profile" msprop:Generator_ChildPropName="Gettbo_ProfileRows" msprop:Generator_UserRelationName="FK_tbo_Profile_tbo_Role" msprop:Generator_RelationVarName="relationFK_tbo_Profile_tbo_Role" msprop:Generator_UserParentTable="tbo_Role" msprop:Generator_ParentPropName="tbo_RoleRow" />
+      <msdata:Relationship name="FK_tbo_Department_tbo_Company" msdata:parent="tbo_Company" msdata:child="tbo_Department" msdata:parentkey="ID" msdata:childkey="CompanyID" msprop:Generator_UserChildTable="tbo_Department" msprop:Generator_ChildPropName="Gettbo_DepartmentRows" msprop:Generator_UserRelationName="FK_tbo_Department_tbo_Company" msprop:Generator_RelationVarName="relationFK_tbo_Department_tbo_Company" msprop:Generator_UserParentTable="tbo_Company" msprop:Generator_ParentPropName="tbo_CompanyRow" />
+      <msdata:Relationship name="FK_tbo_LinkDepartmentUser_tbo_Department" msdata:parent="tbo_Department" msdata:child="tbo_LinkDepartmentUser" msdata:parentkey="ID" msdata:childkey="DepartmentID" msprop:Generator_UserChildTable="tbo_LinkDepartmentUser" msprop:Generator_ChildPropName="Gettbo_LinkDepartmentUserRows" msprop:Generator_UserRelationName="FK_tbo_LinkDepartmentUser_tbo_Department" msprop:Generator_RelationVarName="relationFK_tbo_LinkDepartmentUser_tbo_Department" msprop:Generator_UserParentTable="tbo_Department" msprop:Generator_ParentPropName="tbo_DepartmentRow" />
+      <msdata:Relationship name="FK_tbo_LinkDepartmentUser_tbo_Profile" msdata:parent="tbo_Profile" msdata:child="tbo_LinkDepartmentUser" msdata:parentkey="ID" msdata:childkey="UserID" msprop:Generator_UserChildTable="tbo_LinkDepartmentUser" msprop:Generator_ChildPropName="Gettbo_LinkDepartmentUserRows" msprop:Generator_UserRelationName="FK_tbo_LinkDepartmentUser_tbo_Profile" msprop:Generator_ParentPropName="tbo_ProfileRow" msprop:Generator_RelationVarName="relationFK_tbo_LinkDepartmentUser_tbo_Profile" msprop:Generator_UserParentTable="tbo_Profile" />
+      <msdata:Relationship name="FK_tbo_Profile_tbo_Role" msdata:parent="tbo_Role" msdata:child="tbo_Profile" msdata:parentkey="ID" msdata:childkey="RoleID" msprop:Generator_UserChildTable="tbo_Profile" msprop:Generator_ChildPropName="Gettbo_ProfileRows" msprop:Generator_UserRelationName="FK_tbo_Profile_tbo_Role" msprop:Generator_ParentPropName="tbo_RoleRow" msprop:Generator_RelationVarName="relationFK_tbo_Profile_tbo_Role" msprop:Generator_UserParentTable="tbo_Role" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

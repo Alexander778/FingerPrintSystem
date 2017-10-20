@@ -52,5 +52,18 @@ namespace Forms_FingerPrint
             }
             
         }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tbo_CompanyTableAdapter.FillBy(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
