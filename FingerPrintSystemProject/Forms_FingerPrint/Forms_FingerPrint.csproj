@@ -52,6 +52,12 @@
     <Compile Include="Admin_Panel.Designer.cs">
       <DependentUpon>Admin_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePasswordAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordAdmin.Designer.cs">
+      <DependentUpon>ChangePasswordAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enter_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     </Compile>
     <EmbeddedResource Include="Admin_Panel.resx">
       <DependentUpon>Admin_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordAdmin.resx">
+      <DependentUpon>ChangePasswordAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enter_Form.resx">
       <DependentUpon>Enter_Form.cs</DependentUpon>

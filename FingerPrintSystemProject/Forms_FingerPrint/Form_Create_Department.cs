@@ -54,5 +54,19 @@ namespace Forms_FingerPrint
             tbo_DepartmentBindingSource.EndEdit();
             tbo_DepartmentTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string message = "Your company(ies) and departments were created!Now,please, add information about administrator profile and change password!";
+            string caption = "FingerPrintSystem::Change information";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
+
+            ChangePasswordAdmin ch1 = new ChangePasswordAdmin();
+            ch1.Show();
+            this.Hide();
+        }
     }
 }
