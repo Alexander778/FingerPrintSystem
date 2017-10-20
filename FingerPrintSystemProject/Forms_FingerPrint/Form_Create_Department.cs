@@ -27,6 +27,8 @@ namespace Forms_FingerPrint
 
         private void Form_Create_Department_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet1.tbo_Company". При необходимости она может быть перемещена или удалена.
+            this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet1.tbo_Company);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Department". При необходимости она может быть перемещена или удалена.
             this.tbo_DepartmentTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Department);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Profile". При необходимости она может быть перемещена или удалена.
@@ -34,6 +36,23 @@ namespace Forms_FingerPrint
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Role". При необходимости она может быть перемещена или удалена.
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tbo_DepartmentBindingSource.AddNew();
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tbo_DepartmentBindingSource.RemoveCurrent();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tbo_DepartmentBindingSource.EndEdit();
+            tbo_DepartmentTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
         }
     }
 }

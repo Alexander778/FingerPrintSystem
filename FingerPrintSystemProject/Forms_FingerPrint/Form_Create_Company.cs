@@ -89,8 +89,9 @@ namespace Forms_FingerPrint
                 try
                 {
                     image = new Bitmap(open_dialog.FileName);
-                    this.сompanyLogoPictureBox.Size = image.Size;
+                    //this.сompanyLogoPictureBox.Size = image.Size;
                     сompanyLogoPictureBox.Image = image;
+                    сompanyLogoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     сompanyLogoPictureBox.Invalidate();
                 }
                 catch
@@ -99,6 +100,13 @@ namespace Forms_FingerPrint
                     "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form_Create_Department f1 = new Form_Create_Department();
+            f1.Show();
+            this.Hide();
         }
     }
 }
