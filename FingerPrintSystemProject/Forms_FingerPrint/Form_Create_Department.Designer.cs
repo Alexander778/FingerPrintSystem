@@ -51,6 +51,8 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
@@ -65,7 +67,7 @@
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(18, 26);
+            iDLabel.Location = new System.Drawing.Point(26, 120);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(30, 20);
             iDLabel.TabIndex = 0;
@@ -74,7 +76,7 @@
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(125, 23);
+            this.iDTextBox.Location = new System.Drawing.Point(133, 117);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(100, 26);
             this.iDTextBox.TabIndex = 1;
@@ -82,7 +84,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(18, 58);
+            nameLabel.Location = new System.Drawing.Point(26, 152);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(55, 20);
             nameLabel.TabIndex = 2;
@@ -91,7 +93,7 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
-            this.nameTextBox.Location = new System.Drawing.Point(125, 55);
+            this.nameTextBox.Location = new System.Drawing.Point(133, 149);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 26);
             this.nameTextBox.TabIndex = 3;
@@ -99,7 +101,7 @@
             // companyIDLabel
             // 
             companyIDLabel.AutoSize = true;
-            companyIDLabel.Location = new System.Drawing.Point(18, 90);
+            companyIDLabel.Location = new System.Drawing.Point(26, 184);
             companyIDLabel.Name = "companyIDLabel";
             companyIDLabel.Size = new System.Drawing.Size(101, 20);
             companyIDLabel.TabIndex = 4;
@@ -108,7 +110,7 @@
             // companyIDTextBox
             // 
             this.companyIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.companyIDTextBox.Location = new System.Drawing.Point(125, 87);
+            this.companyIDTextBox.Location = new System.Drawing.Point(133, 181);
             this.companyIDTextBox.Name = "companyIDTextBox";
             this.companyIDTextBox.Size = new System.Drawing.Size(100, 26);
             this.companyIDTextBox.TabIndex = 5;
@@ -116,7 +118,7 @@
             // regimeLabel
             // 
             regimeLabel.AutoSize = true;
-            regimeLabel.Location = new System.Drawing.Point(18, 122);
+            regimeLabel.Location = new System.Drawing.Point(26, 216);
             regimeLabel.Name = "regimeLabel";
             regimeLabel.Size = new System.Drawing.Size(68, 20);
             regimeLabel.TabIndex = 6;
@@ -125,7 +127,7 @@
             // regimeTextBox
             // 
             this.regimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Regime", true));
-            this.regimeTextBox.Location = new System.Drawing.Point(125, 119);
+            this.regimeTextBox.Location = new System.Drawing.Point(133, 213);
             this.regimeTextBox.Name = "regimeTextBox";
             this.regimeTextBox.Size = new System.Drawing.Size(100, 26);
             this.regimeTextBox.TabIndex = 7;
@@ -182,10 +184,10 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.tbo_DepartmentDataGridView.DataSource = this.tbo_DepartmentBindingSource;
-            this.tbo_DepartmentDataGridView.Location = new System.Drawing.Point(286, 26);
+            this.tbo_DepartmentDataGridView.Location = new System.Drawing.Point(380, 28);
             this.tbo_DepartmentDataGridView.Name = "tbo_DepartmentDataGridView";
             this.tbo_DepartmentDataGridView.RowTemplate.Height = 28;
-            this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(444, 55);
+            this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(444, 443);
             this.tbo_DepartmentDataGridView.TabIndex = 8;
             // 
             // dataGridViewTextBoxColumn1
@@ -214,18 +216,38 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(22, 187);
+            this.button1.Location = new System.Drawing.Point(56, 257);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 35);
             this.button1.TabIndex = 9;
             this.button1.Text = "Add Department";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(308, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Please write information about department";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(77, 411);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 35);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Next Step";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Form_Create_Department
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 517);
+            this.ClientSize = new System.Drawing.Size(862, 517);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbo_DepartmentDataGridView);
             this.Controls.Add(iDLabel);
@@ -270,5 +292,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
