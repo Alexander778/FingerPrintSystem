@@ -31,51 +31,33 @@ namespace Forms_FingerPrint
             this.tbo_ProfileTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Profile);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Role". При необходимости она может быть перемещена или удалена.
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
+                (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            try
+            Bitmap image;
+
+            OpenFileDialog open_dialog = new OpenFileDialog();
+            open_dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
+            if (open_dialog.ShowDialog() == DialogResult.OK)
             {
-                this.tbo_RoleTableAdapter.FillBy(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
+                try
+                {
+                    image = new Bitmap(open_dialog.FileName);
+                    //this.сompanyLogoPictureBox.Size = image.Size;
+                    photoPictureBox.Image = image;
+                    photoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    photoPictureBox.Invalidate();
+                }
+                catch
+                {
+                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
+                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.tbo_RoleTableAdapter.FillBy1(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.tbo_RoleTableAdapter.FillBy2(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillBy2ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

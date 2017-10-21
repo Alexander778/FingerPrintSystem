@@ -60,6 +60,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Enter_Form";
             this.Text = "FingerPrintSystem::Enter";
+            this.Load += new System.EventHandler(this.Enter_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

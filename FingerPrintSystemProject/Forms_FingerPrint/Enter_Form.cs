@@ -26,5 +26,11 @@ namespace Forms_FingerPrint
             this.Hide();
 
         }
+
+        private void Enter_Form_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
+                (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+        }
     }
 }
