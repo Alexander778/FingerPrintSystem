@@ -74,6 +74,7 @@ namespace Forms_FingerPrint
         {
             tbo_ProfileBindingSource.EndEdit();
             tbo_LinkDepartmentUserBindingSource.EndEdit();
+            
             tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
             tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
             
@@ -104,6 +105,8 @@ namespace Forms_FingerPrint
             {
                 tbo_ProfileBindingSource.RemoveCurrent();
                 tbo_LinkDepartmentUserBindingSource.RemoveCurrent();
+                tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+                tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
                 string message1 = "This account was deleted. If you want to create new account you should click on Add Admin User";
                 string caption1 = "FingerPrintSystem";
                 MessageBoxButtons buttons1 = MessageBoxButtons.OK;
