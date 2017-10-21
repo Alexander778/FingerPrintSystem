@@ -28,6 +28,10 @@ namespace Forms_FingerPrint
 
         private void ChangePasswordAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Department". При необходимости она может быть перемещена или удалена.
+            this.tbo_DepartmentTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Department);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_LinkDepartmentUser". При необходимости она может быть перемещена или удалена.
+            this.tbo_LinkDepartmentUserTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_LinkDepartmentUser);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Profile". При необходимости она может быть перемещена или удалена.
             this.tbo_ProfileTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Profile);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Role". При необходимости она может быть перемещена или удалена.
@@ -61,7 +65,7 @@ namespace Forms_FingerPrint
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //make photo
         {
 
         }
@@ -69,12 +73,23 @@ namespace Forms_FingerPrint
         private void button5_Click(object sender, EventArgs e)
         {
             tbo_ProfileBindingSource.EndEdit();
+            tbo_LinkDepartmentUserBindingSource.EndEdit();
+            tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
             tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            
+
+            string message = "You created New Admin User. You enter to system by this account";
+            string caption = "FingerPrintSystem";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+            result = MessageBox.Show(message, caption, buttons);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             tbo_ProfileBindingSource.AddNew();
+            tbo_LinkDepartmentUserBindingSource.AddNew();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -88,17 +103,36 @@ namespace Forms_FingerPrint
             if (result == DialogResult.Yes)
             {
                 tbo_ProfileBindingSource.RemoveCurrent();
+                tbo_LinkDepartmentUserBindingSource.RemoveCurrent();
                 string message1 = "This account was deleted. If you want to create new account you should click on Add Admin User";
-                string caption1 = "FingerPrintSystem::Success Operation";
+                string caption1 = "FingerPrintSystem";
                 MessageBoxButtons buttons1 = MessageBoxButtons.OK;
                 DialogResult result1;
                 result1 = MessageBox.Show(message1, caption1, buttons1);
             }
-            else
-            {
-                
+        }
 
-            }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Enter_Form f1 = new Enter_Form();
+            f1.Enabled = false;
+            f1.Hide();
+            this.Hide();
+            FirstEnter fe1 = new FirstEnter();
+            fe1.Show();
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e) //add fingerprint
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tbo_LinkDepartmentUserBindingSource.RemoveCurrent();
+
         }
     }
 }

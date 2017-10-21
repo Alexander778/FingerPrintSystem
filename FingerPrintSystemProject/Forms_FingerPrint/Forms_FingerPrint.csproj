@@ -64,6 +64,12 @@
     <Compile Include="Enter_Form.Designer.cs">
       <DependentUpon>Enter_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirstEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstEnter.Designer.cs">
+      <DependentUpon>FirstEnter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Create_Company.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enter_Form.resx">
       <DependentUpon>Enter_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstEnter.resx">
+      <DependentUpon>FirstEnter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Create_Company.resx">
       <DependentUpon>Form_Create_Company.cs</DependentUpon>
