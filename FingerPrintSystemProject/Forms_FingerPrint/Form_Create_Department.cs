@@ -44,7 +44,6 @@ namespace Forms_FingerPrint
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Visible = true;
-            iDTextBox.Enabled = true;
             nameTextBox.Enabled = true;
             companyIDComboBox.Enabled = true;
             regimeTextBox.Enabled = true;
@@ -93,6 +92,13 @@ namespace Forms_FingerPrint
             {
                 tbo_DepartmentDataGridView.Visible = false;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form_Create_Company f1 = new Form_Create_Company();
+            f1.Show();
+            this.Hide();
         }
     }
 }

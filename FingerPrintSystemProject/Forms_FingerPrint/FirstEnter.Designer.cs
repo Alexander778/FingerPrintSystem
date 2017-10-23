@@ -31,20 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label nameLabel;
-            System.Windows.Forms.Label iDLabel;
             this.label1 = new System.Windows.Forms.Label();
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_ProfileTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter();
             this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
-            iDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +48,7 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(242, 262);
+            passwordLabel.Location = new System.Drawing.Point(242, 218);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new System.Drawing.Size(82, 20);
             passwordLabel.TabIndex = 2;
@@ -61,20 +57,11 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(269, 230);
+            nameLabel.Location = new System.Drawing.Point(269, 186);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(55, 20);
             nameLabel.TabIndex = 6;
             nameLabel.Text = "Name:";
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(294, 198);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(30, 20);
-            iDLabel.TabIndex = 7;
-            iDLabel.Text = "ID:";
             // 
             // label1
             // 
@@ -119,48 +106,28 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(330, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(142, 26);
-            this.textBox1.TabIndex = 8;
-            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(330, 227);
+            this.textBox2.Location = new System.Drawing.Point(330, 183);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(142, 26);
             this.textBox2.TabIndex = 9;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(330, 256);
+            this.textBox3.Location = new System.Drawing.Point(330, 212);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(142, 26);
             this.textBox3.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(496, 331);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "11";
             // 
             // FirstEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 429);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(iDLabel);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(passwordLabel);
@@ -184,9 +151,7 @@
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter tbo_ProfileTableAdapter;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
     }
 }

@@ -34,6 +34,17 @@ namespace Forms_FingerPrint
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Role". При необходимости она может быть перемещена или удалена.
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
 
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
+                (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+
+            
+
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

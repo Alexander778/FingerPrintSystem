@@ -41,15 +41,15 @@ namespace Forms_FingerPrint
 
             con.Open();
 
-            string txtID = textBox1.Text;
+            
             string txtName = textBox2.Text;
             string txtPassword = textBox3.Text;
 
-            string query = "SELECT * FROM tbo_Profile WHERE ID=@id AND Name = @name AND Password=@passwd";
+            string query = "SELECT * FROM tbo_Profile WHERE Name = @name AND Password=@passwd";
             SqlCommand cmd = new SqlCommand(query, con);
 
             
-            cmd.Parameters.Add(new SqlParameter("@id", txtID));
+            
             cmd.Parameters.Add(new SqlParameter("@name", txtName));
             cmd.Parameters.Add(new SqlParameter("@passwd", txtPassword));
 
@@ -58,11 +58,14 @@ namespace Forms_FingerPrint
 
             {
                 MessageBox.Show("Login Succesfull");
+                Admin_Panel ad1 = new Admin_Panel();
+                ad1.Show();
+                this.Hide();
 
             }
             else
             {
-                MessageBox.Show("Invalid Login");
+                MessageBox.Show("Invalid Login.Please Try Again!");
             }
 
 

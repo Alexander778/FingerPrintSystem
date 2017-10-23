@@ -197,5 +197,12 @@ namespace Forms_FingerPrint
         {
 
         }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            Form_Create_Department f1 = new Form_Create_Department();
+            f1.Show();
+            this.Hide();
+        }
     }
 }

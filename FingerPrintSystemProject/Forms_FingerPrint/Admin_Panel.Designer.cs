@@ -33,21 +33,23 @@
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_RoleTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter();
             this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
-            this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             this.tbo_ProfileTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter();
+            this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tboCompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             this.tboCompanyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.tboCompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IDlabel = new System.Windows.Forms.Label();
+            this.Namelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // _FINGERPRINTDB_MDFDataSet
@@ -74,23 +76,27 @@
             this.tableAdapterManager.tbo_RoleTableAdapter = this.tbo_RoleTableAdapter;
             this.tableAdapterManager.UpdateOrder = Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // tbo_ProfileBindingSource
+            // tbo_CompanyTableAdapter
             // 
-            this.tbo_ProfileBindingSource.DataMember = "tbo_Profile";
-            this.tbo_ProfileBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            this.tbo_CompanyTableAdapter.ClearBeforeFill = true;
             // 
             // tbo_ProfileTableAdapter
             // 
             this.tbo_ProfileTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbo_ProfileBindingSource
+            // 
+            this.tbo_ProfileBindingSource.DataMember = "tbo_Profile";
+            this.tbo_ProfileBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 20);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nickname of admin";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
@@ -102,6 +108,16 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 2;
             // 
+            // tboCompanyBindingSource1
+            // 
+            this.tboCompanyBindingSource1.DataMember = "tbo_Company";
+            this.tboCompanyBindingSource1.DataSource = this.fINGERPRINTDBMDFDataSetBindingSource;
+            // 
+            // fINGERPRINTDBMDFDataSetBindingSource
+            // 
+            this.fINGERPRINTDBMDFDataSetBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            this.fINGERPRINTDBMDFDataSetBindingSource.Position = 0;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -111,30 +127,36 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Choose company";
             // 
-            // fINGERPRINTDBMDFDataSetBindingSource
-            // 
-            this.fINGERPRINTDBMDFDataSetBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
-            this.fINGERPRINTDBMDFDataSetBindingSource.Position = 0;
-            // 
             // tboCompanyBindingSource
             // 
             this.tboCompanyBindingSource.DataMember = "tbo_Company";
             this.tboCompanyBindingSource.DataSource = this.fINGERPRINTDBMDFDataSetBindingSource;
             // 
-            // tbo_CompanyTableAdapter
+            // IDlabel
             // 
-            this.tbo_CompanyTableAdapter.ClearBeforeFill = true;
+            this.IDlabel.AutoSize = true;
+            this.IDlabel.Location = new System.Drawing.Point(17, 15);
+            this.IDlabel.Name = "IDlabel";
+            this.IDlabel.Size = new System.Drawing.Size(51, 20);
+            this.IDlabel.TabIndex = 4;
+            this.IDlabel.Text = "label3";
             // 
-            // tboCompanyBindingSource1
+            // Namelabel
             // 
-            this.tboCompanyBindingSource1.DataMember = "tbo_Company";
-            this.tboCompanyBindingSource1.DataSource = this.fINGERPRINTDBMDFDataSetBindingSource;
+            this.Namelabel.AutoSize = true;
+            this.Namelabel.Location = new System.Drawing.Point(18, 39);
+            this.Namelabel.Name = "Namelabel";
+            this.Namelabel.Size = new System.Drawing.Size(51, 20);
+            this.Namelabel.TabIndex = 5;
+            this.Namelabel.Text = "label3";
             // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 633);
+            this.ClientSize = new System.Drawing.Size(670, 633);
+            this.Controls.Add(this.Namelabel);
+            this.Controls.Add(this.IDlabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -144,9 +166,9 @@
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +189,7 @@
         private System.Windows.Forms.BindingSource fINGERPRINTDBMDFDataSetBindingSource;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource1;
+        private System.Windows.Forms.Label IDlabel;
+        private System.Windows.Forms.Label Namelabel;
     }
 }

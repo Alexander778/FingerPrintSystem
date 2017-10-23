@@ -29,6 +29,8 @@ namespace Forms_FingerPrint
 
         private void Form_Create_Company_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet1.tbo_Company". При необходимости она может быть перемещена или удалена.
+            this.tbo_CompanyTableAdapter1.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Role". При необходимости она может быть перемещена или удалена.
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Department". При необходимости она может быть перемещена или удалена.
@@ -44,7 +46,7 @@ namespace Forms_FingerPrint
         {
             Form_Create_Company f1 = new Form_Create_Company();
 
-            iDTextBox.Enabled = true;
+           
             nameTextBox.Enabled = true;
             button3.Enabled = true;
             label1.Visible = true;
@@ -52,7 +54,7 @@ namespace Forms_FingerPrint
             button2.Enabled = true;
             checkBox1.Enabled = true;
             button1.Enabled = true;
-                tbo_CompanyBindingSource.AddNew();
+                tbo_CompanyBindingSource1.AddNew();
             
 
 

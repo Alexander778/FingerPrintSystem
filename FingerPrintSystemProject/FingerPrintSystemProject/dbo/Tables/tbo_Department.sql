@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[tbo_Department] (
-    [ID]        INT           NOT NULL,
+    [ID]        INT NOT NULL IDENTITY(1,1),
     [Name]      NVARCHAR (50) NOT NULL,
     [CompanyID] INT           NOT NULL,
     [Regime]    NVARCHAR (50) NOT NULL,

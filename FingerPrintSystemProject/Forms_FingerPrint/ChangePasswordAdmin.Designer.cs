@@ -95,6 +95,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tboLinkDepartmentUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button8 = new System.Windows.Forms.Button();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             iDLabel1 = new System.Windows.Forms.Label();
@@ -440,7 +441,6 @@
             // 
             // button5
             // 
-            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(535, 337);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 38);
@@ -461,6 +461,7 @@
             // 
             // button7
             // 
+            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(320, 423);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(196, 34);
@@ -673,11 +674,22 @@
             this.tboLinkDepartmentUserBindingSource.DataMember = "tbo_LinkDepartmentUser";
             this.tboLinkDepartmentUserBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(558, 32);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(109, 33);
+            this.button8.TabIndex = 46;
+            this.button8.Text = "Back";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1106, 779);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(departmentIDLabel1);
@@ -792,5 +804,6 @@
         private System.Windows.Forms.BindingSource tboDepartmentBindingSource1;
         private System.Windows.Forms.BindingSource fINGERPRINTDBMDFDataSetBindingSource;
         private System.Windows.Forms.BindingSource tboLinkDepartmentUserBindingSource;
+        private System.Windows.Forms.Button button8;
     }
 }
