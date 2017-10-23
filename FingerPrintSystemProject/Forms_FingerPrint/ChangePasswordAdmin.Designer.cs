@@ -92,6 +92,9 @@
             this.accessTextBox = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tboLinkDepartmentUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tboDepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             iDLabel1 = new System.Windows.Forms.Label();
@@ -114,6 +117,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // iDLabel
@@ -445,7 +451,6 @@
             // 
             // button6
             // 
-            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(320, 341);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(196, 34);
@@ -603,6 +608,8 @@
             // departmentIDComboBox1
             // 
             this.departmentIDComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "DepartmentID", true));
+            this.departmentIDComboBox1.DataSource = this.tboDepartmentBindingSource1;
+            this.departmentIDComboBox1.DisplayMember = "ID";
             this.departmentIDComboBox1.Enabled = false;
             this.departmentIDComboBox1.FormattingEnabled = true;
             this.departmentIDComboBox1.Location = new System.Drawing.Point(728, 82);
@@ -651,6 +658,21 @@
             this.checkBox2.Text = "Show Admin Table";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // fINGERPRINTDBMDFDataSetBindingSource
+            // 
+            this.fINGERPRINTDBMDFDataSetBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            this.fINGERPRINTDBMDFDataSetBindingSource.Position = 0;
+            // 
+            // tboLinkDepartmentUserBindingSource
+            // 
+            this.tboLinkDepartmentUserBindingSource.DataMember = "tbo_LinkDepartmentUser";
+            this.tboLinkDepartmentUserBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            // 
+            // tboDepartmentBindingSource1
+            // 
+            this.tboDepartmentBindingSource1.DataMember = "tbo_Department";
+            this.tboDepartmentBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
             // ChangePasswordAdmin
             // 
@@ -709,6 +731,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -765,5 +790,8 @@
         private System.Windows.Forms.TextBox accessTextBox;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.BindingSource tboDepartmentBindingSource1;
+        private System.Windows.Forms.BindingSource fINGERPRINTDBMDFDataSetBindingSource;
+        private System.Windows.Forms.BindingSource tboLinkDepartmentUserBindingSource;
     }
 }

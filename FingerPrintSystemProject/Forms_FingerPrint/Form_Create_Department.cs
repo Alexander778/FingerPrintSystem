@@ -43,6 +43,17 @@ namespace Forms_FingerPrint
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label1.Visible = true;
+            iDTextBox.Enabled = true;
+            nameTextBox.Enabled = true;
+            companyIDComboBox.Enabled = true;
+            regimeTextBox.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            checkBox1.Enabled = true;
+
+
             tbo_DepartmentBindingSource.AddNew();
             
         }
@@ -70,6 +81,18 @@ namespace Forms_FingerPrint
             ChangePasswordAdmin ch1 = new ChangePasswordAdmin();
             ch1.Show();
             this.Hide();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                tbo_DepartmentDataGridView.Visible = true;
+            }
+            else
+            {
+                tbo_DepartmentDataGridView.Visible = false;
+            }
         }
     }
 }

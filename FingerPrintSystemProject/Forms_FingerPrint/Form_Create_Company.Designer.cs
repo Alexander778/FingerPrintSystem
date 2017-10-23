@@ -55,6 +55,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             сompanyLogoLabel = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "ID", true));
+            this.iDTextBox.Enabled = false;
             this.iDTextBox.Location = new System.Drawing.Point(154, 159);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(100, 26);
@@ -132,6 +134,7 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
+            this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(154, 191);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 26);
@@ -141,6 +144,7 @@
             // 
             this.сompanyLogoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.сompanyLogoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_CompanyBindingSource, "СompanyLogo", true));
+            this.сompanyLogoPictureBox.Enabled = false;
             this.сompanyLogoPictureBox.Location = new System.Drawing.Point(154, 247);
             this.сompanyLogoPictureBox.Name = "сompanyLogoPictureBox";
             this.сompanyLogoPictureBox.Size = new System.Drawing.Size(100, 90);
@@ -150,6 +154,7 @@
             // 
             // b_LoadLogo
             // 
+            this.b_LoadLogo.Enabled = false;
             this.b_LoadLogo.Location = new System.Drawing.Point(304, 302);
             this.b_LoadLogo.Name = "b_LoadLogo";
             this.b_LoadLogo.Size = new System.Drawing.Size(76, 35);
@@ -196,6 +201,7 @@
             this.tbo_CompanyDataGridView.RowTemplate.Height = 28;
             this.tbo_CompanyDataGridView.Size = new System.Drawing.Size(360, 220);
             this.tbo_CompanyDataGridView.TabIndex = 9;
+            this.tbo_CompanyDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -232,6 +238,7 @@
             this.label1.Size = new System.Drawing.Size(324, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "Please write information about your company";
+            this.label1.Visible = false;
             // 
             // label3
             // 
@@ -248,7 +255,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(247, 33);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Save and go to next step";
+            this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -272,11 +279,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(249, 396);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(118, 24);
+            this.checkBox1.TabIndex = 15;
+            this.checkBox1.Text = "Show result";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form_Create_Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 601);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -332,5 +352,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

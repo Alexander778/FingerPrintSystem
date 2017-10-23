@@ -43,8 +43,15 @@ namespace Forms_FingerPrint
         private void button1_Click(object sender, EventArgs e) //Createbutton_Company_Form
         {
             Form_Create_Company f1 = new Form_Create_Company();
-            
-            
+
+            iDTextBox.Enabled = true;
+            nameTextBox.Enabled = true;
+            button3.Enabled = true;
+            label1.Visible = true;
+            b_LoadLogo.Enabled = true;
+            button2.Enabled = true;
+            checkBox1.Enabled = true;
+            button1.Enabled = true;
                 tbo_CompanyBindingSource.AddNew();
             
 
@@ -107,6 +114,18 @@ namespace Forms_FingerPrint
             Form_Create_Department f1 = new Form_Create_Department();
             f1.Show();
             this.Hide();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                tbo_CompanyDataGridView.Visible = true;
+            }
+            else
+            {
+                tbo_CompanyDataGridView.Visible = false;
+            }
         }
     }
 }
