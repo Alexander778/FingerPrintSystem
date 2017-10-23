@@ -90,6 +90,8 @@
             this.departmentIDComboBox1 = new System.Windows.Forms.ComboBox();
             this.userIDTextBox = new System.Windows.Forms.TextBox();
             this.accessTextBox = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             iDLabel1 = new System.Windows.Forms.Label();
@@ -196,6 +198,7 @@
             fingerPrintLabel.Size = new System.Drawing.Size(94, 20);
             fingerPrintLabel.TabIndex = 18;
             fingerPrintLabel.Text = "Finger Print:";
+            fingerPrintLabel.Click += new System.EventHandler(this.fingerPrintLabel_Click);
             // 
             // passwordLabel
             // 
@@ -214,6 +217,33 @@
             roleIDLabel.Size = new System.Drawing.Size(67, 20);
             roleIDLabel.TabIndex = 22;
             roleIDLabel.Text = "Role ID:";
+            // 
+            // departmentIDLabel1
+            // 
+            departmentIDLabel1.AutoSize = true;
+            departmentIDLabel1.Location = new System.Drawing.Point(603, 85);
+            departmentIDLabel1.Name = "departmentIDLabel1";
+            departmentIDLabel1.Size = new System.Drawing.Size(119, 20);
+            departmentIDLabel1.TabIndex = 38;
+            departmentIDLabel1.Text = "Department ID:";
+            // 
+            // userIDLabel
+            // 
+            userIDLabel.AutoSize = true;
+            userIDLabel.Location = new System.Drawing.Point(603, 119);
+            userIDLabel.Name = "userIDLabel";
+            userIDLabel.Size = new System.Drawing.Size(68, 20);
+            userIDLabel.TabIndex = 40;
+            userIDLabel.Text = "User ID:";
+            // 
+            // accessLabel
+            // 
+            accessLabel.AutoSize = true;
+            accessLabel.Location = new System.Drawing.Point(606, 162);
+            accessLabel.Name = "accessLabel";
+            accessLabel.Size = new System.Drawing.Size(65, 20);
+            accessLabel.TabIndex = 42;
+            accessLabel.Text = "Access:";
             // 
             // iDTextBox
             // 
@@ -269,6 +299,7 @@
             // iDTextBox1
             // 
             this.iDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "ID", true));
+            this.iDTextBox1.Enabled = false;
             this.iDTextBox1.Location = new System.Drawing.Point(416, 82);
             this.iDTextBox1.Name = "iDTextBox1";
             this.iDTextBox1.Size = new System.Drawing.Size(100, 26);
@@ -277,6 +308,7 @@
             // nameTextBox1
             // 
             this.nameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Name", true));
+            this.nameTextBox1.Enabled = false;
             this.nameTextBox1.Location = new System.Drawing.Point(416, 114);
             this.nameTextBox1.Name = "nameTextBox1";
             this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
@@ -285,6 +317,7 @@
             // surnameTextBox
             // 
             this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Surname", true));
+            this.surnameTextBox.Enabled = false;
             this.surnameTextBox.Location = new System.Drawing.Point(416, 146);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(100, 26);
@@ -293,6 +326,7 @@
             // patronymicTextBox
             // 
             this.patronymicTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Patronymic", true));
+            this.patronymicTextBox.Enabled = false;
             this.patronymicTextBox.Location = new System.Drawing.Point(416, 178);
             this.patronymicTextBox.Name = "patronymicTextBox";
             this.patronymicTextBox.Size = new System.Drawing.Size(100, 26);
@@ -302,6 +336,7 @@
             // 
             this.photoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_ProfileBindingSource, "Photo", true));
+            this.photoPictureBox.Enabled = false;
             this.photoPictureBox.Location = new System.Drawing.Point(34, 32);
             this.photoPictureBox.Name = "photoPictureBox";
             this.photoPictureBox.Size = new System.Drawing.Size(176, 202);
@@ -311,6 +346,7 @@
             // birthDateTextBox
             // 
             this.birthDateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "BirthDate", true));
+            this.birthDateTextBox.Enabled = false;
             this.birthDateTextBox.Location = new System.Drawing.Point(416, 209);
             this.birthDateTextBox.Name = "birthDateTextBox";
             this.birthDateTextBox.Size = new System.Drawing.Size(100, 26);
@@ -319,6 +355,7 @@
             // scheduleTextBox
             // 
             this.scheduleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
+            this.scheduleTextBox.Enabled = false;
             this.scheduleTextBox.Location = new System.Drawing.Point(416, 241);
             this.scheduleTextBox.Name = "scheduleTextBox";
             this.scheduleTextBox.Size = new System.Drawing.Size(100, 26);
@@ -327,6 +364,7 @@
             // fingerPrintTextBox
             // 
             this.fingerPrintTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "FingerPrint", true));
+            this.fingerPrintTextBox.Enabled = false;
             this.fingerPrintTextBox.Location = new System.Drawing.Point(120, 394);
             this.fingerPrintTextBox.Name = "fingerPrintTextBox";
             this.fingerPrintTextBox.Size = new System.Drawing.Size(100, 26);
@@ -335,6 +373,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Password", true));
+            this.passwordTextBox.Enabled = false;
             this.passwordTextBox.Location = new System.Drawing.Point(416, 277);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
@@ -344,6 +383,7 @@
             // roleIDTextBox
             // 
             this.roleIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "RoleID", true));
+            this.roleIDTextBox.Enabled = false;
             this.roleIDTextBox.Location = new System.Drawing.Point(416, 309);
             this.roleIDTextBox.Name = "roleIDTextBox";
             this.roleIDTextBox.Size = new System.Drawing.Size(100, 26);
@@ -351,6 +391,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(34, 254);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 31);
@@ -361,6 +402,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(34, 301);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 28);
@@ -371,6 +413,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(51, 439);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(154, 30);
@@ -391,6 +434,7 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(535, 337);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 38);
@@ -401,6 +445,7 @@
             // 
             // button6
             // 
+            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(320, 341);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(196, 34);
@@ -411,6 +456,7 @@
             // 
             // button7
             // 
+            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(320, 423);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(196, 34);
@@ -453,11 +499,12 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.tbo_ProfileDataGridView.DataSource = this.tbo_ProfileBindingSource;
-            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(46, 633);
+            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(51, 551);
             this.tbo_ProfileDataGridView.Name = "tbo_ProfileDataGridView";
             this.tbo_ProfileDataGridView.RowTemplate.Height = 28;
             this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1016, 220);
             this.tbo_ProfileDataGridView.TabIndex = 37;
+            this.tbo_ProfileDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -528,11 +575,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.tbo_LinkDepartmentUserDataGridView.DataSource = this.tbo_LinkDepartmentUserBindingSource;
-            this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(728, 254);
+            this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(721, 254);
             this.tbo_LinkDepartmentUserDataGridView.Name = "tbo_LinkDepartmentUserDataGridView";
             this.tbo_LinkDepartmentUserDataGridView.RowTemplate.Height = 28;
             this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(346, 220);
             this.tbo_LinkDepartmentUserDataGridView.TabIndex = 37;
+            this.tbo_LinkDepartmentUserDataGridView.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -552,63 +600,65 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Access";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // departmentIDLabel1
-            // 
-            departmentIDLabel1.AutoSize = true;
-            departmentIDLabel1.Location = new System.Drawing.Point(603, 85);
-            departmentIDLabel1.Name = "departmentIDLabel1";
-            departmentIDLabel1.Size = new System.Drawing.Size(119, 20);
-            departmentIDLabel1.TabIndex = 38;
-            departmentIDLabel1.Text = "Department ID:";
-            // 
             // departmentIDComboBox1
             // 
             this.departmentIDComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "DepartmentID", true));
+            this.departmentIDComboBox1.Enabled = false;
             this.departmentIDComboBox1.FormattingEnabled = true;
             this.departmentIDComboBox1.Location = new System.Drawing.Point(728, 82);
             this.departmentIDComboBox1.Name = "departmentIDComboBox1";
             this.departmentIDComboBox1.Size = new System.Drawing.Size(121, 28);
             this.departmentIDComboBox1.TabIndex = 39;
             // 
-            // userIDLabel
-            // 
-            userIDLabel.AutoSize = true;
-            userIDLabel.Location = new System.Drawing.Point(603, 119);
-            userIDLabel.Name = "userIDLabel";
-            userIDLabel.Size = new System.Drawing.Size(68, 20);
-            userIDLabel.TabIndex = 40;
-            userIDLabel.Text = "User ID:";
-            // 
             // userIDTextBox
             // 
             this.userIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "UserID", true));
+            this.userIDTextBox.Enabled = false;
             this.userIDTextBox.Location = new System.Drawing.Point(728, 116);
             this.userIDTextBox.Name = "userIDTextBox";
             this.userIDTextBox.Size = new System.Drawing.Size(121, 26);
             this.userIDTextBox.TabIndex = 41;
             // 
-            // accessLabel
-            // 
-            accessLabel.AutoSize = true;
-            accessLabel.Location = new System.Drawing.Point(606, 162);
-            accessLabel.Name = "accessLabel";
-            accessLabel.Size = new System.Drawing.Size(65, 20);
-            accessLabel.TabIndex = 42;
-            accessLabel.Text = "Access:";
-            // 
             // accessTextBox
             // 
             this.accessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "Access", true));
+            this.accessTextBox.Enabled = false;
             this.accessTextBox.Location = new System.Drawing.Point(728, 159);
             this.accessTextBox.Name = "accessTextBox";
             this.accessTextBox.Size = new System.Drawing.Size(121, 26);
             this.accessTextBox.TabIndex = 43;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(610, 197);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(118, 24);
+            this.checkBox1.TabIndex = 44;
+            this.checkBox1.Text = "Show Table";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
+            this.checkBox2.Location = new System.Drawing.Point(500, 388);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(167, 24);
+            this.checkBox2.TabIndex = 45;
+            this.checkBox2.Text = "Show Admin Table";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1106, 967);
+            this.ClientSize = new System.Drawing.Size(1106, 779);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(departmentIDLabel1);
             this.Controls.Add(this.departmentIDComboBox1);
             this.Controls.Add(userIDLabel);
@@ -713,5 +763,7 @@
         private System.Windows.Forms.ComboBox departmentIDComboBox1;
         private System.Windows.Forms.TextBox userIDTextBox;
         private System.Windows.Forms.TextBox accessTextBox;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

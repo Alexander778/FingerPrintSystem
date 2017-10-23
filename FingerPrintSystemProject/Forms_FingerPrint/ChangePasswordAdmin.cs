@@ -72,11 +72,13 @@ namespace Forms_FingerPrint
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tbo_ProfileBindingSource.EndEdit();
-            tbo_LinkDepartmentUserBindingSource.EndEdit();
             
-            tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            tbo_LinkDepartmentUserBindingSource.EndEdit();
+            tbo_ProfileBindingSource.EndEdit();
+
             tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            
             
 
             string message = "You created New Admin User. You enter to system by this account";
@@ -88,6 +90,34 @@ namespace Forms_FingerPrint
 
         private void button4_Click(object sender, EventArgs e)
         {
+            photoPictureBox.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            photoPictureBox.Enabled = true;
+            fingerPrintTextBox.Enabled = true;
+            button3.Enabled = true;
+            iDTextBox1.Enabled = true;
+            nameTextBox1.Enabled = true;
+            surnameTextBox.Enabled = true;
+            patronymicTextBox.Enabled = true;
+            birthDateTextBox.Enabled = true;
+            scheduleTextBox.Enabled = true;
+            passwordTextBox.Enabled = true;
+            roleIDTextBox.Enabled = true;
+            button6.Enabled = true;
+            button5.Enabled = true;
+            checkBox2.Enabled = true;
+            button7.Enabled = true;
+            departmentIDComboBox1.Enabled = true;
+            userIDTextBox.Enabled = true;
+            accessTextBox.Enabled = true;
+            checkBox1.Enabled = true;
+
+
+
+
+
+
             tbo_ProfileBindingSource.AddNew();
             tbo_LinkDepartmentUserBindingSource.AddNew();
 
@@ -135,6 +165,36 @@ namespace Forms_FingerPrint
         private void button8_Click(object sender, EventArgs e)
         {
             tbo_LinkDepartmentUserBindingSource.RemoveCurrent();
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            if (checkBox1.Checked == true)
+            {
+                tbo_LinkDepartmentUserDataGridView.Visible = true;
+            }
+            else
+            {
+                tbo_LinkDepartmentUserDataGridView.Visible = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked ==true)
+            {
+                tbo_ProfileDataGridView.Visible = true;
+            }
+            else
+            {
+                tbo_ProfileDataGridView.Visible = false;
+            }
+        }
+
+        private void fingerPrintLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
