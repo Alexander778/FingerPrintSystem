@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Forms_FingerPrint
 {
@@ -35,9 +36,36 @@ namespace Forms_FingerPrint
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+
+            con.Open();
+
+            string txtID = textBox1.Text;
+            string txtName = textBox2.Text;
+            string txtPassword = textBox3.Text;
+
+            string query = "SELECT * FROM tbo_Profile WHERE ID=@id AND Name = @name AND Password=@passwd";
+            SqlCommand cmd = new SqlCommand(query, con);
+
             
-            
-            
+            cmd.Parameters.Add(new SqlParameter("@id", txtID));
+            cmd.Parameters.Add(new SqlParameter("@name", txtName));
+            cmd.Parameters.Add(new SqlParameter("@passwd", txtPassword));
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows == true)
+
+            {
+                MessageBox.Show("Login Succesfull");
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid Login");
+            }
+
+
         }
     }
 }

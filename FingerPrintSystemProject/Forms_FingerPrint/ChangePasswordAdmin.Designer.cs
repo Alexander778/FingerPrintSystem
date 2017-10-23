@@ -88,13 +88,13 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentIDComboBox1 = new System.Windows.Forms.ComboBox();
+            this.tboDepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.userIDTextBox = new System.Windows.Forms.TextBox();
             this.accessTextBox = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tboLinkDepartmentUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tboDepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             iDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             iDLabel1 = new System.Windows.Forms.Label();
@@ -117,9 +117,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // iDLabel
@@ -461,7 +461,6 @@
             // 
             // button7
             // 
-            this.button7.Enabled = false;
             this.button7.Location = new System.Drawing.Point(320, 423);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(196, 34);
@@ -617,6 +616,11 @@
             this.departmentIDComboBox1.Size = new System.Drawing.Size(121, 28);
             this.departmentIDComboBox1.TabIndex = 39;
             // 
+            // tboDepartmentBindingSource1
+            // 
+            this.tboDepartmentBindingSource1.DataMember = "tbo_Department";
+            this.tboDepartmentBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            // 
             // userIDTextBox
             // 
             this.userIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "UserID", true));
@@ -668,11 +672,6 @@
             // 
             this.tboLinkDepartmentUserBindingSource.DataMember = "tbo_LinkDepartmentUser";
             this.tboLinkDepartmentUserBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
-            // 
-            // tboDepartmentBindingSource1
-            // 
-            this.tboDepartmentBindingSource1.DataMember = "tbo_Department";
-            this.tboDepartmentBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
             // ChangePasswordAdmin
             // 
@@ -731,9 +730,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
