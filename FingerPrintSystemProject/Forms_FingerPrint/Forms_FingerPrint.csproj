@@ -89,11 +89,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_FINGERPRINTDB_MDFDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="_FINGERPRINTDB_MDFDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_FINGERPRINTDB_MDFDataSet1.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin_Panel.resx">
       <DependentUpon>Admin_Panel.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,23 +129,12 @@
       <DependentUpon>_FINGERPRINTDB_MDFDataSet.xsd</DependentUpon>
     </None>
     <None Include="_FINGERPRINTDB_MDFDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>_FINGERPRINTDB_MDFDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="_FINGERPRINTDB_MDFDataSet.xss">
       <DependentUpon>_FINGERPRINTDB_MDFDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_FINGERPRINTDB_MDFDataSet1.xsc">
-      <DependentUpon>_FINGERPRINTDB_MDFDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="_FINGERPRINTDB_MDFDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_FINGERPRINTDB_MDFDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_FINGERPRINTDB_MDFDataSet1.xss">
-      <DependentUpon>_FINGERPRINTDB_MDFDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

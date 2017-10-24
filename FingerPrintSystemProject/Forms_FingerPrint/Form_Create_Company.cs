@@ -54,12 +54,7 @@ namespace Forms_FingerPrint
             button2.Enabled = true;
             checkBox1.Enabled = true;
             button1.Enabled = true;
-                tbo_CompanyBindingSource1.AddNew();
-            
-
-
-
-
+                tbo_CompanyBindingSource.AddNew();
 
         }
 
@@ -67,7 +62,7 @@ namespace Forms_FingerPrint
         {
             try
             {
-                this.tbo_CompanyTableAdapter.FillBy(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
+                this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
             }
             catch (System.Exception ex)
             {
@@ -78,9 +73,9 @@ namespace Forms_FingerPrint
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tbo_CompanyBindingSource.EndEdit();
+			tbo_CompanyBindingSource.EndEdit();
             tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
-        }
+		}
 
         private void button3_Click(object sender, EventArgs e)
         {
