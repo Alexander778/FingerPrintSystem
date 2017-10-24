@@ -69,4 +69,7 @@
     <Build Include="dbo\Tables\tbo_Role.sql" />
     <Build Include="dbo\Tables\tbo_Company.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment_Role_.sql" />
+  </ItemGroup>
 </Project>

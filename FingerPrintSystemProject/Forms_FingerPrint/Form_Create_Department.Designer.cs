@@ -58,6 +58,8 @@
             this.regimeTextBox = new System.Windows.Forms.TextBox();
             this.companyIDComboBox = new System.Windows.Forms.ComboBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.tboCompanyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             regimeLabel = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -68,7 +70,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // regimeLabel
+            // 
+            regimeLabel.AutoSize = true;
+            regimeLabel.Location = new System.Drawing.Point(26, 204);
+            regimeLabel.Name = "regimeLabel";
+            regimeLabel.Size = new System.Drawing.Size(68, 20);
+            regimeLabel.TabIndex = 17;
+            regimeLabel.Text = "Regime:";
+            // 
+            // companyIDLabel
+            // 
+            companyIDLabel.AutoSize = true;
+            companyIDLabel.Location = new System.Drawing.Point(26, 170);
+            companyIDLabel.Name = "companyIDLabel";
+            companyIDLabel.Size = new System.Drawing.Size(80, 20);
+            companyIDLabel.TabIndex = 15;
+            companyIDLabel.Text = "Company:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(26, 138);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(55, 20);
+            nameLabel.TabIndex = 13;
+            nameLabel.Text = "Name:";
             // 
             // tbo_DepartmentBindingSource
             // 
@@ -134,6 +165,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -248,19 +280,10 @@
             this.regimeTextBox.Size = new System.Drawing.Size(121, 26);
             this.regimeTextBox.TabIndex = 18;
             // 
-            // regimeLabel
-            // 
-            regimeLabel.AutoSize = true;
-            regimeLabel.Location = new System.Drawing.Point(26, 204);
-            regimeLabel.Name = "regimeLabel";
-            regimeLabel.Size = new System.Drawing.Size(68, 20);
-            regimeLabel.TabIndex = 17;
-            regimeLabel.Text = "Regime:";
-            // 
             // companyIDComboBox
             // 
             this.companyIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.companyIDComboBox.DataSource = this.tboCompanyBindingSource;
+            this.companyIDComboBox.DataSource = this.tboCompanyBindingSource2;
             this.companyIDComboBox.DisplayMember = "ID";
             this.companyIDComboBox.Enabled = false;
             this.companyIDComboBox.FormattingEnabled = true;
@@ -268,15 +291,6 @@
             this.companyIDComboBox.Name = "companyIDComboBox";
             this.companyIDComboBox.Size = new System.Drawing.Size(121, 28);
             this.companyIDComboBox.TabIndex = 16;
-            // 
-            // companyIDLabel
-            // 
-            companyIDLabel.AutoSize = true;
-            companyIDLabel.Location = new System.Drawing.Point(26, 170);
-            companyIDLabel.Name = "companyIDLabel";
-            companyIDLabel.Size = new System.Drawing.Size(80, 20);
-            companyIDLabel.TabIndex = 15;
-            companyIDLabel.Text = "Company:";
             // 
             // nameTextBox
             // 
@@ -287,14 +301,15 @@
             this.nameTextBox.Size = new System.Drawing.Size(121, 26);
             this.nameTextBox.TabIndex = 14;
             // 
-            // nameLabel
+            // tboCompanyBindingSource1
             // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(26, 138);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(55, 20);
-            nameLabel.TabIndex = 13;
-            nameLabel.Text = "Name:";
+            this.tboCompanyBindingSource1.DataMember = "tbo_Company";
+            this.tboCompanyBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            // 
+            // tboCompanyBindingSource2
+            // 
+            this.tboCompanyBindingSource2.DataMember = "tbo_Company";
+            this.tboCompanyBindingSource2.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
             // Form_Create_Department
             // 
@@ -326,6 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +376,7 @@
         private System.Windows.Forms.TextBox regimeTextBox;
         private System.Windows.Forms.ComboBox companyIDComboBox;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.BindingSource tboCompanyBindingSource1;
+        private System.Windows.Forms.BindingSource tboCompanyBindingSource2;
     }
 }

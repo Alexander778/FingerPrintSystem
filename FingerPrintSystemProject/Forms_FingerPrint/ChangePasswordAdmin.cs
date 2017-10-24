@@ -96,7 +96,6 @@ namespace Forms_FingerPrint
             photoPictureBox.Enabled = true;
             fingerPrintTextBox.Enabled = true;
             button3.Enabled = true;
-            iDTextBox1.Enabled = true;
             nameTextBox1.Enabled = true;
             surnameTextBox.Enabled = true;
             patronymicTextBox.Enabled = true;
@@ -120,6 +119,7 @@ namespace Forms_FingerPrint
 
             tbo_ProfileBindingSource.AddNew();
             tbo_LinkDepartmentUserBindingSource.AddNew();
+            tbo_RoleDataGridView.
 
         }
 
