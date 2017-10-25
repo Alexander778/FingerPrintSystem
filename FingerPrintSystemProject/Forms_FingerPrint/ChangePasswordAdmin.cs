@@ -72,8 +72,6 @@ namespace Forms_FingerPrint
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
-            
             tbo_ProfileBindingSource.EndEdit();
             tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
 
@@ -97,7 +95,7 @@ namespace Forms_FingerPrint
             nameTextBox1.Enabled = true;
             surnameTextBox.Enabled = true;
             patronymicTextBox.Enabled = true;
-            birthDateTextBox.Enabled = true;
+            birthDateMaskedTextBox.Enabled = true;
             scheduleTextBox.Enabled = true;
             passwordTextBox.Enabled = true;
             button6.Enabled = true;
@@ -105,6 +103,8 @@ namespace Forms_FingerPrint
             checkBox2.Enabled = true;
             button7.Enabled = true;
             roleIDComboBox.Enabled = true;
+            button8.Enabled = true;
+            button9.Enabled = true;
             
           
 
@@ -132,8 +132,6 @@ namespace Forms_FingerPrint
             if (result == DialogResult.Yes)
             {
                 tbo_ProfileBindingSource.RemoveCurrent();
-                tbo_LinkDepartmentUserBindingSource.RemoveCurrent();
-                tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
                 tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
                 string message1 = "This account was deleted. If you want to create new account you should click on Add Admin User";
                 string caption1 = "FingerPrintSystem";
@@ -170,14 +168,7 @@ namespace Forms_FingerPrint
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked ==true)
-            {
-                tbo_ProfileDataGridView.Visible = true;
-            }
-            else
-            {
-                tbo_ProfileDataGridView.Visible = false;
-            }
+            tbo_ProfileDataGridView.Visible = checkBox2.Checked;
         }
 
         private void fingerPrintLabel_Click(object sender, EventArgs e)
@@ -190,6 +181,40 @@ namespace Forms_FingerPrint
             Form_Create_Department f1 = new Form_Create_Department();
             f1.Show();
             this.Hide();
+        }
+
+        private void nameTextBox1_KeyPress(object sender, EventArgs e)
+        { }
+            
+
+        private void nameTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void birthDateTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void birthDateMonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            
+        }
+
+        private void button8_Click_2(object sender, EventArgs e)
+        {
+            birthDateMonthCalendar.Visible = true;
+            button8.Visible = false;
+            button9.Visible = true;
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            birthDateMonthCalendar.Visible = false;
+            button8.Visible = true;
+            button9.Visible = false;
         }
     }
 }

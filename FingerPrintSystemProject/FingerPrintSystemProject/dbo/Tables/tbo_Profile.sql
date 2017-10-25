@@ -4,7 +4,7 @@
     [Surname]     NVARCHAR (50) NOT NULL,
     [Patronymic]  NVARCHAR (50) NOT NULL,
     [Photo]       IMAGE         NULL,
-    [BirthDate]   NVARCHAR (50) NOT NULL,
+    [BirthDate]   NVARCHAR(50) NOT NULL,
     [Schedule]    NVARCHAR (50) NOT NULL,
     [FingerPrint] NVARCHAR (50) NOT NULL,
     [Password]    NVARCHAR (50) NULL,

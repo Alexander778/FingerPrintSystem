@@ -32,11 +32,12 @@
             System.Windows.Forms.Label nameLabel1;
             System.Windows.Forms.Label surnameLabel;
             System.Windows.Forms.Label patronymicLabel;
-            System.Windows.Forms.Label birthDateLabel;
             System.Windows.Forms.Label scheduleLabel;
             System.Windows.Forms.Label fingerPrintLabel;
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label roleIDLabel;
+            System.Windows.Forms.Label birthDateLabel;
+            System.Windows.Forms.Label birthDateLabel1;
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,7 +48,6 @@
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.patronymicTextBox = new System.Windows.Forms.TextBox();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
-            this.birthDateTextBox = new System.Windows.Forms.TextBox();
             this.scheduleTextBox = new System.Windows.Forms.TextBox();
             this.fingerPrintTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
@@ -80,14 +80,19 @@
             this.tboRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roleIDComboBox = new System.Windows.Forms.ComboBox();
             this.tboRoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.birthDateMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.birthDateMonthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
-            birthDateLabel = new System.Windows.Forms.Label();
             scheduleLabel = new System.Windows.Forms.Label();
             fingerPrintLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             roleIDLabel = new System.Windows.Forms.Label();
+            birthDateLabel = new System.Windows.Forms.Label();
+            birthDateLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
@@ -129,15 +134,6 @@
             patronymicLabel.TabIndex = 10;
             patronymicLabel.Text = "Patronymic:";
             // 
-            // birthDateLabel
-            // 
-            birthDateLabel.AutoSize = true;
-            birthDateLabel.Location = new System.Drawing.Point(316, 177);
-            birthDateLabel.Name = "birthDateLabel";
-            birthDateLabel.Size = new System.Drawing.Size(85, 20);
-            birthDateLabel.TabIndex = 14;
-            birthDateLabel.Text = "Birth Date:";
-            // 
             // scheduleLabel
             // 
             scheduleLabel.AutoSize = true;
@@ -174,6 +170,25 @@
             roleIDLabel.Size = new System.Drawing.Size(67, 20);
             roleIDLabel.TabIndex = 46;
             roleIDLabel.Text = "Role ID:";
+            // 
+            // birthDateLabel
+            // 
+            birthDateLabel.AutoSize = true;
+            birthDateLabel.Location = new System.Drawing.Point(839, 206);
+            birthDateLabel.Name = "birthDateLabel";
+            birthDateLabel.Size = new System.Drawing.Size(85, 20);
+            birthDateLabel.TabIndex = 47;
+            birthDateLabel.Text = "Birth Date:";
+            birthDateLabel.Visible = false;
+            // 
+            // birthDateLabel1
+            // 
+            birthDateLabel1.AutoSize = true;
+            birthDateLabel1.Location = new System.Drawing.Point(316, 176);
+            birthDateLabel1.Name = "birthDateLabel1";
+            birthDateLabel1.Size = new System.Drawing.Size(85, 20);
+            birthDateLabel1.TabIndex = 48;
+            birthDateLabel1.Text = "Birth Date:";
             // 
             // tbo_RoleBindingSource
             // 
@@ -216,6 +231,7 @@
             this.nameTextBox1.Name = "nameTextBox1";
             this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
             this.nameTextBox1.TabIndex = 7;
+            this.nameTextBox1.TextChanged += new System.EventHandler(this.nameTextBox1_TextChanged);
             // 
             // surnameTextBox
             // 
@@ -245,15 +261,6 @@
             this.photoPictureBox.Size = new System.Drawing.Size(176, 202);
             this.photoPictureBox.TabIndex = 13;
             this.photoPictureBox.TabStop = false;
-            // 
-            // birthDateTextBox
-            // 
-            this.birthDateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "BirthDate", true));
-            this.birthDateTextBox.Enabled = false;
-            this.birthDateTextBox.Location = new System.Drawing.Point(416, 174);
-            this.birthDateTextBox.Name = "birthDateTextBox";
-            this.birthDateTextBox.Size = new System.Drawing.Size(100, 26);
-            this.birthDateTextBox.TabIndex = 15;
             // 
             // scheduleTextBox
             // 
@@ -508,11 +515,61 @@
             this.tboRoleBindingSource1.DataMember = "tbo_Role";
             this.tboRoleBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
+            // birthDateMaskedTextBox
+            // 
+            this.birthDateMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "BirthDate", true));
+            this.birthDateMaskedTextBox.Enabled = false;
+            this.birthDateMaskedTextBox.Location = new System.Drawing.Point(930, 203);
+            this.birthDateMaskedTextBox.Mask = "00/00/0000";
+            this.birthDateMaskedTextBox.Name = "birthDateMaskedTextBox";
+            this.birthDateMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.birthDateMaskedTextBox.TabIndex = 48;
+            this.birthDateMaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.birthDateMaskedTextBox.Visible = false;
+            // 
+            // birthDateMonthCalendar
+            // 
+            this.birthDateMonthCalendar.DataBindings.Add(new System.Windows.Forms.Binding("SelectionRange", this.tbo_ProfileBindingSource, "BirthDate", true));
+            this.birthDateMonthCalendar.Location = new System.Drawing.Point(535, 55);
+            this.birthDateMonthCalendar.Name = "birthDateMonthCalendar";
+            this.birthDateMonthCalendar.TabIndex = 49;
+            this.birthDateMonthCalendar.Visible = false;
+            this.birthDateMonthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.birthDateMonthCalendar_DateChanged);
+            // 
+            // button8
+            // 
+            this.button8.Enabled = false;
+            this.button8.Location = new System.Drawing.Point(416, 176);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(100, 25);
+            this.button8.TabIndex = 50;
+            this.button8.Text = "Add";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_2);
+            // 
+            // button9
+            // 
+            this.button9.Enabled = false;
+            this.button9.Location = new System.Drawing.Point(416, 174);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(100, 25);
+            this.button9.TabIndex = 51;
+            this.button9.Text = "Done";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Visible = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 791);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(birthDateLabel1);
+            this.Controls.Add(this.birthDateMonthCalendar);
+            this.Controls.Add(birthDateLabel);
+            this.Controls.Add(this.birthDateMaskedTextBox);
             this.Controls.Add(roleIDLabel);
             this.Controls.Add(this.roleIDComboBox);
             this.Controls.Add(this.checkBox2);
@@ -531,8 +588,6 @@
             this.Controls.Add(patronymicLabel);
             this.Controls.Add(this.patronymicTextBox);
             this.Controls.Add(this.photoPictureBox);
-            this.Controls.Add(birthDateLabel);
-            this.Controls.Add(this.birthDateTextBox);
             this.Controls.Add(scheduleLabel);
             this.Controls.Add(this.scheduleTextBox);
             this.Controls.Add(fingerPrintLabel);
@@ -541,7 +596,7 @@
             this.Controls.Add(this.passwordTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ChangePasswordAdmin";
-            this.Text = "В";
+            this.Text = "FingerPrintSystem::Registration Admin User";
             this.Load += new System.EventHandler(this.ChangePasswordAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).EndInit();
@@ -572,7 +627,6 @@
         private System.Windows.Forms.TextBox surnameTextBox;
         private System.Windows.Forms.TextBox patronymicTextBox;
         private System.Windows.Forms.PictureBox photoPictureBox;
-        private System.Windows.Forms.TextBox birthDateTextBox;
         private System.Windows.Forms.TextBox scheduleTextBox;
         private System.Windows.Forms.TextBox fingerPrintTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
@@ -605,5 +659,9 @@
         private System.Windows.Forms.BindingSource tboRoleBindingSource;
         private System.Windows.Forms.ComboBox roleIDComboBox;
         private System.Windows.Forms.BindingSource tboRoleBindingSource1;
+        private System.Windows.Forms.MaskedTextBox birthDateMaskedTextBox;
+        private System.Windows.Forms.MonthCalendar birthDateMonthCalendar;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
