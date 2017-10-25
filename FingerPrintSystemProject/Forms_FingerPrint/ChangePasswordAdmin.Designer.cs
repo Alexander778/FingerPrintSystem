@@ -37,10 +37,6 @@
             System.Windows.Forms.Label fingerPrintLabel;
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label roleIDLabel;
-            System.Windows.Forms.Label departmentIDLabel1;
-            System.Windows.Forms.Label userIDLabel;
-            System.Windows.Forms.Label accessLabel;
-            System.Windows.Forms.Label nameLabel;
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,7 +51,6 @@
             this.scheduleTextBox = new System.Windows.Forms.TextBox();
             this.fingerPrintTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.roleIDTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -78,24 +73,13 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbo_LinkDepartmentUserDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentIDComboBox1 = new System.Windows.Forms.ComboBox();
             this.tboDepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userIDTextBox = new System.Windows.Forms.TextBox();
-            this.accessTextBox = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tboLinkDepartmentUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button8 = new System.Windows.Forms.Button();
-            this.tbo_RoleDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameComboBox = new System.Windows.Forms.ComboBox();
             this.tboRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roleIDComboBox = new System.Windows.Forms.ComboBox();
+            this.tboRoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
@@ -104,10 +88,6 @@
             fingerPrintLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             roleIDLabel = new System.Windows.Forms.Label();
-            departmentIDLabel1 = new System.Windows.Forms.Label();
-            userIDLabel = new System.Windows.Forms.Label();
-            accessLabel = new System.Windows.Forms.Label();
-            nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
@@ -115,12 +95,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel1
@@ -190,38 +169,11 @@
             // roleIDLabel
             // 
             roleIDLabel.AutoSize = true;
-            roleIDLabel.Location = new System.Drawing.Point(316, 277);
+            roleIDLabel.Location = new System.Drawing.Point(316, 279);
             roleIDLabel.Name = "roleIDLabel";
             roleIDLabel.Size = new System.Drawing.Size(67, 20);
-            roleIDLabel.TabIndex = 22;
+            roleIDLabel.TabIndex = 46;
             roleIDLabel.Text = "Role ID:";
-            // 
-            // departmentIDLabel1
-            // 
-            departmentIDLabel1.AutoSize = true;
-            departmentIDLabel1.Location = new System.Drawing.Point(603, 85);
-            departmentIDLabel1.Name = "departmentIDLabel1";
-            departmentIDLabel1.Size = new System.Drawing.Size(119, 20);
-            departmentIDLabel1.TabIndex = 38;
-            departmentIDLabel1.Text = "Department ID:";
-            // 
-            // userIDLabel
-            // 
-            userIDLabel.AutoSize = true;
-            userIDLabel.Location = new System.Drawing.Point(603, 119);
-            userIDLabel.Name = "userIDLabel";
-            userIDLabel.Size = new System.Drawing.Size(68, 20);
-            userIDLabel.TabIndex = 40;
-            userIDLabel.Text = "User ID:";
-            // 
-            // accessLabel
-            // 
-            accessLabel.AutoSize = true;
-            accessLabel.Location = new System.Drawing.Point(606, 162);
-            accessLabel.Name = "accessLabel";
-            accessLabel.Size = new System.Drawing.Size(65, 20);
-            accessLabel.TabIndex = 42;
-            accessLabel.Text = "Access:";
             // 
             // tbo_RoleBindingSource
             // 
@@ -331,15 +283,6 @@
             this.passwordTextBox.Size = new System.Drawing.Size(100, 26);
             this.passwordTextBox.TabIndex = 21;
             // 
-            // roleIDTextBox
-            // 
-            this.roleIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "RoleID", true));
-            this.roleIDTextBox.Enabled = false;
-            this.roleIDTextBox.Location = new System.Drawing.Point(416, 274);
-            this.roleIDTextBox.Name = "roleIDTextBox";
-            this.roleIDTextBox.Size = new System.Drawing.Size(100, 26);
-            this.roleIDTextBox.TabIndex = 23;
-            // 
             // button1
             // 
             this.button1.Enabled = false;
@@ -448,7 +391,7 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.tbo_ProfileDataGridView.DataSource = this.tbo_ProfileBindingSource;
-            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(51, 551);
+            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(34, 525);
             this.tbo_ProfileDataGridView.Name = "tbo_ProfileDataGridView";
             this.tbo_ProfileDataGridView.RowTemplate.Height = 28;
             this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1016, 220);
@@ -516,86 +459,10 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "RoleID";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // tbo_LinkDepartmentUserDataGridView
-            // 
-            this.tbo_LinkDepartmentUserDataGridView.AutoGenerateColumns = false;
-            this.tbo_LinkDepartmentUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbo_LinkDepartmentUserDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.tbo_LinkDepartmentUserDataGridView.DataSource = this.tbo_LinkDepartmentUserBindingSource;
-            this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(721, 254);
-            this.tbo_LinkDepartmentUserDataGridView.Name = "tbo_LinkDepartmentUserDataGridView";
-            this.tbo_LinkDepartmentUserDataGridView.RowTemplate.Height = 28;
-            this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(346, 220);
-            this.tbo_LinkDepartmentUserDataGridView.TabIndex = 37;
-            this.tbo_LinkDepartmentUserDataGridView.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DepartmentID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "DepartmentID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "UserID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "UserID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Access";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Access";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // departmentIDComboBox1
-            // 
-            this.departmentIDComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "DepartmentID", true));
-            this.departmentIDComboBox1.DataSource = this.tboDepartmentBindingSource1;
-            this.departmentIDComboBox1.DisplayMember = "ID";
-            this.departmentIDComboBox1.Enabled = false;
-            this.departmentIDComboBox1.FormattingEnabled = true;
-            this.departmentIDComboBox1.Location = new System.Drawing.Point(728, 82);
-            this.departmentIDComboBox1.Name = "departmentIDComboBox1";
-            this.departmentIDComboBox1.Size = new System.Drawing.Size(121, 28);
-            this.departmentIDComboBox1.TabIndex = 39;
-            // 
             // tboDepartmentBindingSource1
             // 
             this.tboDepartmentBindingSource1.DataMember = "tbo_Department";
             this.tboDepartmentBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
-            // 
-            // userIDTextBox
-            // 
-            this.userIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "UserID", true));
-            this.userIDTextBox.Enabled = false;
-            this.userIDTextBox.Location = new System.Drawing.Point(728, 116);
-            this.userIDTextBox.Name = "userIDTextBox";
-            this.userIDTextBox.Size = new System.Drawing.Size(121, 26);
-            this.userIDTextBox.TabIndex = 41;
-            // 
-            // accessTextBox
-            // 
-            this.accessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "Access", true));
-            this.accessTextBox.Enabled = false;
-            this.accessTextBox.Location = new System.Drawing.Point(728, 159);
-            this.accessTextBox.Name = "accessTextBox";
-            this.accessTextBox.Size = new System.Drawing.Size(121, 26);
-            this.accessTextBox.TabIndex = 43;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(597, 245);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 24);
-            this.checkBox1.TabIndex = 44;
-            this.checkBox1.Text = "Show Table";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -619,86 +486,36 @@
             this.tboLinkDepartmentUserBindingSource.DataMember = "tbo_LinkDepartmentUser";
             this.tboLinkDepartmentUserBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(558, 32);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(109, 33);
-            this.button8.TabIndex = 46;
-            this.button8.Text = "Back";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // tbo_RoleDataGridView
-            // 
-            this.tbo_RoleDataGridView.AutoGenerateColumns = false;
-            this.tbo_RoleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbo_RoleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.tbo_RoleDataGridView.DataSource = this.tbo_RoleBindingSource;
-            this.tbo_RoleDataGridView.Location = new System.Drawing.Point(893, 79);
-            this.tbo_RoleDataGridView.Name = "tbo_RoleDataGridView";
-            this.tbo_RoleDataGridView.RowTemplate.Height = 28;
-            this.tbo_RoleDataGridView.Size = new System.Drawing.Size(238, 106);
-            this.tbo_RoleDataGridView.TabIndex = 46;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(606, 199);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(46, 20);
-            nameLabel.TabIndex = 46;
-            nameLabel.Text = "Role:";
-            // 
-            // nameComboBox
-            // 
-            this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_RoleBindingSource, "Name", true));
-            this.nameComboBox.DataSource = this.tboRoleBindingSource;
-            this.nameComboBox.DisplayMember = "Name";
-            this.nameComboBox.FormattingEnabled = true;
-            this.nameComboBox.Location = new System.Drawing.Point(728, 191);
-            this.nameComboBox.Name = "nameComboBox";
-            this.nameComboBox.Size = new System.Drawing.Size(121, 28);
-            this.nameComboBox.TabIndex = 47;
-            // 
             // tboRoleBindingSource
             // 
             this.tboRoleBindingSource.DataMember = "tbo_Role";
             this.tboRoleBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
+            // roleIDComboBox
+            // 
+            this.roleIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "RoleID", true));
+            this.roleIDComboBox.DataSource = this.tboRoleBindingSource1;
+            this.roleIDComboBox.DisplayMember = "ID";
+            this.roleIDComboBox.Enabled = false;
+            this.roleIDComboBox.FormattingEnabled = true;
+            this.roleIDComboBox.Location = new System.Drawing.Point(395, 274);
+            this.roleIDComboBox.Name = "roleIDComboBox";
+            this.roleIDComboBox.Size = new System.Drawing.Size(121, 28);
+            this.roleIDComboBox.TabIndex = 47;
+            // 
+            // tboRoleBindingSource1
+            // 
+            this.tboRoleBindingSource1.DataMember = "tbo_Role";
+            this.tboRoleBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1430, 791);
-            this.Controls.Add(nameLabel);
-            this.Controls.Add(this.nameComboBox);
-            this.Controls.Add(this.tbo_RoleDataGridView);
-            this.Controls.Add(this.button8);
+            this.ClientSize = new System.Drawing.Size(1078, 791);
+            this.Controls.Add(roleIDLabel);
+            this.Controls.Add(this.roleIDComboBox);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(departmentIDLabel1);
-            this.Controls.Add(this.departmentIDComboBox1);
-            this.Controls.Add(userIDLabel);
-            this.Controls.Add(this.userIDTextBox);
-            this.Controls.Add(accessLabel);
-            this.Controls.Add(this.accessTextBox);
-            this.Controls.Add(this.tbo_LinkDepartmentUserDataGridView);
             this.Controls.Add(this.tbo_ProfileDataGridView);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -722,11 +539,9 @@
             this.Controls.Add(this.fingerPrintTextBox);
             this.Controls.Add(passwordLabel);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(roleIDLabel);
-            this.Controls.Add(this.roleIDTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ChangePasswordAdmin";
-            this.Text = "ChangePasswordAdmin";
+            this.Text = "В";
             this.Load += new System.EventHandler(this.ChangePasswordAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).EndInit();
@@ -735,12 +550,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,7 +576,6 @@
         private System.Windows.Forms.TextBox scheduleTextBox;
         private System.Windows.Forms.TextBox fingerPrintTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.TextBox roleIDTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -785,23 +598,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridView tbo_LinkDepartmentUserDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.ComboBox departmentIDComboBox1;
-        private System.Windows.Forms.TextBox userIDTextBox;
-        private System.Windows.Forms.TextBox accessTextBox;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.BindingSource tboDepartmentBindingSource1;
         private System.Windows.Forms.BindingSource fINGERPRINTDBMDFDataSetBindingSource;
         private System.Windows.Forms.BindingSource tboLinkDepartmentUserBindingSource;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView tbo_RoleDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.ComboBox nameComboBox;
         private System.Windows.Forms.BindingSource tboRoleBindingSource;
+        private System.Windows.Forms.ComboBox roleIDComboBox;
+        private System.Windows.Forms.BindingSource tboRoleBindingSource1;
     }
 }

@@ -13,8 +13,9 @@ INSERT INTO tbo_Role(Name)
 VALUES ('Admin');
 GO
 INSERT INTO tbo_Role(Name) 
-VALUES ('Role');
+VALUES ('User');
 GO
+
 
 
 
