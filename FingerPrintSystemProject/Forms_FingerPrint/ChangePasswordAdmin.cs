@@ -16,6 +16,7 @@ namespace Forms_FingerPrint
         public ChangePasswordAdmin()
         {
             InitializeComponent();
+       
         }
 
         private void tbo_RoleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -38,7 +39,9 @@ namespace Forms_FingerPrint
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
-           
+
+            
+
 
         }
 
@@ -77,36 +80,66 @@ namespace Forms_FingerPrint
             {
                 tbo_ProfileBindingSource.EndEdit();
                 tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
-
-
-
+                
                 string message = "You created New Admin User. You enter to system by this account";
                 string caption = "FingerPrintSystem";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
                 result = MessageBox.Show(message, caption, buttons);
+
+
+                button4.Enabled = true;
+                nameTextBox1.BackColor = Color.White;
+                surnameTextBox.BackColor = Color.White;
+                patronymicTextBox.BackColor = Color.White;
+                fingerPrintTextBox.BackColor = Color.White;
+                passwordTextBox.BackColor = Color.White;
+                scheduleMaskedTextBox.BackColor = Color.White;
+                pictureBox1.Visible = false;
+                pictureBox3.Visible = false;
             }
             catch (System.Data.NoNullAllowedException)
             {
                 MessageBox.Show("You did not write all information about you",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //!
 
-                TextBox[] txtarr = new TextBox[8];
-                txtarr[0] = nameTextBox1;
-                txtarr[1] = surnameTextBox;
-                txtarr[2] = patronymicTextBox;
-                // txtarr[3] = birthDateDateTimePicker;
-                //txtarr[4] = scheduleMaskedTextBox;
-                txtarr[3] = passwordTextBox;
-                // txtarr[6] = roleIDComboBox;
-                //txtarr[7] = Convert.to dateCreationDateTimePicker;
-
-                for (int i = 0; i < txtarr.Length - 1; i++)
+                scheduleMaskedTextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                if (scheduleMaskedTextBox.Text == "")
                 {
-                   
-
+                 scheduleMaskedTextBox.BackColor = Color.LightPink;
                 }
 
+                TextBox[] txtboxes = new TextBox[5];
+                txtboxes[0] = nameTextBox1;
+                txtboxes[1] = surnameTextBox;
+                txtboxes[2] = patronymicTextBox;
+                txtboxes[3] = fingerPrintTextBox;
+                txtboxes[4] = passwordTextBox;
+                
+
+                for (int i = 0; i < txtboxes.Length; i++)
+                {
+                    if (txtboxes[i].Text == "")
+                    {
+                        txtboxes[i].BackColor = Color.LightPink;
+                    }
+                   
+                }
+                
+                if (birthDateDateTimePicker.Value == DateTime.Today)
+                {
+                    pictureBox3.Visible = true;
+                }
+                
+
+                if (roleIDComboBox.Text=="")
+                {
+                    pictureBox1.Visible = true;
+                }
+                
+
+               
 
 
             }
@@ -132,6 +165,7 @@ namespace Forms_FingerPrint
             scheduleMaskedTextBox.Enabled = true;
             birthDateDateTimePicker.Enabled = true;
             dateCreationDateTimePicker.Enabled = true;
+            button4.Enabled = false;
 
 
 
@@ -188,6 +222,7 @@ namespace Forms_FingerPrint
                 birthDateDateTimePicker.Enabled = false;
                 dateCreationDateTimePicker.Enabled = false;
                 tbo_ProfileDataGridView.Visible = false;
+                button4.Enabled = true;
             }
         }
 
@@ -238,10 +273,7 @@ namespace Forms_FingerPrint
         { }
             
 
-        private void nameTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void birthDateTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -318,5 +350,7 @@ namespace Forms_FingerPrint
                 passwordTextBox.PasswordChar = '*';
             }
         }
+
+       
     }
 }

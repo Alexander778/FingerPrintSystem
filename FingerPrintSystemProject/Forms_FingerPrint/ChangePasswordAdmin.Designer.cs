@@ -85,6 +85,9 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
@@ -107,6 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel1
@@ -232,7 +238,6 @@
             this.nameTextBox1.Name = "nameTextBox1";
             this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
             this.nameTextBox1.TabIndex = 7;
-            this.nameTextBox1.TextChanged += new System.EventHandler(this.nameTextBox1_TextChanged);
             this.nameTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox1_KeyPress);
             // 
             // surnameTextBox
@@ -332,6 +337,7 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(535, 319);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 38);
@@ -436,12 +442,13 @@
             // 
             // scheduleMaskedTextBox
             // 
+            this.scheduleMaskedTextBox.BackColor = System.Drawing.Color.White;
             this.scheduleMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
             this.scheduleMaskedTextBox.Enabled = false;
             this.scheduleMaskedTextBox.Location = new System.Drawing.Point(406, 193);
             this.scheduleMaskedTextBox.Mask = "???-???";
             this.scheduleMaskedTextBox.Name = "scheduleMaskedTextBox";
-            this.scheduleMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.scheduleMaskedTextBox.Size = new System.Drawing.Size(70, 26);
             this.scheduleMaskedTextBox.TabIndex = 52;
             this.scheduleMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scheduleMaskedTextBox_KeyPress);
             // 
@@ -564,11 +571,41 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
+            this.pictureBox1.Location = new System.Drawing.Point(519, 262);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
+            this.pictureBox3.Location = new System.Drawing.Point(612, 161);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 58;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 849);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(birthDateLabel);
             this.Controls.Add(this.birthDateDateTimePicker);
@@ -615,6 +652,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,5 +709,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DateTimePicker birthDateDateTimePicker;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
