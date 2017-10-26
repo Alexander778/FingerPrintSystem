@@ -35,9 +35,9 @@
             System.Windows.Forms.Label fingerPrintLabel;
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label roleIDLabel;
-            System.Windows.Forms.Label scheduleLabel;
             System.Windows.Forms.Label dateCreationLabel;
             System.Windows.Forms.Label birthDateLabel;
+            System.Windows.Forms.Label scheduleLabel;
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,7 +69,6 @@
             this.roleIDComboBox = new System.Windows.Forms.ComboBox();
             this.tboRoleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tboRoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.scheduleMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.dateCreationDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tbo_ProfileDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,15 +87,19 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.scheduleTextBox = new System.Windows.Forms.TextBox();
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
             fingerPrintLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             roleIDLabel = new System.Windows.Forms.Label();
-            scheduleLabel = new System.Windows.Forms.Label();
             dateCreationLabel = new System.Windows.Forms.Label();
             birthDateLabel = new System.Windows.Forms.Label();
+            scheduleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
@@ -118,7 +121,7 @@
             // nameLabel1
             // 
             nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(316, 68);
+            nameLabel1.Location = new System.Drawing.Point(250, 68);
             nameLabel1.Name = "nameLabel1";
             nameLabel1.Size = new System.Drawing.Size(55, 20);
             nameLabel1.TabIndex = 6;
@@ -127,7 +130,7 @@
             // surnameLabel
             // 
             surnameLabel.AutoSize = true;
-            surnameLabel.Location = new System.Drawing.Point(316, 100);
+            surnameLabel.Location = new System.Drawing.Point(250, 100);
             surnameLabel.Name = "surnameLabel";
             surnameLabel.Size = new System.Drawing.Size(78, 20);
             surnameLabel.TabIndex = 8;
@@ -136,7 +139,7 @@
             // patronymicLabel
             // 
             patronymicLabel.AutoSize = true;
-            patronymicLabel.Location = new System.Drawing.Point(316, 132);
+            patronymicLabel.Location = new System.Drawing.Point(250, 132);
             patronymicLabel.Name = "patronymicLabel";
             patronymicLabel.Size = new System.Drawing.Size(91, 20);
             patronymicLabel.TabIndex = 10;
@@ -155,7 +158,7 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(316, 231);
+            passwordLabel.Location = new System.Drawing.Point(699, 132);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new System.Drawing.Size(82, 20);
             passwordLabel.TabIndex = 20;
@@ -164,25 +167,16 @@
             // roleIDLabel
             // 
             roleIDLabel.AutoSize = true;
-            roleIDLabel.Location = new System.Drawing.Point(316, 265);
+            roleIDLabel.Location = new System.Drawing.Point(708, 170);
             roleIDLabel.Name = "roleIDLabel";
             roleIDLabel.Size = new System.Drawing.Size(67, 20);
             roleIDLabel.TabIndex = 46;
             roleIDLabel.Text = "Role ID:";
             // 
-            // scheduleLabel
-            // 
-            scheduleLabel.AutoSize = true;
-            scheduleLabel.Location = new System.Drawing.Point(315, 196);
-            scheduleLabel.Name = "scheduleLabel";
-            scheduleLabel.Size = new System.Drawing.Size(80, 20);
-            scheduleLabel.TabIndex = 51;
-            scheduleLabel.Text = "Schedule:";
-            // 
             // dateCreationLabel
             // 
             dateCreationLabel.AutoSize = true;
-            dateCreationLabel.Location = new System.Drawing.Point(314, 295);
+            dateCreationLabel.Location = new System.Drawing.Point(482, 221);
             dateCreationLabel.Name = "dateCreationLabel";
             dateCreationLabel.Size = new System.Drawing.Size(112, 20);
             dateCreationLabel.TabIndex = 52;
@@ -191,7 +185,7 @@
             // birthDateLabel
             // 
             birthDateLabel.AutoSize = true;
-            birthDateLabel.Location = new System.Drawing.Point(315, 165);
+            birthDateLabel.Location = new System.Drawing.Point(254, 165);
             birthDateLabel.Name = "birthDateLabel";
             birthDateLabel.Size = new System.Drawing.Size(85, 20);
             birthDateLabel.TabIndex = 53;
@@ -234,7 +228,7 @@
             // 
             this.nameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Name", true));
             this.nameTextBox1.Enabled = false;
-            this.nameTextBox1.Location = new System.Drawing.Point(416, 65);
+            this.nameTextBox1.Location = new System.Drawing.Point(350, 65);
             this.nameTextBox1.Name = "nameTextBox1";
             this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
             this.nameTextBox1.TabIndex = 7;
@@ -244,7 +238,7 @@
             // 
             this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Surname", true));
             this.surnameTextBox.Enabled = false;
-            this.surnameTextBox.Location = new System.Drawing.Point(416, 97);
+            this.surnameTextBox.Location = new System.Drawing.Point(350, 97);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(100, 26);
             this.surnameTextBox.TabIndex = 9;
@@ -254,7 +248,7 @@
             // 
             this.patronymicTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Patronymic", true));
             this.patronymicTextBox.Enabled = false;
-            this.patronymicTextBox.Location = new System.Drawing.Point(416, 129);
+            this.patronymicTextBox.Location = new System.Drawing.Point(350, 129);
             this.patronymicTextBox.Name = "patronymicTextBox";
             this.patronymicTextBox.Size = new System.Drawing.Size(100, 26);
             this.patronymicTextBox.TabIndex = 11;
@@ -285,10 +279,10 @@
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Password", true));
             this.passwordTextBox.Enabled = false;
-            this.passwordTextBox.Location = new System.Drawing.Point(416, 228);
+            this.passwordTextBox.Location = new System.Drawing.Point(787, 132);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 26);
+            this.passwordTextBox.Size = new System.Drawing.Size(122, 26);
             this.passwordTextBox.TabIndex = 21;
             this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox_KeyPress);
             // 
@@ -338,7 +332,7 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(535, 319);
+            this.button5.Location = new System.Drawing.Point(516, 295);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(78, 38);
             this.button5.TabIndex = 28;
@@ -348,7 +342,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(320, 323);
+            this.button6.Location = new System.Drawing.Point(282, 295);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(196, 34);
             this.button6.TabIndex = 29;
@@ -359,7 +353,7 @@
             // button7
             // 
             this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(320, 405);
+            this.button7.Location = new System.Drawing.Point(310, 390);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(196, 34);
             this.button7.TabIndex = 30;
@@ -394,7 +388,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(500, 370);
+            this.checkBox2.Location = new System.Drawing.Point(633, 305);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(167, 24);
             this.checkBox2.TabIndex = 45;
@@ -424,7 +418,7 @@
             this.roleIDComboBox.DisplayMember = "ID";
             this.roleIDComboBox.Enabled = false;
             this.roleIDComboBox.FormattingEnabled = true;
-            this.roleIDComboBox.Location = new System.Drawing.Point(395, 260);
+            this.roleIDComboBox.Location = new System.Drawing.Point(787, 165);
             this.roleIDComboBox.Name = "roleIDComboBox";
             this.roleIDComboBox.Size = new System.Drawing.Size(121, 28);
             this.roleIDComboBox.TabIndex = 47;
@@ -440,23 +434,11 @@
             this.tboRoleBindingSource1.DataMember = "tbo_Role";
             this.tboRoleBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // scheduleMaskedTextBox
-            // 
-            this.scheduleMaskedTextBox.BackColor = System.Drawing.Color.White;
-            this.scheduleMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
-            this.scheduleMaskedTextBox.Enabled = false;
-            this.scheduleMaskedTextBox.Location = new System.Drawing.Point(406, 193);
-            this.scheduleMaskedTextBox.Mask = "???-???";
-            this.scheduleMaskedTextBox.Name = "scheduleMaskedTextBox";
-            this.scheduleMaskedTextBox.Size = new System.Drawing.Size(70, 26);
-            this.scheduleMaskedTextBox.TabIndex = 52;
-            this.scheduleMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scheduleMaskedTextBox_KeyPress);
-            // 
             // dateCreationDateTimePicker
             // 
             this.dateCreationDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tbo_ProfileBindingSource, "DateCreation", true));
             this.dateCreationDateTimePicker.Enabled = false;
-            this.dateCreationDateTimePicker.Location = new System.Drawing.Point(432, 291);
+            this.dateCreationDateTimePicker.Location = new System.Drawing.Point(600, 217);
             this.dateCreationDateTimePicker.Name = "dateCreationDateTimePicker";
             this.dateCreationDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.dateCreationDateTimePicker.TabIndex = 53;
@@ -555,7 +537,7 @@
             // 
             this.birthDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tbo_ProfileBindingSource, "BirthDate", true));
             this.birthDateDateTimePicker.Enabled = false;
-            this.birthDateDateTimePicker.Location = new System.Drawing.Point(406, 161);
+            this.birthDateDateTimePicker.Location = new System.Drawing.Point(345, 161);
             this.birthDateDateTimePicker.Name = "birthDateDateTimePicker";
             this.birthDateDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.birthDateDateTimePicker.TabIndex = 54;
@@ -563,7 +545,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(523, 229);
+            this.checkBox1.Location = new System.Drawing.Point(925, 132);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(147, 24);
             this.checkBox1.TabIndex = 55;
@@ -579,7 +561,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
-            this.pictureBox1.Location = new System.Drawing.Point(519, 262);
+            this.pictureBox1.Location = new System.Drawing.Point(911, 167);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -591,7 +573,7 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
-            this.pictureBox3.Location = new System.Drawing.Point(612, 161);
+            this.pictureBox3.Location = new System.Drawing.Point(551, 161);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(26, 24);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -599,11 +581,80 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"});
+            this.comboBox1.Location = new System.Drawing.Point(787, 92);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(57, 28);
+            this.comboBox1.TabIndex = 59;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Enabled = false;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"});
+            this.comboBox2.Location = new System.Drawing.Point(850, 92);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(59, 28);
+            this.comboBox2.TabIndex = 60;
+            // 
+            // button8
+            // 
+            this.button8.Enabled = false;
+            this.button8.Location = new System.Drawing.Point(925, 62);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(46, 27);
+            this.button8.TabIndex = 61;
+            this.button8.Text = "Add";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_2);
+            // 
+            // scheduleLabel
+            // 
+            scheduleLabel.AutoSize = true;
+            scheduleLabel.Location = new System.Drawing.Point(701, 65);
+            scheduleLabel.Name = "scheduleLabel";
+            scheduleLabel.Size = new System.Drawing.Size(80, 20);
+            scheduleLabel.TabIndex = 62;
+            scheduleLabel.Text = "Schedule:";
+            // 
+            // scheduleTextBox
+            // 
+            this.scheduleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
+            this.scheduleTextBox.Enabled = false;
+            this.scheduleTextBox.Location = new System.Drawing.Point(787, 62);
+            this.scheduleTextBox.Name = "scheduleTextBox";
+            this.scheduleTextBox.Size = new System.Drawing.Size(122, 26);
+            this.scheduleTextBox.TabIndex = 63;
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 849);
+            this.Controls.Add(scheduleLabel);
+            this.Controls.Add(this.scheduleTextBox);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
@@ -612,8 +663,6 @@
             this.Controls.Add(this.tbo_ProfileDataGridView);
             this.Controls.Add(dateCreationLabel);
             this.Controls.Add(this.dateCreationDateTimePicker);
-            this.Controls.Add(scheduleLabel);
-            this.Controls.Add(this.scheduleMaskedTextBox);
             this.Controls.Add(roleIDLabel);
             this.Controls.Add(this.roleIDComboBox);
             this.Controls.Add(this.checkBox2);
@@ -693,7 +742,6 @@
         private System.Windows.Forms.ComboBox roleIDComboBox;
         private System.Windows.Forms.BindingSource tboRoleBindingSource1;
         private System.Windows.Forms.BindingSource tboRoleBindingSource2;
-        private System.Windows.Forms.MaskedTextBox scheduleMaskedTextBox;
         private System.Windows.Forms.DateTimePicker dateCreationDateTimePicker;
         private System.Windows.Forms.DataGridView tbo_ProfileDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -712,5 +760,9 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox scheduleTextBox;
     }
 }

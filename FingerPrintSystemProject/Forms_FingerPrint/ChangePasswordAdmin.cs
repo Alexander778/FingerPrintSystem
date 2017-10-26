@@ -94,9 +94,11 @@ namespace Forms_FingerPrint
                 patronymicTextBox.BackColor = Color.White;
                 fingerPrintTextBox.BackColor = Color.White;
                 passwordTextBox.BackColor = Color.White;
-                scheduleMaskedTextBox.BackColor = Color.White;
+                scheduleTextBox.BackColor = Color.White;
                 pictureBox1.Visible = false;
                 pictureBox3.Visible = false;
+                button7.Enabled = true;
+
             }
             catch (System.Data.NoNullAllowedException)
             {
@@ -104,18 +106,19 @@ namespace Forms_FingerPrint
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //!
 
-                scheduleMaskedTextBox.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-                if (scheduleMaskedTextBox.Text == "")
-                {
-                 scheduleMaskedTextBox.BackColor = Color.LightPink;
-                }
+                //scheduleTextBox.TextFormat = MaskFormat.ExcludePromptAndLiterals;
+                //if (scheduleMaskedTextBox.Text == "")
+                //{
+                // scheduleMaskedTextBox.BackColor = Color.LightPink;
+                //}
 
-                TextBox[] txtboxes = new TextBox[5];
+                TextBox[] txtboxes = new TextBox[6];
                 txtboxes[0] = nameTextBox1;
                 txtboxes[1] = surnameTextBox;
                 txtboxes[2] = patronymicTextBox;
                 txtboxes[3] = fingerPrintTextBox;
                 txtboxes[4] = passwordTextBox;
+                txtboxes[5] = scheduleTextBox;
                 
 
                 for (int i = 0; i < txtboxes.Length; i++)
@@ -127,6 +130,7 @@ namespace Forms_FingerPrint
                    
                 }
                 
+
                 if (birthDateDateTimePicker.Value == DateTime.Today)
                 {
                     pictureBox3.Visible = true;
@@ -160,12 +164,16 @@ namespace Forms_FingerPrint
             button6.Enabled = true;
             button5.Enabled = true;
             checkBox2.Enabled = true;
-            button7.Enabled = true;
             roleIDComboBox.Enabled = true;
-            scheduleMaskedTextBox.Enabled = true;
+            scheduleTextBox.Enabled = true;
             birthDateDateTimePicker.Enabled = true;
             dateCreationDateTimePicker.Enabled = true;
             button4.Enabled = false;
+            button8.Enabled = true;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+            dateCreationDateTimePicker.Value = DateTime.Today;
+            birthDateDateTimePicker.Value = DateTime.Today;
 
 
 
@@ -218,11 +226,13 @@ namespace Forms_FingerPrint
                 checkBox2.Enabled = false;
                 button7.Enabled = false;
                 roleIDComboBox.Enabled = false;
-                scheduleMaskedTextBox.Enabled = false;
+                scheduleTextBox.Enabled = false;
                 birthDateDateTimePicker.Enabled = false;
                 dateCreationDateTimePicker.Enabled = false;
                 tbo_ProfileDataGridView.Visible = false;
                 button4.Enabled = true;
+                dateCreationDateTimePicker.Value = DateTime.Today;
+                birthDateDateTimePicker.Value = DateTime.Today;
             }
         }
 
@@ -351,6 +361,20 @@ namespace Forms_FingerPrint
             }
         }
 
-       
+        private void button8_Click_2(object sender, EventArgs e)
+        {
+            string a = comboBox1.SelectedItem.ToString();
+            string b = comboBox2.SelectedItem.ToString();
+
+            scheduleTextBox.AppendText(a+"-");
+            scheduleTextBox.AppendText(b);
+
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
