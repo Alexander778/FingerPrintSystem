@@ -63,7 +63,9 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\tbo_Profile.sql" />
+    <Build Include="dbo\Tables\tbo_Profile.sql">
+      <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
+    </Build>
     <Build Include="dbo\Tables\tbo_LinkDepartmentUser.sql" />
     <Build Include="dbo\Tables\tbo_Department.sql" />
     <Build Include="dbo\Tables\tbo_Role.sql" />
@@ -71,5 +73,8 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment_Role_.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="FingerPrintSystemProject.refactorlog" />
   </ItemGroup>
 </Project>

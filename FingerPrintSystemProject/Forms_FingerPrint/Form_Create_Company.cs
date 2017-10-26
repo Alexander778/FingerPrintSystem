@@ -95,7 +95,7 @@ namespace Forms_FingerPrint
                     image = new Bitmap(open_dialog.FileName);
                     //this.сompanyLogoPictureBox.Size = image.Size;
                     сompanyLogoPictureBox.Image = image;
-                    сompanyLogoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    сompanyLogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                     сompanyLogoPictureBox.Invalidate();
                 }
                 catch

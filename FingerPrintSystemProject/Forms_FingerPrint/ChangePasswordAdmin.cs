@@ -54,13 +54,13 @@ namespace Forms_FingerPrint
                     image = new Bitmap(open_dialog.FileName);
                     //this.сompanyLogoPictureBox.Size = image.Size;
                     photoPictureBox.Image = image;
-                    photoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    photoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
                     photoPictureBox.Invalidate();
                 }
                 catch
                 {
-                    DialogResult rezult = MessageBox.Show("Невозможно открыть выбранный файл",
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DialogResult rezult = MessageBox.Show("Impossible to open this file",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -101,9 +101,10 @@ namespace Forms_FingerPrint
             checkBox2.Enabled = true;
             button7.Enabled = true;
             roleIDComboBox.Enabled = true;
-            button8.Enabled = true;
-            button9.Enabled = true;
             scheduleMaskedTextBox.Enabled = true;
+            birthDateDateTimePicker.Enabled = true;
+            dateCreationDateTimePicker.Enabled = true;
+
 
 
 
@@ -138,6 +139,27 @@ namespace Forms_FingerPrint
                 MessageBoxButtons buttons1 = MessageBoxButtons.OK;
                 DialogResult result1;
                 result1 = MessageBox.Show(message1, caption1, buttons1);
+
+                birthDateDateTimePicker.Value = DateTime.Today;
+                photoPictureBox.Enabled = false;
+                button1.Enabled = false;
+                button2.Enabled = false;
+                photoPictureBox.Enabled = false;
+                fingerPrintTextBox.Enabled = false;
+                button3.Enabled = false;
+                nameTextBox1.Enabled = false;
+                surnameTextBox.Enabled = false;
+                patronymicTextBox.Enabled = false;
+                passwordTextBox.Enabled = false;
+                button6.Enabled = false;
+                button5.Enabled = false;
+                checkBox2.Enabled = false;
+                button7.Enabled = false;
+                roleIDComboBox.Enabled = false;
+                scheduleMaskedTextBox.Enabled = false;
+                birthDateDateTimePicker.Enabled = false;
+                dateCreationDateTimePicker.Enabled = false;
+                tbo_ProfileDataGridView.Visible = false;
             }
         }
 
@@ -202,19 +224,9 @@ namespace Forms_FingerPrint
             
         }
 
-        private void button8_Click_2(object sender, EventArgs e)
+        private void photoPictureBox_Click(object sender, EventArgs e)
         {
-            birthDateMonthCalendar.Visible = true;
-            button8.Visible = false;
-            button9.Visible = true;
 
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            birthDateMonthCalendar.Visible = false;
-            button8.Visible = true;
-            button9.Visible = false;
         }
     }
 }
