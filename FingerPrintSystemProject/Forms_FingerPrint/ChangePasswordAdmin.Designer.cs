@@ -32,12 +32,11 @@
             System.Windows.Forms.Label nameLabel1;
             System.Windows.Forms.Label surnameLabel;
             System.Windows.Forms.Label patronymicLabel;
-            System.Windows.Forms.Label scheduleLabel;
             System.Windows.Forms.Label fingerPrintLabel;
             System.Windows.Forms.Label passwordLabel;
             System.Windows.Forms.Label roleIDLabel;
-            System.Windows.Forms.Label birthDateLabel;
             System.Windows.Forms.Label birthDateLabel1;
+            System.Windows.Forms.Label scheduleLabel;
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,7 +47,6 @@
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.patronymicTextBox = new System.Windows.Forms.TextBox();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
-            this.scheduleTextBox = new System.Windows.Forms.TextBox();
             this.fingerPrintTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -80,19 +78,19 @@
             this.tboRoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roleIDComboBox = new System.Windows.Forms.ComboBox();
             this.tboRoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.birthDateMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.birthDateMonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.tboRoleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.scheduleMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
-            scheduleLabel = new System.Windows.Forms.Label();
             fingerPrintLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             roleIDLabel = new System.Windows.Forms.Label();
-            birthDateLabel = new System.Windows.Forms.Label();
             birthDateLabel1 = new System.Windows.Forms.Label();
+            scheduleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
@@ -105,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel1
@@ -134,15 +133,6 @@
             patronymicLabel.TabIndex = 10;
             patronymicLabel.Text = "Patronymic:";
             // 
-            // scheduleLabel
-            // 
-            scheduleLabel.AutoSize = true;
-            scheduleLabel.Location = new System.Drawing.Point(316, 209);
-            scheduleLabel.Name = "scheduleLabel";
-            scheduleLabel.Size = new System.Drawing.Size(80, 20);
-            scheduleLabel.TabIndex = 16;
-            scheduleLabel.Text = "Schedule:";
-            // 
             // fingerPrintLabel
             // 
             fingerPrintLabel.AutoSize = true;
@@ -170,16 +160,6 @@
             roleIDLabel.Size = new System.Drawing.Size(67, 20);
             roleIDLabel.TabIndex = 46;
             roleIDLabel.Text = "Role ID:";
-            // 
-            // birthDateLabel
-            // 
-            birthDateLabel.AutoSize = true;
-            birthDateLabel.Location = new System.Drawing.Point(839, 206);
-            birthDateLabel.Name = "birthDateLabel";
-            birthDateLabel.Size = new System.Drawing.Size(85, 20);
-            birthDateLabel.TabIndex = 47;
-            birthDateLabel.Text = "Birth Date:";
-            birthDateLabel.Visible = false;
             // 
             // birthDateLabel1
             // 
@@ -261,15 +241,6 @@
             this.photoPictureBox.Size = new System.Drawing.Size(176, 202);
             this.photoPictureBox.TabIndex = 13;
             this.photoPictureBox.TabStop = false;
-            // 
-            // scheduleTextBox
-            // 
-            this.scheduleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
-            this.scheduleTextBox.Enabled = false;
-            this.scheduleTextBox.Location = new System.Drawing.Point(416, 206);
-            this.scheduleTextBox.Name = "scheduleTextBox";
-            this.scheduleTextBox.Size = new System.Drawing.Size(100, 26);
-            this.scheduleTextBox.TabIndex = 17;
             // 
             // fingerPrintTextBox
             // 
@@ -501,7 +472,7 @@
             // roleIDComboBox
             // 
             this.roleIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "RoleID", true));
-            this.roleIDComboBox.DataSource = this.tboRoleBindingSource1;
+            this.roleIDComboBox.DataSource = this.tboRoleBindingSource2;
             this.roleIDComboBox.DisplayMember = "ID";
             this.roleIDComboBox.Enabled = false;
             this.roleIDComboBox.FormattingEnabled = true;
@@ -509,23 +480,12 @@
             this.roleIDComboBox.Name = "roleIDComboBox";
             this.roleIDComboBox.Size = new System.Drawing.Size(121, 28);
             this.roleIDComboBox.TabIndex = 47;
+            this.roleIDComboBox.ValueMember = "Name";
             // 
             // tboRoleBindingSource1
             // 
             this.tboRoleBindingSource1.DataMember = "tbo_Role";
             this.tboRoleBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
-            // 
-            // birthDateMaskedTextBox
-            // 
-            this.birthDateMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "BirthDate", true));
-            this.birthDateMaskedTextBox.Enabled = false;
-            this.birthDateMaskedTextBox.Location = new System.Drawing.Point(930, 203);
-            this.birthDateMaskedTextBox.Mask = "00/00/0000";
-            this.birthDateMaskedTextBox.Name = "birthDateMaskedTextBox";
-            this.birthDateMaskedTextBox.Size = new System.Drawing.Size(100, 26);
-            this.birthDateMaskedTextBox.TabIndex = 48;
-            this.birthDateMaskedTextBox.ValidatingType = typeof(System.DateTime);
-            this.birthDateMaskedTextBox.Visible = false;
             // 
             // birthDateMonthCalendar
             // 
@@ -550,7 +510,7 @@
             // button9
             // 
             this.button9.Enabled = false;
-            this.button9.Location = new System.Drawing.Point(416, 174);
+            this.button9.Location = new System.Drawing.Point(416, 176);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(100, 25);
             this.button9.TabIndex = 51;
@@ -559,17 +519,41 @@
             this.button9.Visible = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // tboRoleBindingSource2
+            // 
+            this.tboRoleBindingSource2.DataMember = "tbo_Role";
+            this.tboRoleBindingSource2.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            // 
+            // scheduleLabel
+            // 
+            scheduleLabel.AutoSize = true;
+            scheduleLabel.Location = new System.Drawing.Point(320, 210);
+            scheduleLabel.Name = "scheduleLabel";
+            scheduleLabel.Size = new System.Drawing.Size(80, 20);
+            scheduleLabel.TabIndex = 51;
+            scheduleLabel.Text = "Schedule:";
+            // 
+            // scheduleMaskedTextBox
+            // 
+            this.scheduleMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
+            this.scheduleMaskedTextBox.Enabled = false;
+            this.scheduleMaskedTextBox.Location = new System.Drawing.Point(406, 207);
+            this.scheduleMaskedTextBox.Mask = "???-???";
+            this.scheduleMaskedTextBox.Name = "scheduleMaskedTextBox";
+            this.scheduleMaskedTextBox.Size = new System.Drawing.Size(100, 26);
+            this.scheduleMaskedTextBox.TabIndex = 52;
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 791);
+            this.ClientSize = new System.Drawing.Size(1174, 791);
+            this.Controls.Add(scheduleLabel);
+            this.Controls.Add(this.scheduleMaskedTextBox);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(birthDateLabel1);
             this.Controls.Add(this.birthDateMonthCalendar);
-            this.Controls.Add(birthDateLabel);
-            this.Controls.Add(this.birthDateMaskedTextBox);
             this.Controls.Add(roleIDLabel);
             this.Controls.Add(this.roleIDComboBox);
             this.Controls.Add(this.checkBox2);
@@ -588,8 +572,6 @@
             this.Controls.Add(patronymicLabel);
             this.Controls.Add(this.patronymicTextBox);
             this.Controls.Add(this.photoPictureBox);
-            this.Controls.Add(scheduleLabel);
-            this.Controls.Add(this.scheduleTextBox);
             this.Controls.Add(fingerPrintLabel);
             this.Controls.Add(this.fingerPrintTextBox);
             this.Controls.Add(passwordLabel);
@@ -610,6 +592,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboLinkDepartmentUserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,7 +610,6 @@
         private System.Windows.Forms.TextBox surnameTextBox;
         private System.Windows.Forms.TextBox patronymicTextBox;
         private System.Windows.Forms.PictureBox photoPictureBox;
-        private System.Windows.Forms.TextBox scheduleTextBox;
         private System.Windows.Forms.TextBox fingerPrintTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button button1;
@@ -659,9 +641,10 @@
         private System.Windows.Forms.BindingSource tboRoleBindingSource;
         private System.Windows.Forms.ComboBox roleIDComboBox;
         private System.Windows.Forms.BindingSource tboRoleBindingSource1;
-        private System.Windows.Forms.MaskedTextBox birthDateMaskedTextBox;
         private System.Windows.Forms.MonthCalendar birthDateMonthCalendar;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.BindingSource tboRoleBindingSource2;
+        private System.Windows.Forms.MaskedTextBox scheduleMaskedTextBox;
     }
 }

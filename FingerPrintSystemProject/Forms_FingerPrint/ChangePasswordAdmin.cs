@@ -95,8 +95,6 @@ namespace Forms_FingerPrint
             nameTextBox1.Enabled = true;
             surnameTextBox.Enabled = true;
             patronymicTextBox.Enabled = true;
-            birthDateMaskedTextBox.Enabled = true;
-            scheduleTextBox.Enabled = true;
             passwordTextBox.Enabled = true;
             button6.Enabled = true;
             button5.Enabled = true;
@@ -105,8 +103,10 @@ namespace Forms_FingerPrint
             roleIDComboBox.Enabled = true;
             button8.Enabled = true;
             button9.Enabled = true;
-            
-          
+            scheduleMaskedTextBox.Enabled = true;
+
+
+
 
 
 
