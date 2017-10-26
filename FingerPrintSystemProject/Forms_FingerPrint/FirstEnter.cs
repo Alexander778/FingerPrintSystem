@@ -70,5 +70,24 @@ namespace Forms_FingerPrint
 
 
         }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar < 32 || e.KeyChar >= 58) && (!Char.IsLetter(number)) && number != 8) //цифры, клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

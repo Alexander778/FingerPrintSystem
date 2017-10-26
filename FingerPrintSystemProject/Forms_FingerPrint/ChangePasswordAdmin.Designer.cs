@@ -84,6 +84,7 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
@@ -166,11 +167,29 @@
             // scheduleLabel
             // 
             scheduleLabel.AutoSize = true;
-            scheduleLabel.Location = new System.Drawing.Point(320, 196);
+            scheduleLabel.Location = new System.Drawing.Point(315, 196);
             scheduleLabel.Name = "scheduleLabel";
             scheduleLabel.Size = new System.Drawing.Size(80, 20);
             scheduleLabel.TabIndex = 51;
             scheduleLabel.Text = "Schedule:";
+            // 
+            // dateCreationLabel
+            // 
+            dateCreationLabel.AutoSize = true;
+            dateCreationLabel.Location = new System.Drawing.Point(314, 295);
+            dateCreationLabel.Name = "dateCreationLabel";
+            dateCreationLabel.Size = new System.Drawing.Size(112, 20);
+            dateCreationLabel.TabIndex = 52;
+            dateCreationLabel.Text = "Date Creation:";
+            // 
+            // birthDateLabel
+            // 
+            birthDateLabel.AutoSize = true;
+            birthDateLabel.Location = new System.Drawing.Point(315, 165);
+            birthDateLabel.Name = "birthDateLabel";
+            birthDateLabel.Size = new System.Drawing.Size(85, 20);
+            birthDateLabel.TabIndex = 53;
+            birthDateLabel.Text = "Birth Date:";
             // 
             // tbo_RoleBindingSource
             // 
@@ -214,6 +233,7 @@
             this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
             this.nameTextBox1.TabIndex = 7;
             this.nameTextBox1.TextChanged += new System.EventHandler(this.nameTextBox1_TextChanged);
+            this.nameTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox1_KeyPress);
             // 
             // surnameTextBox
             // 
@@ -223,6 +243,7 @@
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(100, 26);
             this.surnameTextBox.TabIndex = 9;
+            this.surnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surnameTextBox_KeyPress);
             // 
             // patronymicTextBox
             // 
@@ -232,6 +253,7 @@
             this.patronymicTextBox.Name = "patronymicTextBox";
             this.patronymicTextBox.Size = new System.Drawing.Size(100, 26);
             this.patronymicTextBox.TabIndex = 11;
+            this.patronymicTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patronymicTextBox_KeyPress);
             // 
             // photoPictureBox
             // 
@@ -263,6 +285,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 26);
             this.passwordTextBox.TabIndex = 21;
+            this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox_KeyPress);
             // 
             // button1
             // 
@@ -420,15 +443,7 @@
             this.scheduleMaskedTextBox.Name = "scheduleMaskedTextBox";
             this.scheduleMaskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.scheduleMaskedTextBox.TabIndex = 52;
-            // 
-            // dateCreationLabel
-            // 
-            dateCreationLabel.AutoSize = true;
-            dateCreationLabel.Location = new System.Drawing.Point(314, 295);
-            dateCreationLabel.Name = "dateCreationLabel";
-            dateCreationLabel.Size = new System.Drawing.Size(112, 20);
-            dateCreationLabel.TabIndex = 52;
-            dateCreationLabel.Text = "Date Creation:";
+            this.scheduleMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scheduleMaskedTextBox_KeyPress);
             // 
             // dateCreationDateTimePicker
             // 
@@ -529,15 +544,6 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "DateCreation";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // birthDateLabel
-            // 
-            birthDateLabel.AutoSize = true;
-            birthDateLabel.Location = new System.Drawing.Point(315, 165);
-            birthDateLabel.Name = "birthDateLabel";
-            birthDateLabel.Size = new System.Drawing.Size(85, 20);
-            birthDateLabel.TabIndex = 53;
-            birthDateLabel.Text = "Birth Date:";
-            // 
             // birthDateDateTimePicker
             // 
             this.birthDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tbo_ProfileBindingSource, "BirthDate", true));
@@ -547,11 +553,23 @@
             this.birthDateDateTimePicker.Size = new System.Drawing.Size(200, 26);
             this.birthDateDateTimePicker.TabIndex = 54;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(523, 229);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(147, 24);
+            this.checkBox1.TabIndex = 55;
+            this.checkBox1.Text = "Show password";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // ChangePasswordAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 849);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(birthDateLabel);
             this.Controls.Add(this.birthDateDateTimePicker);
             this.Controls.Add(this.tbo_ProfileDataGridView);
@@ -650,5 +668,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DateTimePicker birthDateDateTimePicker;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

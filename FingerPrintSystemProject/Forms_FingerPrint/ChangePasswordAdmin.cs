@@ -38,6 +38,7 @@ namespace Forms_FingerPrint
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+           
 
         }
 
@@ -72,16 +73,43 @@ namespace Forms_FingerPrint
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tbo_ProfileBindingSource.EndEdit();
-            tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            try
+            {
+                tbo_ProfileBindingSource.EndEdit();
+                tbo_ProfileTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
 
 
 
-            string message = "You created New Admin User. You enter to system by this account";
-            string caption = "FingerPrintSystem";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            result = MessageBox.Show(message, caption, buttons);
+                string message = "You created New Admin User. You enter to system by this account";
+                string caption = "FingerPrintSystem";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+                result = MessageBox.Show(message, caption, buttons);
+            }
+            catch (System.Data.NoNullAllowedException)
+            {
+                MessageBox.Show("You did not write all information about you",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                TextBox[] txtarr = new TextBox[8];
+                txtarr[0] = nameTextBox1;
+                txtarr[1] = surnameTextBox;
+                txtarr[2] = patronymicTextBox;
+                // txtarr[3] = birthDateDateTimePicker;
+                //txtarr[4] = scheduleMaskedTextBox;
+                txtarr[3] = passwordTextBox;
+                // txtarr[6] = roleIDComboBox;
+                //txtarr[7] = Convert.to dateCreationDateTimePicker;
+
+                for (int i = 0; i < txtarr.Length - 1; i++)
+                {
+                   
+
+                }
+
+
+
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -191,6 +219,7 @@ namespace Forms_FingerPrint
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             tbo_ProfileDataGridView.Visible = checkBox2.Checked;
+
         }
 
         private void fingerPrintLabel_Click(object sender, EventArgs e)
@@ -227,6 +256,67 @@ namespace Forms_FingerPrint
         private void photoPictureBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void nameTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+            
+
+        }
+
+        private void surnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void patronymicTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void scheduleMaskedTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void passwordTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((e.KeyChar <32 || e.KeyChar >= 58) && (!Char.IsLetter(number)) && number != 8) //цифры, клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            passwordTextBox.PasswordChar='\0';
+            if (checkBox1.Checked == false)
+            {
+                passwordTextBox.PasswordChar = '*';
+            }
         }
     }
 }
