@@ -165,7 +165,7 @@ namespace Forms_FingerPrint
             button5.Enabled = true;
             checkBox2.Enabled = true;
             roleIDComboBox.Enabled = true;
-            scheduleTextBox.Enabled = true;
+           // scheduleTextBox.Enabled = true;
             birthDateDateTimePicker.Enabled = true;
             dateCreationDateTimePicker.Enabled = true;
             button4.Enabled = false;
@@ -363,11 +363,38 @@ namespace Forms_FingerPrint
 
         private void button8_Click_2(object sender, EventArgs e)
         {
-            string a = comboBox1.SelectedItem.ToString();
-            string b = comboBox2.SelectedItem.ToString();
 
-            scheduleTextBox.AppendText(a+"-");
-            scheduleTextBox.AppendText(b);
+            try
+            {
+                string a = comboBox1.SelectedItem.ToString();
+                string b = comboBox2.SelectedItem.ToString();
+
+                if (a == b)
+                {
+                    MessageBox.Show("You can not choose 2 same days!",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                else if (scheduleTextBox != null)
+                {
+                    scheduleTextBox.Clear();
+                    scheduleTextBox.AppendText(a + "-");
+                    scheduleTextBox.AppendText(b);
+
+                }
+                else
+                {
+                    scheduleTextBox.AppendText(a + "-");
+                    scheduleTextBox.AppendText(b);
+                }
+            }
+            catch(System.NullReferenceException)
+            {
+                MessageBox.Show("You did not choose any days!",
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
 
 
         }
