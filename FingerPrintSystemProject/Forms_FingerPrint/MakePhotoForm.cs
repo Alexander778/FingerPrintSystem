@@ -9,131 +9,77 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using AForge.Video;
+using WIA;
+using WIAVIDEOLib;
+using System.IO;
+
 
 namespace Forms_FingerPrint
 {
     public partial class MakePhotoForm : Form
     {
-        private bool DeviceExist = false;
-        private FilterInfoCollection videoDevices;
-        private VideoCaptureDevice videoSource = null;
+
         public MakePhotoForm()
         {
             InitializeComponent();
         }
+
         private void MakePhotoForm_Load(object sender, EventArgs e)
         {
-            getCamList();
+           
         }
-        private void getCamList()
+        
+        private void button1_Click_2(object sender, EventArgs e)
         {
-            try
-            {
-                videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-                comboBox1.Items.Clear();
-                if (videoDevices.Count == 0)
-                    throw new ApplicationException();
-                DeviceExist = true;
-                foreach (FilterInfo device in videoDevices)
-                {
-                    comboBox1.Items.Add(device.Name);
-                }
-                comboBox1.SelectedIndex = 0;
-            }
-            catch (ApplicationException)
-            {
-                DeviceExist = false;
-                MessageBox.Show("No capture device on your system");
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (button1.Text == "Start")
- {
-                if (DeviceExist)
-                {
-                    videoSource = new VideoCaptureDevice(videoDevices[comboBox1.SelectedIndex].MonikerString);
-                    videoSource.NewFrame += new NewFrameEventHandler(video_NewFrame);
-                    CloseVideoSource();
-                    videoSource.DesiredFrameSize = new Size(320, 240);
-                    videoSource.Start();
-                    button1.Text = "Stop";
-                }
-                else
-                {
-                    MessageBox.Show("Error: No Device selected");
-                }
-            }
- else
- {
-                if (videoSource.IsRunning)
-                {
-                    CloseVideoSource();
-                    button1.Text = "Start";
-                }
-            }
-        }
-        //close the device safely
-        private void CloseVideoSource()
-        {
-            if (!(videoSource == null))
-                if (videoSource.IsRunning)
-                {
-                    videoSource.SignalToStop();
-                    videoSource = null;
-                }
-        }
-        //eventhandler if new frame is ready
-        private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            Bitmap img = (Bitmap)eventArgs.Frame.Clone();
-            pictureBox1.Image = img;
-        }
-        private void MakePhotoForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            CloseVideoSource();
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Image.Save("Capture-" + DateTime.Now.ToString("HH-mm-ss tt") + ".jpg");
-            
-        }
+            WIA.DeviceManager DeviceManager1 = new DeviceManagerClass();
+            WIA.CommonDialogClass CommonDialog1 = new CommonDialogClass();
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
+            // 1. Помогаем пользователю выбрать устройство
+            WIA.Device Device1 = CommonDialog1.ShowSelectDevice(WiaDeviceType.CameraDeviceType, true, false);
 
-        }
+            // 2. Делаем снимок
+            Device1.ExecuteCommand(WIA.CommandID.wiaCommandTakePicture);
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (pictureBox1.Image != null) //если в pictureBox есть изображение
+            // 3. Снова подключаемся к устройству для получения фото
+            WIA.Device Device1a = null;
+            foreach (DeviceInfo dev_item in DeviceManager1.DeviceInfos)
             {
-                //создание диалогового окна "Сохранить как..", для сохранения изображения
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Title = "Сохранить картинку как...";
-                //отображать ли предупреждение, если пользователь указывает имя уже существующего файла
-                savedialog.OverwritePrompt = true;
-                //отображать ли предупреждение, если пользователь указывает несуществующий путь
-                savedialog.CheckPathExists = true;
-                //список форматов файла, отображаемый в поле "Тип файла"
-                savedialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.JPG)|*.JPG|Image Files(*.GIF)|*.GIF|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
-                //отображается ли кнопка "Справка" в диалоговом окне
-                savedialog.ShowHelp = true;
-                if (savedialog.ShowDialog() == DialogResult.OK) //если в диалоговом окне нажата кнопка "ОК"
+                // Перечисляем все устройства
+                if (dev_item.DeviceID == Device1.DeviceID)
                 {
-                    try
-                    {
-                        pictureBox1.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Невозможно сохранить изображение", "Ошибка",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    // и подключаемся к тому, чей DeviceID совпадает с ранее выбранным
+                    Device1a = dev_item.Connect();
+                    break;
                 }
             }
+
+            // 4. Находим какой объект нам нужен
+            WIA.Item newItem = Device1a.Items[Device1a.Items.Count];
+
+            // 5. Читаем файл из устройства
+            WIA.ImageFile newImage = (ImageFile)CommonDialog1.ShowTransfer(newItem, WIA.FormatID.wiaFormatJPEG, false);
+
+            // 6. Преобразуем полученные данные в вектор
+            WIA.Vector newVector = newImage.FileData;
+
+            // 7. Забираем из вектора байтовый массив, содержащий изображение
+            Byte[] bytBLOBData = (Byte[])newVector.get_BinaryData();
+
+            // 8. Преобразуем массив в поток
+            MemoryStream stmBLOBData = new MemoryStream(bytBLOBData);
+
+            // 9. Преобразуем поток в изображение и присваиваем его элементу PictureBox
+            pictureBox1.Image = Image.FromStream(stmBLOBData);
+
+            // 10. Режим масштабирования Zoom помогает увидеть весь кадр (в целях отладки)
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
         }
     }
-
 }
+        
+    
+
+
+
+
 

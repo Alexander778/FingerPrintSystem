@@ -75,6 +75,7 @@ namespace Forms_FingerPrint
         {
             MakePhotoForm f = new MakePhotoForm();
             f.Show();
+
             
         }
 
