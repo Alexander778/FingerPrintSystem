@@ -32,16 +32,17 @@ namespace Forms_FingerPrint
         private void button1_Click_2(object sender, EventArgs e)
         {
             WIA.DeviceManager DeviceManager1 = new DeviceManagerClass();
-            WIA.CommonDialogClass CommonDialog1 = new CommonDialogClass();
+            WIA.CommonDialog CommonDialog1 = new CommonDialogClass();
 
             // 1. Помогаем пользователю выбрать устройство
             WIA.Device Device1 = CommonDialog1.ShowSelectDevice(WiaDeviceType.CameraDeviceType, true, false);
-
+            
             // 2. Делаем снимок
             Device1.ExecuteCommand(WIA.CommandID.wiaCommandTakePicture);
 
-            // 3. Снова подключаемся к устройству для получения фото
             WIA.Device Device1a = null;
+            
+            // 3. Снова подключаемся к устройству для получения фото
             foreach (DeviceInfo dev_item in DeviceManager1.DeviceInfos)
             {
                 // Перечисляем все устройства
@@ -52,10 +53,11 @@ namespace Forms_FingerPrint
                     break;
                 }
             }
+            
 
             // 4. Находим какой объект нам нужен
             WIA.Item newItem = Device1a.Items[Device1a.Items.Count];
-
+            
             // 5. Читаем файл из устройства
             WIA.ImageFile newImage = (ImageFile)CommonDialog1.ShowTransfer(newItem, WIA.FormatID.wiaFormatJPEG, false);
 

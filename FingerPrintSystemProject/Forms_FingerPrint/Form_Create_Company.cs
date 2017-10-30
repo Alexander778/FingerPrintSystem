@@ -108,9 +108,9 @@ namespace Forms_FingerPrint
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form_Create_Department f1 = new Form_Create_Department();
-            f1.Show();
             this.Hide();
+            
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -123,6 +123,12 @@ namespace Forms_FingerPrint
             {
                 tbo_CompanyDataGridView.Visible = false;
             }
+        }
+
+        private void Form_Create_Company_VisibleChanged(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }

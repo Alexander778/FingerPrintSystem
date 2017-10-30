@@ -91,6 +91,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.scheduleTextBox = new System.Windows.Forms.TextBox();
+            this.tboRoleBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             nameLabel1 = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
             patronymicLabel = new System.Windows.Forms.Label();
@@ -116,41 +117,46 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel1
             // 
             nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(250, 68);
+            nameLabel1.Location = new System.Drawing.Point(167, 44);
+            nameLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nameLabel1.Name = "nameLabel1";
-            nameLabel1.Size = new System.Drawing.Size(55, 20);
+            nameLabel1.Size = new System.Drawing.Size(38, 13);
             nameLabel1.TabIndex = 6;
             nameLabel1.Text = "Name:";
             // 
             // surnameLabel
             // 
             surnameLabel.AutoSize = true;
-            surnameLabel.Location = new System.Drawing.Point(250, 100);
+            surnameLabel.Location = new System.Drawing.Point(167, 65);
+            surnameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             surnameLabel.Name = "surnameLabel";
-            surnameLabel.Size = new System.Drawing.Size(78, 20);
+            surnameLabel.Size = new System.Drawing.Size(52, 13);
             surnameLabel.TabIndex = 8;
             surnameLabel.Text = "Surname:";
             // 
             // patronymicLabel
             // 
             patronymicLabel.AutoSize = true;
-            patronymicLabel.Location = new System.Drawing.Point(250, 132);
+            patronymicLabel.Location = new System.Drawing.Point(167, 86);
+            patronymicLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             patronymicLabel.Name = "patronymicLabel";
-            patronymicLabel.Size = new System.Drawing.Size(91, 20);
+            patronymicLabel.Size = new System.Drawing.Size(62, 13);
             patronymicLabel.TabIndex = 10;
             patronymicLabel.Text = "Patronymic:";
             // 
             // fingerPrintLabel
             // 
             fingerPrintLabel.AutoSize = true;
-            fingerPrintLabel.Location = new System.Drawing.Point(245, 231);
+            fingerPrintLabel.Location = new System.Drawing.Point(163, 150);
+            fingerPrintLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             fingerPrintLabel.Name = "fingerPrintLabel";
-            fingerPrintLabel.Size = new System.Drawing.Size(94, 20);
+            fingerPrintLabel.Size = new System.Drawing.Size(63, 13);
             fingerPrintLabel.TabIndex = 18;
             fingerPrintLabel.Text = "Finger Print:";
             fingerPrintLabel.Click += new System.EventHandler(this.fingerPrintLabel_Click);
@@ -158,45 +164,50 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(699, 132);
+            passwordLabel.Location = new System.Drawing.Point(466, 86);
+            passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(82, 20);
+            passwordLabel.Size = new System.Drawing.Size(56, 13);
             passwordLabel.TabIndex = 20;
             passwordLabel.Text = "Password:";
             // 
             // roleIDLabel
             // 
             roleIDLabel.AutoSize = true;
-            roleIDLabel.Location = new System.Drawing.Point(699, 167);
+            roleIDLabel.Location = new System.Drawing.Point(466, 114);
+            roleIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             roleIDLabel.Name = "roleIDLabel";
-            roleIDLabel.Size = new System.Drawing.Size(67, 20);
+            roleIDLabel.Size = new System.Drawing.Size(46, 13);
             roleIDLabel.TabIndex = 46;
             roleIDLabel.Text = "Role ID:";
             // 
             // dateCreationLabel
             // 
             dateCreationLabel.AutoSize = true;
-            dateCreationLabel.Location = new System.Drawing.Point(699, 214);
+            dateCreationLabel.Location = new System.Drawing.Point(466, 139);
+            dateCreationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             dateCreationLabel.Name = "dateCreationLabel";
-            dateCreationLabel.Size = new System.Drawing.Size(112, 20);
+            dateCreationLabel.Size = new System.Drawing.Size(75, 13);
             dateCreationLabel.TabIndex = 52;
             dateCreationLabel.Text = "Date Creation:";
             // 
             // birthDateLabel
             // 
             birthDateLabel.AutoSize = true;
-            birthDateLabel.Location = new System.Drawing.Point(250, 165);
+            birthDateLabel.Location = new System.Drawing.Point(167, 107);
+            birthDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             birthDateLabel.Name = "birthDateLabel";
-            birthDateLabel.Size = new System.Drawing.Size(85, 20);
+            birthDateLabel.Size = new System.Drawing.Size(57, 13);
             birthDateLabel.TabIndex = 53;
             birthDateLabel.Text = "Birth Date:";
             // 
             // scheduleLabel
             // 
             scheduleLabel.AutoSize = true;
-            scheduleLabel.Location = new System.Drawing.Point(699, 65);
+            scheduleLabel.Location = new System.Drawing.Point(466, 42);
+            scheduleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             scheduleLabel.Name = "scheduleLabel";
-            scheduleLabel.Size = new System.Drawing.Size(80, 20);
+            scheduleLabel.Size = new System.Drawing.Size(55, 13);
             scheduleLabel.TabIndex = 62;
             scheduleLabel.Text = "Schedule:";
             // 
@@ -237,9 +248,10 @@
             // 
             this.nameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Name", true));
             this.nameTextBox1.Enabled = false;
-            this.nameTextBox1.Location = new System.Drawing.Point(350, 65);
+            this.nameTextBox1.Location = new System.Drawing.Point(233, 42);
+            this.nameTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox1.Name = "nameTextBox1";
-            this.nameTextBox1.Size = new System.Drawing.Size(100, 26);
+            this.nameTextBox1.Size = new System.Drawing.Size(68, 20);
             this.nameTextBox1.TabIndex = 7;
             this.nameTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox1_KeyPress);
             // 
@@ -247,9 +259,10 @@
             // 
             this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Surname", true));
             this.surnameTextBox.Enabled = false;
-            this.surnameTextBox.Location = new System.Drawing.Point(350, 97);
+            this.surnameTextBox.Location = new System.Drawing.Point(233, 63);
+            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(100, 26);
+            this.surnameTextBox.Size = new System.Drawing.Size(68, 20);
             this.surnameTextBox.TabIndex = 9;
             this.surnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surnameTextBox_KeyPress);
             // 
@@ -257,9 +270,10 @@
             // 
             this.patronymicTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Patronymic", true));
             this.patronymicTextBox.Enabled = false;
-            this.patronymicTextBox.Location = new System.Drawing.Point(350, 129);
+            this.patronymicTextBox.Location = new System.Drawing.Point(233, 84);
+            this.patronymicTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.patronymicTextBox.Name = "patronymicTextBox";
-            this.patronymicTextBox.Size = new System.Drawing.Size(100, 26);
+            this.patronymicTextBox.Size = new System.Drawing.Size(68, 20);
             this.patronymicTextBox.TabIndex = 11;
             this.patronymicTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patronymicTextBox_KeyPress);
             // 
@@ -268,9 +282,10 @@
             this.photoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.photoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_ProfileBindingSource, "Photo", true));
             this.photoPictureBox.Enabled = false;
-            this.photoPictureBox.Location = new System.Drawing.Point(34, 32);
+            this.photoPictureBox.Location = new System.Drawing.Point(23, 21);
+            this.photoPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(176, 202);
+            this.photoPictureBox.Size = new System.Drawing.Size(118, 132);
             this.photoPictureBox.TabIndex = 13;
             this.photoPictureBox.TabStop = false;
             this.photoPictureBox.Click += new System.EventHandler(this.photoPictureBox_Click);
@@ -279,28 +294,31 @@
             // 
             this.fingerPrintTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "FingerPrint", true));
             this.fingerPrintTextBox.Enabled = false;
-            this.fingerPrintTextBox.Location = new System.Drawing.Point(345, 228);
+            this.fingerPrintTextBox.Location = new System.Drawing.Point(230, 148);
+            this.fingerPrintTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.fingerPrintTextBox.Name = "fingerPrintTextBox";
-            this.fingerPrintTextBox.Size = new System.Drawing.Size(100, 26);
+            this.fingerPrintTextBox.Size = new System.Drawing.Size(68, 20);
             this.fingerPrintTextBox.TabIndex = 19;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Password", true));
             this.passwordTextBox.Enabled = false;
-            this.passwordTextBox.Location = new System.Drawing.Point(787, 132);
+            this.passwordTextBox.Location = new System.Drawing.Point(523, 84);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(122, 26);
+            this.passwordTextBox.Size = new System.Drawing.Size(83, 20);
             this.passwordTextBox.TabIndex = 21;
             this.passwordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordTextBox_KeyPress);
             // 
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(34, 254);
+            this.button1.Location = new System.Drawing.Point(23, 165);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 31);
+            this.button1.Size = new System.Drawing.Size(117, 20);
             this.button1.TabIndex = 24;
             this.button1.Text = "Load";
             this.button1.UseVisualStyleBackColor = true;
@@ -309,9 +327,10 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(34, 301);
+            this.button2.Location = new System.Drawing.Point(23, 196);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 28);
+            this.button2.Size = new System.Drawing.Size(117, 22);
             this.button2.TabIndex = 25;
             this.button2.Text = "Make photo";
             this.button2.UseVisualStyleBackColor = true;
@@ -320,9 +339,10 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(276, 273);
+            this.button3.Location = new System.Drawing.Point(184, 177);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 30);
+            this.button3.Size = new System.Drawing.Size(103, 19);
             this.button3.TabIndex = 26;
             this.button3.Text = "Add FingerPrint";
             this.button3.UseVisualStyleBackColor = true;
@@ -330,9 +350,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(320, 28);
+            this.button4.Location = new System.Drawing.Point(213, 18);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(196, 33);
+            this.button4.Size = new System.Drawing.Size(131, 21);
             this.button4.TabIndex = 27;
             this.button4.Text = "Add Admin User";
             this.button4.UseVisualStyleBackColor = true;
@@ -341,9 +362,10 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(733, 273);
+            this.button5.Location = new System.Drawing.Point(489, 177);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 38);
+            this.button5.Size = new System.Drawing.Size(52, 25);
             this.button5.TabIndex = 28;
             this.button5.Text = "Save";
             this.button5.UseVisualStyleBackColor = true;
@@ -351,9 +373,10 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(488, 273);
+            this.button6.Location = new System.Drawing.Point(325, 177);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(196, 34);
+            this.button6.Size = new System.Drawing.Size(131, 22);
             this.button6.TabIndex = 29;
             this.button6.Text = "Remove this account";
             this.button6.UseVisualStyleBackColor = true;
@@ -361,10 +384,10 @@
             // 
             // button7
             // 
-            this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(276, 322);
+            this.button7.Location = new System.Drawing.Point(184, 209);
+            this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 34);
+            this.button7.Size = new System.Drawing.Size(99, 22);
             this.button7.TabIndex = 30;
             this.button7.Text = "Finish registration";
             this.button7.UseVisualStyleBackColor = true;
@@ -397,9 +420,10 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(848, 287);
+            this.checkBox2.Location = new System.Drawing.Point(565, 187);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(167, 24);
+            this.checkBox2.Size = new System.Drawing.Size(115, 17);
             this.checkBox2.TabIndex = 45;
             this.checkBox2.Text = "Show Admin Table";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -423,15 +447,14 @@
             // roleIDComboBox
             // 
             this.roleIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "RoleID", true));
-            this.roleIDComboBox.DataSource = this.tboRoleBindingSource2;
-            this.roleIDComboBox.DisplayMember = "ID";
             this.roleIDComboBox.Enabled = false;
             this.roleIDComboBox.FormattingEnabled = true;
-            this.roleIDComboBox.Location = new System.Drawing.Point(778, 162);
+            this.roleIDComboBox.Location = new System.Drawing.Point(519, 108);
+            this.roleIDComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.roleIDComboBox.Name = "roleIDComboBox";
-            this.roleIDComboBox.Size = new System.Drawing.Size(121, 28);
+            this.roleIDComboBox.Size = new System.Drawing.Size(82, 21);
             this.roleIDComboBox.TabIndex = 47;
-            this.roleIDComboBox.ValueMember = "Name";
+            this.roleIDComboBox.SelectedIndexChanged += new System.EventHandler(this.roleIDComboBox_SelectedIndexChanged);
             // 
             // tboRoleBindingSource2
             // 
@@ -447,9 +470,10 @@
             // 
             this.dateCreationDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tbo_ProfileBindingSource, "DateCreation", true));
             this.dateCreationDateTimePicker.Enabled = false;
-            this.dateCreationDateTimePicker.Location = new System.Drawing.Point(817, 210);
+            this.dateCreationDateTimePicker.Location = new System.Drawing.Point(545, 136);
+            this.dateCreationDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateCreationDateTimePicker.Name = "dateCreationDateTimePicker";
-            this.dateCreationDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.dateCreationDateTimePicker.Size = new System.Drawing.Size(135, 20);
             this.dateCreationDateTimePicker.TabIndex = 53;
             // 
             // tbo_ProfileDataGridView
@@ -469,10 +493,11 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.tbo_ProfileDataGridView.DataSource = this.tbo_ProfileBindingSource;
-            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(20, 381);
+            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(13, 248);
+            this.tbo_ProfileDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.tbo_ProfileDataGridView.Name = "tbo_ProfileDataGridView";
             this.tbo_ProfileDataGridView.RowTemplate.Height = 28;
-            this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1142, 322);
+            this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(761, 209);
             this.tbo_ProfileDataGridView.TabIndex = 53;
             // 
             // dataGridViewTextBoxColumn1
@@ -546,17 +571,19 @@
             // 
             this.birthDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tbo_ProfileBindingSource, "BirthDate", true));
             this.birthDateDateTimePicker.Enabled = false;
-            this.birthDateDateTimePicker.Location = new System.Drawing.Point(341, 161);
+            this.birthDateDateTimePicker.Location = new System.Drawing.Point(227, 105);
+            this.birthDateDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.birthDateDateTimePicker.Name = "birthDateDateTimePicker";
-            this.birthDateDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.birthDateDateTimePicker.Size = new System.Drawing.Size(135, 20);
             this.birthDateDateTimePicker.TabIndex = 54;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(925, 132);
+            this.checkBox1.Location = new System.Drawing.Point(617, 86);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(147, 24);
+            this.checkBox1.Size = new System.Drawing.Size(101, 17);
             this.checkBox1.TabIndex = 55;
             this.checkBox1.Text = "Show password";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -570,9 +597,10 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
-            this.pictureBox1.Location = new System.Drawing.Point(902, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(602, 111);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
@@ -582,9 +610,10 @@
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
-            this.pictureBox3.Location = new System.Drawing.Point(547, 161);
+            this.pictureBox3.Location = new System.Drawing.Point(365, 105);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox3.Size = new System.Drawing.Size(18, 16);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 58;
             this.pictureBox3.TabStop = false;
@@ -602,9 +631,10 @@
             "Fri",
             "Sat",
             "Sun"});
-            this.comboBox1.Location = new System.Drawing.Point(785, 92);
+            this.comboBox1.Location = new System.Drawing.Point(523, 60);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(57, 28);
+            this.comboBox1.Size = new System.Drawing.Size(39, 21);
             this.comboBox1.TabIndex = 59;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -620,17 +650,19 @@
             "Fri",
             "Sat",
             "Sun"});
-            this.comboBox2.Location = new System.Drawing.Point(848, 92);
+            this.comboBox2.Location = new System.Drawing.Point(565, 60);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(59, 28);
+            this.comboBox2.Size = new System.Drawing.Size(41, 21);
             this.comboBox2.TabIndex = 60;
             // 
             // button8
             // 
             this.button8.Enabled = false;
-            this.button8.Location = new System.Drawing.Point(923, 62);
+            this.button8.Location = new System.Drawing.Point(615, 40);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(46, 27);
+            this.button8.Size = new System.Drawing.Size(35, 22);
             this.button8.TabIndex = 61;
             this.button8.Text = "Add";
             this.button8.UseVisualStyleBackColor = true;
@@ -640,16 +672,22 @@
             // 
             this.scheduleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_ProfileBindingSource, "Schedule", true));
             this.scheduleTextBox.Enabled = false;
-            this.scheduleTextBox.Location = new System.Drawing.Point(785, 62);
+            this.scheduleTextBox.Location = new System.Drawing.Point(523, 40);
+            this.scheduleTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.scheduleTextBox.Name = "scheduleTextBox";
-            this.scheduleTextBox.Size = new System.Drawing.Size(122, 26);
+            this.scheduleTextBox.Size = new System.Drawing.Size(83, 20);
             this.scheduleTextBox.TabIndex = 63;
+            // 
+            // tboRoleBindingSource3
+            // 
+            this.tboRoleBindingSource3.DataMember = "tbo_Role";
+            this.tboRoleBindingSource3.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
             // ChangePasswordAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 715);
+            this.ClientSize = new System.Drawing.Size(783, 465);
             this.Controls.Add(scheduleLabel);
             this.Controls.Add(this.scheduleTextBox);
             this.Controls.Add(this.button8);
@@ -685,6 +723,8 @@
             this.Controls.Add(passwordLabel);
             this.Controls.Add(this.passwordTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "ChangePasswordAdmin";
             this.Text = "FingerPrintSystem::Registration Admin User";
             this.Load += new System.EventHandler(this.ChangePasswordAdmin_Load);
@@ -704,6 +744,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboRoleBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,5 +805,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox scheduleTextBox;
+        private System.Windows.Forms.BindingSource tboRoleBindingSource3;
     }
 }

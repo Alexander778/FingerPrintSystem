@@ -13,6 +13,7 @@ namespace Forms_FingerPrint
 {
     public partial class FirstEnter : Form
     {
+      
         public FirstEnter()
         {
             InitializeComponent();
@@ -68,6 +69,7 @@ namespace Forms_FingerPrint
                 MessageBox.Show("Invalid Login.Please Try Again!");
             }
 
+           
 
         }
 

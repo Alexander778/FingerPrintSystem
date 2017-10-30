@@ -42,7 +42,11 @@ namespace Forms_FingerPrint
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
 
-            
+            this.roleIDComboBox.DisplayMember = "ID";
+            this.roleIDComboBox.ValueMember = "ID"; //Field in the datatable which you want to be the value of the combobox
+            this.roleIDComboBox.DataSource = _FINGERPRINTDB_MDFDataSet.Tables["tbo_Role"];
+
+
 
 
         }
@@ -238,6 +242,16 @@ namespace Forms_FingerPrint
                 button4.Enabled = true;
                 dateCreationDateTimePicker.Value = DateTime.Today;
                 birthDateDateTimePicker.Value = DateTime.Today;
+                button4.Enabled = true;
+                nameTextBox1.BackColor = Color.White;
+                surnameTextBox.BackColor = Color.White;
+                patronymicTextBox.BackColor = Color.White;
+                fingerPrintTextBox.BackColor = Color.White;
+                passwordTextBox.BackColor = Color.White;
+                scheduleTextBox.BackColor = Color.White;
+                pictureBox1.Visible = false;
+                pictureBox3.Visible = false;
+               
             }
         }
 
@@ -405,6 +419,11 @@ namespace Forms_FingerPrint
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roleIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

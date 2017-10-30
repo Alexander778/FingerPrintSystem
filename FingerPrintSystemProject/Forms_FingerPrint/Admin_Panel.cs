@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Forms_FingerPrint
 {
@@ -27,6 +28,10 @@ namespace Forms_FingerPrint
 
         private void Admin_Panel_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet1.tbo_Company". При необходимости она может быть перемещена или удалена.
+            this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet1.tbo_Company);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Department". При необходимости она может быть перемещена или удалена.
+            this.tbo_DepartmentTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Department);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Company". При необходимости она может быть перемещена или удалена.
             this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Profile". При необходимости она может быть перемещена или удалена.
@@ -39,11 +44,70 @@ namespace Forms_FingerPrint
 
             
 
-            
+
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form_Create_Company f = new Form_Create_Company();
+            f.Show();
+            
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tbo_CompanyTableAdapter.FillByExample(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fillByExampleToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tbo_CompanyTableAdapter.FillByExample(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            //nameComboBox.SelectedValue = "ID";
+            //nameComboBox.ValueMember = "Name";
+            //nameComboBox.DataSource = _FINGERPRINTDB_MDFDataSet.Tables["tbo_Company"];
+
 
         }
     }
