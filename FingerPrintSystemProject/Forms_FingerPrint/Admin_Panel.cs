@@ -101,13 +101,24 @@ namespace Forms_FingerPrint
 
         }
 
+       
+
+       
+
+        private void nameComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
-            //nameComboBox.SelectedValue = "ID";
-            //nameComboBox.ValueMember = "Name";
-            //nameComboBox.DataSource = _FINGERPRINTDB_MDFDataSet.Tables["tbo_Company"];
 
+
+
+            nameComboBox.BeginUpdate();
+            tbo_CompanyTableAdapter.Fill(_FINGERPRINTDB_MDFDataSet.tbo_Company);
+            nameComboBox.DataSource = tbo_CompanyBindingSource;
+            nameComboBox.EndUpdate();
 
         }
     }
