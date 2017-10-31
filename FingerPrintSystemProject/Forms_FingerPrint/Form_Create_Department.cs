@@ -47,10 +47,11 @@ namespace Forms_FingerPrint
             nameTextBox.Enabled = true;
             companyIDComboBox.Enabled = true;
             regimeTextBox.Enabled = true;
-            button2.Enabled = true;
             button3.Enabled = true;
             button4.Enabled = true;
             checkBox1.Enabled = true;
+            button1.Enabled = false;
+            
 
 
             tbo_DepartmentBindingSource.AddNew();
@@ -64,8 +65,47 @@ namespace Forms_FingerPrint
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tbo_DepartmentBindingSource.EndEdit();
-            tbo_DepartmentTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            try
+            {
+                tbo_DepartmentBindingSource.EndEdit();
+                tbo_DepartmentTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+                nameTextBox.BackColor = Color.White;
+                regimeTextBox.BackColor = Color.White;
+                pictureBox1.Visible = false;
+            }
+            catch (System.Data.NoNullAllowedException)
+            {
+                MessageBox.Show("You did not write all information about department",
+                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                TextBox[] txtboxes = new TextBox[2];
+                txtboxes[0] = nameTextBox;
+                txtboxes[1] = regimeTextBox;
+                
+                for (int i = 0; i <= txtboxes.Length-1; i++)
+                {
+                    if (txtboxes[i].Text == "")
+                    {
+                        txtboxes[i].BackColor = Color.LightPink;
+                    }
+                    else
+                    {
+                        txtboxes[i].BackColor = Color.White;
+                    } 
+                     
+
+                }
+                if (companyIDComboBox.Text != "")
+                {
+                    pictureBox1.Visible = false;
+                }
+                else
+                {
+                    pictureBox1.Visible = true;
+
+                }
+
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

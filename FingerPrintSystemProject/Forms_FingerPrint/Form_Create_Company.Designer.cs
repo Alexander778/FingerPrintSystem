@@ -37,7 +37,6 @@
             this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
             this.tbo_DepartmentTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter();
             this.b_LoadLogo = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.b_CreateCompany = new System.Windows.Forms.Button();
             this.tbo_DepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,6 +55,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.сompanyLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             nameLabel = new System.Windows.Forms.Label();
             сompanyLogoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).BeginInit();
@@ -64,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -117,7 +118,7 @@
             // b_LoadLogo
             // 
             this.b_LoadLogo.Enabled = false;
-            this.b_LoadLogo.Location = new System.Drawing.Point(203, 168);
+            this.b_LoadLogo.Location = new System.Drawing.Point(226, 168);
             this.b_LoadLogo.Margin = new System.Windows.Forms.Padding(2);
             this.b_LoadLogo.Name = "b_LoadLogo";
             this.b_LoadLogo.Size = new System.Drawing.Size(51, 23);
@@ -125,16 +126,6 @@
             this.b_LoadLogo.Text = "Load";
             this.b_LoadLogo.UseVisualStyleBackColor = true;
             this.b_LoadLogo.Click += new System.EventHandler(this.b_LoadLogo_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 203);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "*Logo must be PNG 100x100";
             // 
             // b_CreateCompany
             // 
@@ -154,6 +145,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Enabled = false;
             this.label1.Location = new System.Drawing.Point(19, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -165,6 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Location = new System.Drawing.Point(17, 259);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -174,6 +167,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(20, 304);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
@@ -185,6 +179,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(20, 218);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -196,6 +191,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(203, 127);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -270,6 +266,7 @@
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
+            this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(121, 101);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
@@ -279,6 +276,7 @@
             // сompanyLogoPictureBox
             // 
             this.сompanyLogoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_CompanyBindingSource, "СompanyLogo", true));
+            this.сompanyLogoPictureBox.Enabled = false;
             this.сompanyLogoPictureBox.Location = new System.Drawing.Point(121, 131);
             this.сompanyLogoPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.сompanyLogoPictureBox.Name = "сompanyLogoPictureBox";
@@ -287,11 +285,26 @@
             this.сompanyLogoPictureBox.TabIndex = 20;
             this.сompanyLogoPictureBox.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
+            this.pictureBox1.Location = new System.Drawing.Point(192, 174);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Form_Create_Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 391);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(сompanyLogoLabel);
@@ -304,7 +317,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.b_CreateCompany);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.b_LoadLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -318,6 +330,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +341,6 @@
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter tbo_CompanyTableAdapter;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button b_LoadLogo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button b_CreateCompany;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter;
         private System.Windows.Forms.BindingSource tbo_DepartmentBindingSource;
@@ -350,5 +362,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.PictureBox сompanyLogoPictureBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

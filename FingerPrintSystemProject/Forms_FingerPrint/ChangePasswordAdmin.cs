@@ -136,7 +136,10 @@ namespace Forms_FingerPrint
                     {
                         txtboxes[i].BackColor = Color.LightPink;
                     }
-                   
+                    else
+                    {
+                        txtboxes[i].BackColor = Color.White;
+                    }
                 }
                 
 

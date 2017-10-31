@@ -47,19 +47,18 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.tboCompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet1 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.regimeTextBox = new System.Windows.Forms.TextBox();
             this.companyIDComboBox = new System.Windows.Forms.ComboBox();
+            this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.tboCompanyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             regimeLabel = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -70,34 +69,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // regimeLabel
             // 
             regimeLabel.AutoSize = true;
-            regimeLabel.Location = new System.Drawing.Point(26, 204);
+            regimeLabel.Location = new System.Drawing.Point(17, 133);
+            regimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             regimeLabel.Name = "regimeLabel";
-            regimeLabel.Size = new System.Drawing.Size(68, 20);
+            regimeLabel.Size = new System.Drawing.Size(46, 13);
             regimeLabel.TabIndex = 17;
             regimeLabel.Text = "Regime:";
             // 
             // companyIDLabel
             // 
             companyIDLabel.AutoSize = true;
-            companyIDLabel.Location = new System.Drawing.Point(26, 170);
+            companyIDLabel.Location = new System.Drawing.Point(17, 110);
+            companyIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             companyIDLabel.Name = "companyIDLabel";
-            companyIDLabel.Size = new System.Drawing.Size(80, 20);
+            companyIDLabel.Size = new System.Drawing.Size(54, 13);
             companyIDLabel.TabIndex = 15;
             companyIDLabel.Text = "Company:";
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(26, 138);
+            nameLabel.Location = new System.Drawing.Point(17, 90);
+            nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(55, 20);
+            nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 13;
             nameLabel.Text = "Name:";
             // 
@@ -153,10 +156,11 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.tbo_DepartmentDataGridView.DataSource = this.tbo_DepartmentBindingSource;
-            this.tbo_DepartmentDataGridView.Location = new System.Drawing.Point(340, 28);
+            this.tbo_DepartmentDataGridView.Location = new System.Drawing.Point(227, 18);
+            this.tbo_DepartmentDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbo_DepartmentDataGridView.Name = "tbo_DepartmentDataGridView";
             this.tbo_DepartmentDataGridView.RowTemplate.Height = 28;
-            this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(448, 443);
+            this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(299, 288);
             this.tbo_DepartmentDataGridView.TabIndex = 8;
             this.tbo_DepartmentDataGridView.Visible = false;
             // 
@@ -187,9 +191,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 28);
+            this.button1.Location = new System.Drawing.Point(20, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 35);
+            this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "Add Department";
             this.button1.UseVisualStyleBackColor = true;
@@ -198,22 +203,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 95);
+            this.label1.Location = new System.Drawing.Point(17, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 20);
+            this.label1.Size = new System.Drawing.Size(204, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Please write information about department";
             this.label1.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(178, 411);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 35);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Next Step";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tboCompanyBindingSource
             // 
@@ -231,9 +227,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(30, 283);
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(20, 184);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 35);
+            this.button3.Size = new System.Drawing.Size(50, 23);
             this.button3.TabIndex = 19;
             this.button3.Text = "Save";
             this.button3.UseVisualStyleBackColor = true;
@@ -241,9 +239,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(178, 283);
+            this.button4.Location = new System.Drawing.Point(119, 184);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(76, 35);
+            this.button4.Size = new System.Drawing.Size(51, 23);
             this.button4.TabIndex = 20;
             this.button4.Text = "Remove";
             this.button4.UseVisualStyleBackColor = true;
@@ -253,52 +252,52 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(85, 343);
+            this.checkBox1.Location = new System.Drawing.Point(57, 223);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 24);
+            this.checkBox1.Size = new System.Drawing.Size(81, 17);
             this.checkBox1.TabIndex = 21;
             this.checkBox1.Text = "Show result";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(24, 411);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(81, 35);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // regimeTextBox
             // 
             this.regimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Regime", true));
             this.regimeTextBox.Enabled = false;
-            this.regimeTextBox.Location = new System.Drawing.Point(133, 201);
+            this.regimeTextBox.Location = new System.Drawing.Point(89, 131);
+            this.regimeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.regimeTextBox.Name = "regimeTextBox";
-            this.regimeTextBox.Size = new System.Drawing.Size(121, 26);
+            this.regimeTextBox.Size = new System.Drawing.Size(82, 20);
             this.regimeTextBox.TabIndex = 18;
             // 
             // companyIDComboBox
             // 
             this.companyIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.companyIDComboBox.DataSource = this.tboCompanyBindingSource2;
+            this.companyIDComboBox.DataSource = this.tboCompanyBindingSource;
             this.companyIDComboBox.DisplayMember = "ID";
             this.companyIDComboBox.Enabled = false;
             this.companyIDComboBox.FormattingEnabled = true;
-            this.companyIDComboBox.Location = new System.Drawing.Point(133, 167);
+            this.companyIDComboBox.Location = new System.Drawing.Point(89, 109);
+            this.companyIDComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.companyIDComboBox.Name = "companyIDComboBox";
-            this.companyIDComboBox.Size = new System.Drawing.Size(121, 28);
+            this.companyIDComboBox.Size = new System.Drawing.Size(82, 21);
             this.companyIDComboBox.TabIndex = 16;
+            this.companyIDComboBox.ValueMember = "Name";
+            // 
+            // tboCompanyBindingSource2
+            // 
+            this.tboCompanyBindingSource2.DataMember = "tbo_Company";
+            this.tboCompanyBindingSource2.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
             // nameTextBox
             // 
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
             this.nameTextBox.Enabled = false;
-            this.nameTextBox.Location = new System.Drawing.Point(133, 135);
+            this.nameTextBox.Location = new System.Drawing.Point(89, 88);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(121, 26);
+            this.nameTextBox.Size = new System.Drawing.Size(82, 20);
             this.nameTextBox.TabIndex = 14;
             // 
             // tboCompanyBindingSource1
@@ -306,17 +305,25 @@
             this.tboCompanyBindingSource1.DataMember = "tbo_Company";
             this.tboCompanyBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // tboCompanyBindingSource2
+            // pictureBox1
             // 
-            this.tboCompanyBindingSource2.DataMember = "tbo_Company";
-            this.tboCompanyBindingSource2.DataSource = this._FINGERPRINTDB_MDFDataSet;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::Forms_FingerPrint.Properties.Resources.Восклицательный_знак;
+            this.pictureBox1.Location = new System.Drawing.Point(175, 114);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // Form_Create_Department
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 517);
-            this.Controls.Add(this.button5);
+            this.ClientSize = new System.Drawing.Size(541, 336);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -326,11 +333,11 @@
             this.Controls.Add(this.companyIDComboBox);
             this.Controls.Add(regimeLabel);
             this.Controls.Add(this.regimeTextBox);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbo_DepartmentDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Create_Department";
             this.Text = "FingerPrintSystem::Add Departments";
             this.Load += new System.EventHandler(this.Form_Create_Department_Load);
@@ -341,8 +348,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,18 +373,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet1;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter tbo_CompanyTableAdapter;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox regimeTextBox;
         private System.Windows.Forms.ComboBox companyIDComboBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource1;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

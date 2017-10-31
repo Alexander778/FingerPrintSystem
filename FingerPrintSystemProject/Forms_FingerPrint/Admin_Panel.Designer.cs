@@ -137,6 +137,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Create departments";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -244,6 +245,7 @@
             this.nameComboBox.TabIndex = 14;
             this.nameComboBox.ValueMember = "ID";
             this.nameComboBox.SelectedIndexChanged += new System.EventHandler(this.nameComboBox_SelectedIndexChanged_1);
+            this.nameComboBox.SelectedValueChanged += new System.EventHandler(this.nameComboBox_SelectedValueChanged);
             // 
             // tboCompanyBindingSource2
             // 

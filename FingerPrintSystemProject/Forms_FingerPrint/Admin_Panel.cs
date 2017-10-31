@@ -107,19 +107,36 @@ namespace Forms_FingerPrint
 
         private void nameComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
 
-
-
             nameComboBox.BeginUpdate();
-            tbo_CompanyTableAdapter.Fill(_FINGERPRINTDB_MDFDataSet.tbo_Company);
+            tbo_CompanyTableAdapter.FillByExample(_FINGERPRINTDB_MDFDataSet.tbo_Company);
             nameComboBox.DataSource = tbo_CompanyBindingSource;
             nameComboBox.EndUpdate();
 
+
+            //nameComboBox.BeginUpdate();
+            //tbo_CompanyTableAdapter.Fill(_FINGERPRINTDB_MDFDataSet.tbo_Company);
+            //nameComboBox.DataSource = tbo_CompanyBindingSource;
+            //nameComboBox.EndUpdate();
+
+        }
+
+        private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            tbo_DepartmentTableAdapter.FillBy(_FINGERPRINTDB_MDFDataSet.tbo_Department);
+            nameComboBox1.DataSource = tbo_CompanyBindingSource;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form_Create_Department f1 = new Form_Create_Department();
+            f1.Show();
         }
     }
 }

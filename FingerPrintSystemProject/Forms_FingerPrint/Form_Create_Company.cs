@@ -54,7 +54,7 @@ namespace Forms_FingerPrint
             b_LoadLogo.Enabled = true;
             button2.Enabled = true;
             checkBox1.Enabled = true;
-            button1.Enabled = true;
+            сompanyLogoPictureBox.Enabled = true;
                 tbo_CompanyBindingSource.AddNew();
 
         }
@@ -74,8 +74,57 @@ namespace Forms_FingerPrint
 
         private void button2_Click(object sender, EventArgs e)
         {
-			tbo_CompanyBindingSource.EndEdit();
-            tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+            try
+            {
+
+                tbo_CompanyBindingSource.EndEdit();
+                tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+                nameTextBox.BackColor = Color.White;
+                pictureBox1.Visible = false;
+
+                nameTextBox.Enabled = false;
+                button3.Enabled = false;
+                label1.Visible = false;
+                b_LoadLogo.Enabled = false;
+                button2.Enabled = false;
+                checkBox1.Enabled = false;
+                сompanyLogoPictureBox.Enabled = false;
+                button1.Enabled = true;
+
+            }
+            catch (System.Data.NoNullAllowedException)
+            {
+                MessageBox.Show("You did not write all information about company",
+                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (nameTextBox.Text == "")
+                {
+                    nameTextBox.BackColor = Color.LightPink;
+                }
+                else
+                {
+                    nameTextBox.BackColor = Color.White;
+                }
+
+            }
+           
+
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox.Show("Please add company's logo",
+                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                pictureBox1.Visible = true;
+                if (nameTextBox.Text == "")
+                {
+                    nameTextBox.BackColor = Color.LightPink;
+                }
+                else
+                {
+                    nameTextBox.BackColor = Color.White;
+                }
+
+            }
+
 		}
 
         private void button3_Click(object sender, EventArgs e)
@@ -130,6 +179,11 @@ namespace Forms_FingerPrint
         {
 
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
