@@ -35,10 +35,6 @@
             this.tbo_DepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbo_RoleTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter();
-            this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
-            this.tbo_DepartmentTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter();
-            this.tbo_ProfileTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter();
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_DepartmentDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tboCompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet1 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
-            this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -59,6 +54,11 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.tboCompanyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbo_DepartmentTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter();
+            this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
+            this.tbo_RoleTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter();
+            this.tbo_ProfileTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter();
+            this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             regimeLabel = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -119,28 +119,6 @@
             this.tbo_RoleBindingSource.DataMember = "tbo_Role";
             this.tbo_RoleBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // tbo_RoleTableAdapter
-            // 
-            this.tbo_RoleTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.tbo_CompanyTableAdapter = null;
-            this.tableAdapterManager.tbo_DepartmentTableAdapter = this.tbo_DepartmentTableAdapter;
-            this.tableAdapterManager.tbo_LinkDepartmentUserTableAdapter = null;
-            this.tableAdapterManager.tbo_ProfileTableAdapter = this.tbo_ProfileTableAdapter;
-            this.tableAdapterManager.tbo_RoleTableAdapter = this.tbo_RoleTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // tbo_DepartmentTableAdapter
-            // 
-            this.tbo_DepartmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbo_ProfileTableAdapter
-            // 
-            this.tbo_ProfileTableAdapter.ClearBeforeFill = true;
-            // 
             // tbo_ProfileBindingSource
             // 
             this.tbo_ProfileBindingSource.DataMember = "tbo_Profile";
@@ -157,7 +135,7 @@
             this.dataGridViewTextBoxColumn4});
             this.tbo_DepartmentDataGridView.DataSource = this.tbo_DepartmentBindingSource;
             this.tbo_DepartmentDataGridView.Location = new System.Drawing.Point(227, 18);
-            this.tbo_DepartmentDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbo_DepartmentDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.tbo_DepartmentDataGridView.Name = "tbo_DepartmentDataGridView";
             this.tbo_DepartmentDataGridView.RowTemplate.Height = 28;
             this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(299, 288);
@@ -192,7 +170,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(20, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 23);
             this.button1.TabIndex = 9;
@@ -221,15 +199,11 @@
             this._FINGERPRINTDB_MDFDataSet1.DataSetName = "_FINGERPRINTDB_MDFDataSet";
             this._FINGERPRINTDB_MDFDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbo_CompanyTableAdapter
-            // 
-            this.tbo_CompanyTableAdapter.ClearBeforeFill = true;
-            // 
             // button3
             // 
             this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(20, 184);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 23);
             this.button3.TabIndex = 19;
@@ -240,7 +214,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(119, 184);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(51, 23);
             this.button4.TabIndex = 20;
@@ -253,7 +227,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(57, 223);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(81, 17);
             this.checkBox1.TabIndex = 21;
@@ -266,7 +240,7 @@
             this.regimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Regime", true));
             this.regimeTextBox.Enabled = false;
             this.regimeTextBox.Location = new System.Drawing.Point(89, 131);
-            this.regimeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.regimeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.regimeTextBox.Name = "regimeTextBox";
             this.regimeTextBox.Size = new System.Drawing.Size(82, 20);
             this.regimeTextBox.TabIndex = 18;
@@ -279,7 +253,7 @@
             this.companyIDComboBox.Enabled = false;
             this.companyIDComboBox.FormattingEnabled = true;
             this.companyIDComboBox.Location = new System.Drawing.Point(89, 109);
-            this.companyIDComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.companyIDComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.companyIDComboBox.Name = "companyIDComboBox";
             this.companyIDComboBox.Size = new System.Drawing.Size(82, 21);
             this.companyIDComboBox.TabIndex = 16;
@@ -295,7 +269,7 @@
             this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
             this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(89, 88);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(82, 20);
             this.nameTextBox.TabIndex = 14;
@@ -318,11 +292,37 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
+            // tbo_DepartmentTableAdapter
+            // 
+            this.tbo_DepartmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tbo_CompanyTableAdapter = this.tbo_CompanyTableAdapter;
+            this.tableAdapterManager.tbo_DepartmentTableAdapter = this.tbo_DepartmentTableAdapter;
+            this.tableAdapterManager.tbo_LinkDepartmentUserTableAdapter = null;
+            this.tableAdapterManager.tbo_ProfileTableAdapter = this.tbo_ProfileTableAdapter;
+            this.tableAdapterManager.tbo_RoleTableAdapter = this.tbo_RoleTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // tbo_RoleTableAdapter
+            // 
+            this.tbo_RoleTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbo_ProfileTableAdapter
+            // 
+            this.tbo_ProfileTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbo_CompanyTableAdapter
+            // 
+            this.tbo_CompanyTableAdapter.ClearBeforeFill = true;
+            // 
             // Form_Create_Department
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 336);
+            this.ClientSize = new System.Drawing.Size(546, 319);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
@@ -337,7 +337,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbo_DepartmentDataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Create_Department";
             this.Text = "FingerPrintSystem::Add Departments";
             this.Load += new System.EventHandler(this.Form_Create_Department_Load);
@@ -360,11 +360,7 @@
 
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet;
         private System.Windows.Forms.BindingSource tbo_RoleBindingSource;
-        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter tbo_RoleTableAdapter;
-        private _FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter tbo_ProfileTableAdapter;
         private System.Windows.Forms.BindingSource tbo_ProfileBindingSource;
-        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter;
         private System.Windows.Forms.BindingSource tbo_DepartmentBindingSource;
         private System.Windows.Forms.DataGridView tbo_DepartmentDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -375,7 +371,6 @@
         private System.Windows.Forms.Label label1;
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet1;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource;
-        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter tbo_CompanyTableAdapter;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -385,5 +380,10 @@
         private System.Windows.Forms.BindingSource tboCompanyBindingSource1;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter;
+        private _FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter tbo_RoleTableAdapter;
+        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_ProfileTableAdapter tbo_ProfileTableAdapter;
+        private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter tbo_CompanyTableAdapter;
     }
 }

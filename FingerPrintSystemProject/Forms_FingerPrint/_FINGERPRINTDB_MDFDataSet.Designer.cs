@@ -26,19 +26,19 @@ namespace Forms_FingerPrint {
         
         private tbo_CompanyDataTable tabletbo_Company;
         
-        private tbo_DepartmentDataTable tabletbo_Department;
-        
         private tbo_LinkDepartmentUserDataTable tabletbo_LinkDepartmentUser;
+        
+        private tbo_DepartmentDataTable tabletbo_Department;
         
         private tbo_ProfileDataTable tabletbo_Profile;
         
         private tbo_RoleDataTable tabletbo_Role;
         
-        private global::System.Data.DataRelation relationFK_tbo_Department_tbo_Company;
-        
         private global::System.Data.DataRelation relationFK_tbo_LinkDepartmentUser_tbo_Department;
         
         private global::System.Data.DataRelation relationFK_tbo_LinkDepartmentUser_tbo_Profile;
+        
+        private global::System.Data.DataRelation relationFK_tbo_Department_tbo_Company;
         
         private global::System.Data.DataRelation relationFK_tbo_Profile_tbo_Role;
         
@@ -73,11 +73,11 @@ namespace Forms_FingerPrint {
                 if ((ds.Tables["tbo_Company"] != null)) {
                     base.Tables.Add(new tbo_CompanyDataTable(ds.Tables["tbo_Company"]));
                 }
-                if ((ds.Tables["tbo_Department"] != null)) {
-                    base.Tables.Add(new tbo_DepartmentDataTable(ds.Tables["tbo_Department"]));
-                }
                 if ((ds.Tables["tbo_LinkDepartmentUser"] != null)) {
                     base.Tables.Add(new tbo_LinkDepartmentUserDataTable(ds.Tables["tbo_LinkDepartmentUser"]));
+                }
+                if ((ds.Tables["tbo_Department"] != null)) {
+                    base.Tables.Add(new tbo_DepartmentDataTable(ds.Tables["tbo_Department"]));
                 }
                 if ((ds.Tables["tbo_Profile"] != null)) {
                     base.Tables.Add(new tbo_ProfileDataTable(ds.Tables["tbo_Profile"]));
@@ -117,9 +117,9 @@ namespace Forms_FingerPrint {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tbo_DepartmentDataTable tbo_Department {
+        public tbo_LinkDepartmentUserDataTable tbo_LinkDepartmentUser {
             get {
-                return this.tabletbo_Department;
+                return this.tabletbo_LinkDepartmentUser;
             }
         }
         
@@ -127,9 +127,9 @@ namespace Forms_FingerPrint {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tbo_LinkDepartmentUserDataTable tbo_LinkDepartmentUser {
+        public tbo_DepartmentDataTable tbo_Department {
             get {
-                return this.tabletbo_LinkDepartmentUser;
+                return this.tabletbo_Department;
             }
         }
         
@@ -223,11 +223,11 @@ namespace Forms_FingerPrint {
                 if ((ds.Tables["tbo_Company"] != null)) {
                     base.Tables.Add(new tbo_CompanyDataTable(ds.Tables["tbo_Company"]));
                 }
-                if ((ds.Tables["tbo_Department"] != null)) {
-                    base.Tables.Add(new tbo_DepartmentDataTable(ds.Tables["tbo_Department"]));
-                }
                 if ((ds.Tables["tbo_LinkDepartmentUser"] != null)) {
                     base.Tables.Add(new tbo_LinkDepartmentUserDataTable(ds.Tables["tbo_LinkDepartmentUser"]));
+                }
+                if ((ds.Tables["tbo_Department"] != null)) {
+                    base.Tables.Add(new tbo_DepartmentDataTable(ds.Tables["tbo_Department"]));
                 }
                 if ((ds.Tables["tbo_Profile"] != null)) {
                     base.Tables.Add(new tbo_ProfileDataTable(ds.Tables["tbo_Profile"]));
@@ -274,16 +274,16 @@ namespace Forms_FingerPrint {
                     this.tabletbo_Company.InitVars();
                 }
             }
-            this.tabletbo_Department = ((tbo_DepartmentDataTable)(base.Tables["tbo_Department"]));
-            if ((initTable == true)) {
-                if ((this.tabletbo_Department != null)) {
-                    this.tabletbo_Department.InitVars();
-                }
-            }
             this.tabletbo_LinkDepartmentUser = ((tbo_LinkDepartmentUserDataTable)(base.Tables["tbo_LinkDepartmentUser"]));
             if ((initTable == true)) {
                 if ((this.tabletbo_LinkDepartmentUser != null)) {
                     this.tabletbo_LinkDepartmentUser.InitVars();
+                }
+            }
+            this.tabletbo_Department = ((tbo_DepartmentDataTable)(base.Tables["tbo_Department"]));
+            if ((initTable == true)) {
+                if ((this.tabletbo_Department != null)) {
+                    this.tabletbo_Department.InitVars();
                 }
             }
             this.tabletbo_Profile = ((tbo_ProfileDataTable)(base.Tables["tbo_Profile"]));
@@ -298,9 +298,9 @@ namespace Forms_FingerPrint {
                     this.tabletbo_Role.InitVars();
                 }
             }
-            this.relationFK_tbo_Department_tbo_Company = this.Relations["FK_tbo_Department_tbo_Company"];
             this.relationFK_tbo_LinkDepartmentUser_tbo_Department = this.Relations["FK_tbo_LinkDepartmentUser_tbo_Department"];
             this.relationFK_tbo_LinkDepartmentUser_tbo_Profile = this.Relations["FK_tbo_LinkDepartmentUser_tbo_Profile"];
+            this.relationFK_tbo_Department_tbo_Company = this.Relations["FK_tbo_Department_tbo_Company"];
             this.relationFK_tbo_Profile_tbo_Role = this.Relations["FK_tbo_Profile_tbo_Role"];
         }
         
@@ -314,18 +314,14 @@ namespace Forms_FingerPrint {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabletbo_Company = new tbo_CompanyDataTable();
             base.Tables.Add(this.tabletbo_Company);
-            this.tabletbo_Department = new tbo_DepartmentDataTable();
-            base.Tables.Add(this.tabletbo_Department);
             this.tabletbo_LinkDepartmentUser = new tbo_LinkDepartmentUserDataTable();
             base.Tables.Add(this.tabletbo_LinkDepartmentUser);
+            this.tabletbo_Department = new tbo_DepartmentDataTable();
+            base.Tables.Add(this.tabletbo_Department);
             this.tabletbo_Profile = new tbo_ProfileDataTable();
             base.Tables.Add(this.tabletbo_Profile);
             this.tabletbo_Role = new tbo_RoleDataTable();
             base.Tables.Add(this.tabletbo_Role);
-            this.relationFK_tbo_Department_tbo_Company = new global::System.Data.DataRelation("FK_tbo_Department_tbo_Company", new global::System.Data.DataColumn[] {
-                        this.tabletbo_Company.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletbo_Department.CompanyIDColumn}, false);
-            this.Relations.Add(this.relationFK_tbo_Department_tbo_Company);
             this.relationFK_tbo_LinkDepartmentUser_tbo_Department = new global::System.Data.DataRelation("FK_tbo_LinkDepartmentUser_tbo_Department", new global::System.Data.DataColumn[] {
                         this.tabletbo_Department.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbo_LinkDepartmentUser.DepartmentIDColumn}, false);
@@ -334,6 +330,10 @@ namespace Forms_FingerPrint {
                         this.tabletbo_Profile.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbo_LinkDepartmentUser.UserIDColumn}, false);
             this.Relations.Add(this.relationFK_tbo_LinkDepartmentUser_tbo_Profile);
+            this.relationFK_tbo_Department_tbo_Company = new global::System.Data.DataRelation("FK_tbo_Department_tbo_Company", new global::System.Data.DataColumn[] {
+                        this.tabletbo_Company.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbo_Department.CompanyIDColumn}, false);
+            this.Relations.Add(this.relationFK_tbo_Department_tbo_Company);
             this.relationFK_tbo_Profile_tbo_Role = new global::System.Data.DataRelation("FK_tbo_Profile_tbo_Role", new global::System.Data.DataColumn[] {
                         this.tabletbo_Role.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbo_Profile.RoleIDColumn}, false);
@@ -348,13 +348,13 @@ namespace Forms_FingerPrint {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetbo_Department() {
+        private bool ShouldSerializetbo_LinkDepartmentUser() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetbo_LinkDepartmentUser() {
+        private bool ShouldSerializetbo_Department() {
             return false;
         }
         
@@ -429,10 +429,10 @@ namespace Forms_FingerPrint {
         public delegate void tbo_CompanyRowChangeEventHandler(object sender, tbo_CompanyRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tbo_DepartmentRowChangeEventHandler(object sender, tbo_DepartmentRowChangeEvent e);
+        public delegate void tbo_LinkDepartmentUserRowChangeEventHandler(object sender, tbo_LinkDepartmentUserRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tbo_LinkDepartmentUserRowChangeEventHandler(object sender, tbo_LinkDepartmentUserRowChangeEvent e);
+        public delegate void tbo_DepartmentRowChangeEventHandler(object sender, tbo_DepartmentRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tbo_ProfileRowChangeEventHandler(object sender, tbo_ProfileRowChangeEvent e);
@@ -606,6 +606,7 @@ namespace Forms_FingerPrint {
                 this.columnID.Unique = true;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 50;
+                this.columnСompanyLogo.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -692,6 +693,302 @@ namespace Forms_FingerPrint {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "tbo_CompanyDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tbo_LinkDepartmentUserDataTable : global::System.Data.TypedTableBase<tbo_LinkDepartmentUserRow> {
+            
+            private global::System.Data.DataColumn columnDepartmentID;
+            
+            private global::System.Data.DataColumn columnUserID;
+            
+            private global::System.Data.DataColumn columnAccess;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_LinkDepartmentUserDataTable() {
+                this.TableName = "tbo_LinkDepartmentUser";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tbo_LinkDepartmentUserDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tbo_LinkDepartmentUserDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DepartmentIDColumn {
+                get {
+                    return this.columnDepartmentID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UserIDColumn {
+                get {
+                    return this.columnUserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AccessColumn {
+                get {
+                    return this.columnAccess;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_LinkDepartmentUserRow this[int index] {
+                get {
+                    return ((tbo_LinkDepartmentUserRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addtbo_LinkDepartmentUserRow(tbo_LinkDepartmentUserRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_LinkDepartmentUserRow Addtbo_LinkDepartmentUserRow(tbo_DepartmentRow parenttbo_DepartmentRowByFK_tbo_LinkDepartmentUser_tbo_Department, tbo_ProfileRow parenttbo_ProfileRowByFK_tbo_LinkDepartmentUser_tbo_Profile, string Access) {
+                tbo_LinkDepartmentUserRow rowtbo_LinkDepartmentUserRow = ((tbo_LinkDepartmentUserRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        Access};
+                if ((parenttbo_DepartmentRowByFK_tbo_LinkDepartmentUser_tbo_Department != null)) {
+                    columnValuesArray[0] = parenttbo_DepartmentRowByFK_tbo_LinkDepartmentUser_tbo_Department[0];
+                }
+                if ((parenttbo_ProfileRowByFK_tbo_LinkDepartmentUser_tbo_Profile != null)) {
+                    columnValuesArray[1] = parenttbo_ProfileRowByFK_tbo_LinkDepartmentUser_tbo_Profile[0];
+                }
+                rowtbo_LinkDepartmentUserRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtbo_LinkDepartmentUserRow);
+                return rowtbo_LinkDepartmentUserRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_LinkDepartmentUserRow FindByDepartmentIDUserID(int DepartmentID, int UserID) {
+                return ((tbo_LinkDepartmentUserRow)(this.Rows.Find(new object[] {
+                            DepartmentID,
+                            UserID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tbo_LinkDepartmentUserDataTable cln = ((tbo_LinkDepartmentUserDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tbo_LinkDepartmentUserDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDepartmentID = base.Columns["DepartmentID"];
+                this.columnUserID = base.Columns["UserID"];
+                this.columnAccess = base.Columns["Access"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDepartmentID = new global::System.Data.DataColumn("DepartmentID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartmentID);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
+                this.columnAccess = new global::System.Data.DataColumn("Access", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccess);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDepartmentID,
+                                this.columnUserID}, true));
+                this.columnDepartmentID.AllowDBNull = false;
+                this.columnUserID.AllowDBNull = false;
+                this.columnAccess.AllowDBNull = false;
+                this.columnAccess.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_LinkDepartmentUserRow Newtbo_LinkDepartmentUserRow() {
+                return ((tbo_LinkDepartmentUserRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tbo_LinkDepartmentUserRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tbo_LinkDepartmentUserRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tbo_LinkDepartmentUserRowChanged != null)) {
+                    this.tbo_LinkDepartmentUserRowChanged(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tbo_LinkDepartmentUserRowChanging != null)) {
+                    this.tbo_LinkDepartmentUserRowChanging(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tbo_LinkDepartmentUserRowDeleted != null)) {
+                    this.tbo_LinkDepartmentUserRowDeleted(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tbo_LinkDepartmentUserRowDeleting != null)) {
+                    this.tbo_LinkDepartmentUserRowDeleting(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removetbo_LinkDepartmentUserRow(tbo_LinkDepartmentUserRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                _FINGERPRINTDB_MDFDataSet ds = new _FINGERPRINTDB_MDFDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tbo_LinkDepartmentUserDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1004,302 +1301,6 @@ namespace Forms_FingerPrint {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "tbo_DepartmentDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tbo_LinkDepartmentUserDataTable : global::System.Data.TypedTableBase<tbo_LinkDepartmentUserRow> {
-            
-            private global::System.Data.DataColumn columnDepartmentID;
-            
-            private global::System.Data.DataColumn columnUserID;
-            
-            private global::System.Data.DataColumn columnAccess;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserDataTable() {
-                this.TableName = "tbo_LinkDepartmentUser";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tbo_LinkDepartmentUserDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tbo_LinkDepartmentUserDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DepartmentIDColumn {
-                get {
-                    return this.columnDepartmentID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UserIDColumn {
-                get {
-                    return this.columnUserID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AccessColumn {
-                get {
-                    return this.columnAccess;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserRow this[int index] {
-                get {
-                    return ((tbo_LinkDepartmentUserRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tbo_LinkDepartmentUserRowChangeEventHandler tbo_LinkDepartmentUserRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addtbo_LinkDepartmentUserRow(tbo_LinkDepartmentUserRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserRow Addtbo_LinkDepartmentUserRow(tbo_DepartmentRow parenttbo_DepartmentRowByFK_tbo_LinkDepartmentUser_tbo_Department, tbo_ProfileRow parenttbo_ProfileRowByFK_tbo_LinkDepartmentUser_tbo_Profile, string Access) {
-                tbo_LinkDepartmentUserRow rowtbo_LinkDepartmentUserRow = ((tbo_LinkDepartmentUserRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        Access};
-                if ((parenttbo_DepartmentRowByFK_tbo_LinkDepartmentUser_tbo_Department != null)) {
-                    columnValuesArray[0] = parenttbo_DepartmentRowByFK_tbo_LinkDepartmentUser_tbo_Department[0];
-                }
-                if ((parenttbo_ProfileRowByFK_tbo_LinkDepartmentUser_tbo_Profile != null)) {
-                    columnValuesArray[1] = parenttbo_ProfileRowByFK_tbo_LinkDepartmentUser_tbo_Profile[0];
-                }
-                rowtbo_LinkDepartmentUserRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtbo_LinkDepartmentUserRow);
-                return rowtbo_LinkDepartmentUserRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserRow FindByDepartmentIDUserID(int DepartmentID, int UserID) {
-                return ((tbo_LinkDepartmentUserRow)(this.Rows.Find(new object[] {
-                            DepartmentID,
-                            UserID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                tbo_LinkDepartmentUserDataTable cln = ((tbo_LinkDepartmentUserDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new tbo_LinkDepartmentUserDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnDepartmentID = base.Columns["DepartmentID"];
-                this.columnUserID = base.Columns["UserID"];
-                this.columnAccess = base.Columns["Access"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnDepartmentID = new global::System.Data.DataColumn("DepartmentID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDepartmentID);
-                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserID);
-                this.columnAccess = new global::System.Data.DataColumn("Access", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAccess);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDepartmentID,
-                                this.columnUserID}, true));
-                this.columnDepartmentID.AllowDBNull = false;
-                this.columnUserID.AllowDBNull = false;
-                this.columnAccess.AllowDBNull = false;
-                this.columnAccess.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserRow Newtbo_LinkDepartmentUserRow() {
-                return ((tbo_LinkDepartmentUserRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tbo_LinkDepartmentUserRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(tbo_LinkDepartmentUserRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.tbo_LinkDepartmentUserRowChanged != null)) {
-                    this.tbo_LinkDepartmentUserRowChanged(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.tbo_LinkDepartmentUserRowChanging != null)) {
-                    this.tbo_LinkDepartmentUserRowChanging(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.tbo_LinkDepartmentUserRowDeleted != null)) {
-                    this.tbo_LinkDepartmentUserRowDeleted(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.tbo_LinkDepartmentUserRowDeleting != null)) {
-                    this.tbo_LinkDepartmentUserRowDeleting(this, new tbo_LinkDepartmentUserRowChangeEvent(((tbo_LinkDepartmentUserRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removetbo_LinkDepartmentUserRow(tbo_LinkDepartmentUserRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                _FINGERPRINTDB_MDFDataSet ds = new _FINGERPRINTDB_MDFDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tbo_LinkDepartmentUserDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2076,28 +2077,11 @@ namespace Forms_FingerPrint {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public byte[] СompanyLogo {
                 get {
-                    try {
-                        return ((byte[])(this[this.tabletbo_Company.СompanyLogoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'СompanyLogo\' в таблице \'tbo_Company\' равно DBNull.", e);
-                    }
+                    return ((byte[])(this[this.tabletbo_Company.СompanyLogoColumn]));
                 }
                 set {
                     this[this.tabletbo_Company.СompanyLogoColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsСompanyLogoNull() {
-                return this.IsNull(this.tabletbo_Company.СompanyLogoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetСompanyLogoNull() {
-                this[this.tabletbo_Company.СompanyLogoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2108,6 +2092,76 @@ namespace Forms_FingerPrint {
                 }
                 else {
                     return ((tbo_DepartmentRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbo_Department_tbo_Company"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tbo_LinkDepartmentUserRow : global::System.Data.DataRow {
+            
+            private tbo_LinkDepartmentUserDataTable tabletbo_LinkDepartmentUser;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tbo_LinkDepartmentUserRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletbo_LinkDepartmentUser = ((tbo_LinkDepartmentUserDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DepartmentID {
+                get {
+                    return ((int)(this[this.tabletbo_LinkDepartmentUser.DepartmentIDColumn]));
+                }
+                set {
+                    this[this.tabletbo_LinkDepartmentUser.DepartmentIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int UserID {
+                get {
+                    return ((int)(this[this.tabletbo_LinkDepartmentUser.UserIDColumn]));
+                }
+                set {
+                    this[this.tabletbo_LinkDepartmentUser.UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Access {
+                get {
+                    return ((string)(this[this.tabletbo_LinkDepartmentUser.AccessColumn]));
+                }
+                set {
+                    this[this.tabletbo_LinkDepartmentUser.AccessColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_DepartmentRow tbo_DepartmentRow {
+                get {
+                    return ((tbo_DepartmentRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Department"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Department"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbo_ProfileRow tbo_ProfileRow {
+                get {
+                    return ((tbo_ProfileRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Profile"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Profile"]);
                 }
             }
         }
@@ -2189,76 +2243,6 @@ namespace Forms_FingerPrint {
                 }
                 else {
                     return ((tbo_LinkDepartmentUserRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbo_LinkDepartmentUser_tbo_Department"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class tbo_LinkDepartmentUserRow : global::System.Data.DataRow {
-            
-            private tbo_LinkDepartmentUserDataTable tabletbo_LinkDepartmentUser;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tbo_LinkDepartmentUserRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabletbo_LinkDepartmentUser = ((tbo_LinkDepartmentUserDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DepartmentID {
-                get {
-                    return ((int)(this[this.tabletbo_LinkDepartmentUser.DepartmentIDColumn]));
-                }
-                set {
-                    this[this.tabletbo_LinkDepartmentUser.DepartmentIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int UserID {
-                get {
-                    return ((int)(this[this.tabletbo_LinkDepartmentUser.UserIDColumn]));
-                }
-                set {
-                    this[this.tabletbo_LinkDepartmentUser.UserIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Access {
-                get {
-                    return ((string)(this[this.tabletbo_LinkDepartmentUser.AccessColumn]));
-                }
-                set {
-                    this[this.tabletbo_LinkDepartmentUser.AccessColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_DepartmentRow tbo_DepartmentRow {
-                get {
-                    return ((tbo_DepartmentRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Department"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Department"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_ProfileRow tbo_ProfileRow {
-                get {
-                    return ((tbo_ProfileRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Profile"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbo_LinkDepartmentUser_tbo_Profile"]);
                 }
             }
         }
@@ -2558,22 +2542,22 @@ namespace Forms_FingerPrint {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tbo_DepartmentRowChangeEvent : global::System.EventArgs {
+        public class tbo_LinkDepartmentUserRowChangeEvent : global::System.EventArgs {
             
-            private tbo_DepartmentRow eventRow;
+            private tbo_LinkDepartmentUserRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_DepartmentRowChangeEvent(tbo_DepartmentRow row, global::System.Data.DataRowAction action) {
+            public tbo_LinkDepartmentUserRowChangeEvent(tbo_LinkDepartmentUserRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_DepartmentRow Row {
+            public tbo_LinkDepartmentUserRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2592,22 +2576,22 @@ namespace Forms_FingerPrint {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tbo_LinkDepartmentUserRowChangeEvent : global::System.EventArgs {
+        public class tbo_DepartmentRowChangeEvent : global::System.EventArgs {
             
-            private tbo_LinkDepartmentUserRow eventRow;
+            private tbo_DepartmentRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserRowChangeEvent(tbo_LinkDepartmentUserRow row, global::System.Data.DataRowAction action) {
+            public tbo_DepartmentRowChangeEvent(tbo_DepartmentRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_LinkDepartmentUserRow Row {
+            public tbo_DepartmentRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2857,15 +2841,11 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, Name, СompanyLogo FROM dbo.tbo_Company";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Name  FROM dbo.tbo_Company ";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2890,19 +2870,6 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
             _FINGERPRINTDB_MDFDataSet.tbo_CompanyDataTable dataTable = new _FINGERPRINTDB_MDFDataSet.tbo_CompanyDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByExample(_FINGERPRINTDB_MDFDataSet.tbo_CompanyDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2974,7 +2941,7 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
             if ((СompanyLogo == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("СompanyLogo");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(СompanyLogo));
@@ -3007,7 +2974,7 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
             }
             if ((СompanyLogo == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("СompanyLogo");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(СompanyLogo));
@@ -3042,391 +3009,6 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Name, byte[] СompanyLogo, int Original_ID, string Original_Name) {
             return this.Update(Name, СompanyLogo, Original_ID, Original_Name, Original_ID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tbo_DepartmentTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public tbo_DepartmentTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tbo_Department";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("CompanyID", "CompanyID");
-            tableMapping.ColumnMappings.Add("Regime", "Regime");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbo_Department] WHERE (([ID] = @Original_ID) AND ([Name] = @Or" +
-                "iginal_Name) AND ([CompanyID] = @Original_CompanyID) AND ([Regime] = @Original_R" +
-                "egime))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbo_Department] ([Name], [CompanyID], [Regime]) VALUES (@Name," +
-                " @CompanyID, @Regime);\r\nSELECT ID, Name, CompanyID, Regime FROM tbo_Department W" +
-                "HERE (ID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbo_Department] SET [Name] = @Name, [CompanyID] = @CompanyID, [Regime] = @Regime WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ([CompanyID] = @Original_CompanyID) AND ([Regime] = @Original_Regime));
-SELECT ID, Name, CompanyID, Regime FROM tbo_Department WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Forms_FingerPrint.Properties.Settings.Default.FINGERPRINTDB_DB;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Name, CompanyID, Regime FROM dbo.tbo_Department";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Name FROM dbo.tbo_Department";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(_FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable = new _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(_FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable = new _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(_FINGERPRINTDB_MDFDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "tbo_Department");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Name, int Original_CompanyID, string Original_Regime) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Name");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Name));
-            }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_CompanyID));
-            if ((Original_Regime == null)) {
-                throw new global::System.ArgumentNullException("Original_Regime");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Regime));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int CompanyID, string Regime) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CompanyID));
-            if ((Regime == null)) {
-                throw new global::System.ArgumentNullException("Regime");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Regime));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int CompanyID, string Regime, int Original_ID, string Original_Name, int Original_CompanyID, string Original_Regime, int ID) {
-            if ((Name == null)) {
-                throw new global::System.ArgumentNullException("Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CompanyID));
-            if ((Regime == null)) {
-                throw new global::System.ArgumentNullException("Regime");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Regime));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
-            if ((Original_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_Name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Name));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_CompanyID));
-            if ((Original_Regime == null)) {
-                throw new global::System.ArgumentNullException("Original_Regime");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Regime));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, int CompanyID, string Regime, int Original_ID, string Original_Name, int Original_CompanyID, string Original_Regime) {
-            return this.Update(Name, CompanyID, Regime, Original_ID, Original_Name, Original_CompanyID, Original_Regime, Original_ID);
         }
     }
     
@@ -3757,6 +3339,363 @@ SELECT DepartmentID, UserID, Access FROM tbo_LinkDepartmentUser WHERE (Departmen
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Access, int Original_DepartmentID, int Original_UserID, string Original_Access) {
             return this.Update(Original_DepartmentID, Original_UserID, Access, Original_DepartmentID, Original_UserID, Original_Access);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tbo_DepartmentTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public tbo_DepartmentTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tbo_Department";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("CompanyID", "CompanyID");
+            tableMapping.ColumnMappings.Add("Regime", "Regime");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tbo_Department] WHERE (([ID] = @Original_ID) AND ([Name] = @Or" +
+                "iginal_Name) AND ([CompanyID] = @Original_CompanyID) AND ([Regime] = @Original_R" +
+                "egime))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbo_Department] ([Name], [CompanyID], [Regime]) VALUES (@Name," +
+                " @CompanyID, @Regime);\r\nSELECT ID, Name, CompanyID, Regime FROM tbo_Department W" +
+                "HERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tbo_Department] SET [Name] = @Name, [CompanyID] = @CompanyID, [Regime] = @Regime WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ([CompanyID] = @Original_CompanyID) AND ([Regime] = @Original_Regime));
+SELECT ID, Name, CompanyID, Regime FROM tbo_Department WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompanyID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Regime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Regime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Forms_FingerPrint.Properties.Settings.Default.FINGERPRINTDB_DB;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID, Name, CompanyID, Regime FROM dbo.tbo_Department";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(_FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable = new _FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(_FINGERPRINTDB_MDFDataSet.tbo_DepartmentDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(_FINGERPRINTDB_MDFDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "tbo_Department");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, string Original_Name, int Original_CompanyID, string Original_Regime) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            if ((Original_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_Name");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Name));
+            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_CompanyID));
+            if ((Original_Regime == null)) {
+                throw new global::System.ArgumentNullException("Original_Regime");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Regime));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Name, int CompanyID, string Regime) {
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
+            }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CompanyID));
+            if ((Regime == null)) {
+                throw new global::System.ArgumentNullException("Regime");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Regime));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Name, int CompanyID, string Regime, int Original_ID, string Original_Name, int Original_CompanyID, string Original_Regime, int ID) {
+            if ((Name == null)) {
+                throw new global::System.ArgumentNullException("Name");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(CompanyID));
+            if ((Regime == null)) {
+                throw new global::System.ArgumentNullException("Regime");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Regime));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            if ((Original_Name == null)) {
+                throw new global::System.ArgumentNullException("Original_Name");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Name));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_CompanyID));
+            if ((Original_Regime == null)) {
+                throw new global::System.ArgumentNullException("Original_Regime");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Regime));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Name, int CompanyID, string Regime, int Original_ID, string Original_Name, int Original_CompanyID, string Original_Regime) {
+            return this.Update(Name, CompanyID, Regime, Original_ID, Original_Name, Original_CompanyID, Original_Regime, Original_ID);
         }
     }
     
@@ -4668,9 +4607,9 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
         
         private tbo_CompanyTableAdapter _tbo_CompanyTableAdapter;
         
-        private tbo_DepartmentTableAdapter _tbo_DepartmentTableAdapter;
-        
         private tbo_LinkDepartmentUserTableAdapter _tbo_LinkDepartmentUserTableAdapter;
+        
+        private tbo_DepartmentTableAdapter _tbo_DepartmentTableAdapter;
         
         private tbo_ProfileTableAdapter _tbo_ProfileTableAdapter;
         
@@ -4710,12 +4649,12 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter {
+        public tbo_LinkDepartmentUserTableAdapter tbo_LinkDepartmentUserTableAdapter {
             get {
-                return this._tbo_DepartmentTableAdapter;
+                return this._tbo_LinkDepartmentUserTableAdapter;
             }
             set {
-                this._tbo_DepartmentTableAdapter = value;
+                this._tbo_LinkDepartmentUserTableAdapter = value;
             }
         }
         
@@ -4724,12 +4663,12 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tbo_LinkDepartmentUserTableAdapter tbo_LinkDepartmentUserTableAdapter {
+        public tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter {
             get {
-                return this._tbo_LinkDepartmentUserTableAdapter;
+                return this._tbo_DepartmentTableAdapter;
             }
             set {
-                this._tbo_LinkDepartmentUserTableAdapter = value;
+                this._tbo_DepartmentTableAdapter = value;
             }
         }
         
@@ -4784,13 +4723,13 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
                             && (this._tbo_CompanyTableAdapter.Connection != null))) {
                     return this._tbo_CompanyTableAdapter.Connection;
                 }
-                if (((this._tbo_DepartmentTableAdapter != null) 
-                            && (this._tbo_DepartmentTableAdapter.Connection != null))) {
-                    return this._tbo_DepartmentTableAdapter.Connection;
-                }
                 if (((this._tbo_LinkDepartmentUserTableAdapter != null) 
                             && (this._tbo_LinkDepartmentUserTableAdapter.Connection != null))) {
                     return this._tbo_LinkDepartmentUserTableAdapter.Connection;
+                }
+                if (((this._tbo_DepartmentTableAdapter != null) 
+                            && (this._tbo_DepartmentTableAdapter.Connection != null))) {
+                    return this._tbo_DepartmentTableAdapter.Connection;
                 }
                 if (((this._tbo_ProfileTableAdapter != null) 
                             && (this._tbo_ProfileTableAdapter.Connection != null))) {
@@ -4816,10 +4755,10 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
                 if ((this._tbo_CompanyTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tbo_DepartmentTableAdapter != null)) {
+                if ((this._tbo_LinkDepartmentUserTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tbo_LinkDepartmentUserTableAdapter != null)) {
+                if ((this._tbo_DepartmentTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._tbo_ProfileTableAdapter != null)) {
@@ -5028,13 +4967,13 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._tbo_DepartmentTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tbo_DepartmentTableAdapter.Connection) == false))) {
+            if (((this._tbo_LinkDepartmentUserTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tbo_LinkDepartmentUserTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._tbo_LinkDepartmentUserTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tbo_LinkDepartmentUserTableAdapter.Connection) == false))) {
+            if (((this._tbo_DepartmentTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tbo_DepartmentTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -5089,15 +5028,6 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tbo_CompanyTableAdapter.Adapter);
                     }
                 }
-                if ((this._tbo_DepartmentTableAdapter != null)) {
-                    revertConnections.Add(this._tbo_DepartmentTableAdapter, this._tbo_DepartmentTableAdapter.Connection);
-                    this._tbo_DepartmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tbo_DepartmentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tbo_DepartmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tbo_DepartmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tbo_DepartmentTableAdapter.Adapter);
-                    }
-                }
                 if ((this._tbo_LinkDepartmentUserTableAdapter != null)) {
                     revertConnections.Add(this._tbo_LinkDepartmentUserTableAdapter, this._tbo_LinkDepartmentUserTableAdapter.Connection);
                     this._tbo_LinkDepartmentUserTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -5105,6 +5035,15 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
                     if (this._tbo_LinkDepartmentUserTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._tbo_LinkDepartmentUserTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tbo_LinkDepartmentUserTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tbo_DepartmentTableAdapter != null)) {
+                    revertConnections.Add(this._tbo_DepartmentTableAdapter, this._tbo_DepartmentTableAdapter.Connection);
+                    this._tbo_DepartmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tbo_DepartmentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tbo_DepartmentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tbo_DepartmentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tbo_DepartmentTableAdapter.Adapter);
                     }
                 }
                 if ((this._tbo_ProfileTableAdapter != null)) {
@@ -5187,13 +5126,13 @@ SELECT ID, Name, Surname, Patronymic, Photo, BirthDate, Schedule, FingerPrint, P
                     this._tbo_CompanyTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tbo_CompanyTableAdapter]));
                     this._tbo_CompanyTableAdapter.Transaction = null;
                 }
-                if ((this._tbo_DepartmentTableAdapter != null)) {
-                    this._tbo_DepartmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tbo_DepartmentTableAdapter]));
-                    this._tbo_DepartmentTableAdapter.Transaction = null;
-                }
                 if ((this._tbo_LinkDepartmentUserTableAdapter != null)) {
                     this._tbo_LinkDepartmentUserTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tbo_LinkDepartmentUserTableAdapter]));
                     this._tbo_LinkDepartmentUserTableAdapter.Transaction = null;
+                }
+                if ((this._tbo_DepartmentTableAdapter != null)) {
+                    this._tbo_DepartmentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tbo_DepartmentTableAdapter]));
+                    this._tbo_DepartmentTableAdapter.Transaction = null;
                 }
                 if ((this._tbo_ProfileTableAdapter != null)) {
                     this._tbo_ProfileTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tbo_ProfileTableAdapter]));

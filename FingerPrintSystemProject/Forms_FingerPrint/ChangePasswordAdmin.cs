@@ -31,6 +31,8 @@ namespace Forms_FingerPrint
 
         private void ChangePasswordAdmin_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Company". При необходимости она может быть перемещена или удалена.
+            this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Department". При необходимости она может быть перемещена или удалена.
             this.tbo_DepartmentTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Department);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_LinkDepartmentUser". При необходимости она может быть перемещена или удалена.
@@ -42,9 +44,11 @@ namespace Forms_FingerPrint
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
 
-            this.roleIDComboBox.DisplayMember = "ID";
-            this.roleIDComboBox.ValueMember = "ID"; //Field in the datatable which you want to be the value of the combobox
-            this.roleIDComboBox.DataSource = _FINGERPRINTDB_MDFDataSet.Tables["tbo_Role"];
+            roleIDComboBox.DataSource = _FINGERPRINTDB_MDFDataSet.Tables["tbo_Role"].DefaultView;
+            roleIDComboBox.DisplayMember = "Name";
+            //roleIDComboBox.ValueMember = "ID"; ; //Field in the datatable which you want to be the value of the combobox
+            
+
 
 
 
@@ -427,6 +431,11 @@ namespace Forms_FingerPrint
         }
 
         private void roleIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbo_ProfileDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

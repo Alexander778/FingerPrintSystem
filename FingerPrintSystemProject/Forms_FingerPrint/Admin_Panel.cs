@@ -67,15 +67,7 @@ namespace Forms_FingerPrint
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.tbo_CompanyTableAdapter.FillByExample(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -90,15 +82,7 @@ namespace Forms_FingerPrint
 
         private void fillByExampleToolStripButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.tbo_CompanyTableAdapter.FillByExample(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            
         }
 
        
@@ -113,10 +97,7 @@ namespace Forms_FingerPrint
         private void button4_Click(object sender, EventArgs e)
         {
 
-            nameComboBox.BeginUpdate();
-            tbo_CompanyTableAdapter.FillByExample(_FINGERPRINTDB_MDFDataSet.tbo_Company);
-            nameComboBox.DataSource = tbo_CompanyBindingSource;
-            nameComboBox.EndUpdate();
+            
 
 
             //nameComboBox.BeginUpdate();
@@ -128,8 +109,7 @@ namespace Forms_FingerPrint
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            tbo_DepartmentTableAdapter.FillBy(_FINGERPRINTDB_MDFDataSet.tbo_Department);
-            nameComboBox1.DataSource = tbo_CompanyBindingSource;
+
 
         }
 
