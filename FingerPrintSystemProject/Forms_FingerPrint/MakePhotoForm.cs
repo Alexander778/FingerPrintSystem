@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AForge.Video.DirectShow;
-using AForge.Video;
-using WIA;
-using WIAVIDEOLib;
+//using AForge.Video.DirectShow;
+//using AForge.Video;
+//using WIA;
+//using WIAVIDEOLib;
 using System.IO;
 
 
@@ -29,53 +29,53 @@ namespace Forms_FingerPrint
            
         }
         
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-            WIA.DeviceManager DeviceManager1 = new DeviceManagerClass();
-            WIA.CommonDialog CommonDialog1 = new CommonDialogClass();
+        //private void button1_Click_2(object sender, EventArgs e)
+        //{
+        //    WIA.DeviceManager DeviceManager1 = new DeviceManagerClass();
+        //    WIA.CommonDialog CommonDialog1 = new CommonDialogClass();
 
-            // 1. Помогаем пользователю выбрать устройство
-            WIA.Device Device1 = CommonDialog1.ShowSelectDevice(WiaDeviceType.CameraDeviceType, true, false);
+        //    // 1. Помогаем пользователю выбрать устройство
+        //    WIA.Device Device1 = CommonDialog1.ShowSelectDevice(WiaDeviceType.CameraDeviceType, true, false);
             
-            // 2. Делаем снимок
-            Device1.ExecuteCommand(WIA.CommandID.wiaCommandTakePicture);
+        //    // 2. Делаем снимок
+        //    Device1.ExecuteCommand(WIA.CommandID.wiaCommandTakePicture);
 
-            WIA.Device Device1a = null;
+        //    WIA.Device Device1a = null;
             
-            // 3. Снова подключаемся к устройству для получения фото
-            foreach (DeviceInfo dev_item in DeviceManager1.DeviceInfos)
-            {
-                // Перечисляем все устройства
-                if (dev_item.DeviceID == Device1.DeviceID)
-                {
-                    // и подключаемся к тому, чей DeviceID совпадает с ранее выбранным
-                    Device1a = dev_item.Connect();
-                    break;
-                }
-            }
+        //    // 3. Снова подключаемся к устройству для получения фото
+        //    foreach (DeviceInfo dev_item in DeviceManager1.DeviceInfos)
+        //    {
+        //        // Перечисляем все устройства
+        //        if (dev_item.DeviceID == Device1.DeviceID)
+        //        {
+        //            // и подключаемся к тому, чей DeviceID совпадает с ранее выбранным
+        //            Device1a = dev_item.Connect();
+        //            break;
+        //        }
+        //    }
             
 
-            // 4. Находим какой объект нам нужен
-            WIA.Item newItem = Device1a.Items[Device1a.Items.Count];
+        //    // 4. Находим какой объект нам нужен
+        //    WIA.Item newItem = Device1a.Items[Device1a.Items.Count];
             
-            // 5. Читаем файл из устройства
-            WIA.ImageFile newImage = (ImageFile)CommonDialog1.ShowTransfer(newItem, WIA.FormatID.wiaFormatJPEG, false);
+        //    // 5. Читаем файл из устройства
+        //    WIA.ImageFile newImage = (ImageFile)CommonDialog1.ShowTransfer(newItem, WIA.FormatID.wiaFormatJPEG, false);
 
-            // 6. Преобразуем полученные данные в вектор
-            WIA.Vector newVector = newImage.FileData;
+        //    // 6. Преобразуем полученные данные в вектор
+        //    WIA.Vector newVector = newImage.FileData;
 
-            // 7. Забираем из вектора байтовый массив, содержащий изображение
-            Byte[] bytBLOBData = (Byte[])newVector.get_BinaryData();
+        //    // 7. Забираем из вектора байтовый массив, содержащий изображение
+        //    Byte[] bytBLOBData = (Byte[])newVector.get_BinaryData();
 
-            // 8. Преобразуем массив в поток
-            MemoryStream stmBLOBData = new MemoryStream(bytBLOBData);
+        //    // 8. Преобразуем массив в поток
+        //    MemoryStream stmBLOBData = new MemoryStream(bytBLOBData);
 
-            // 9. Преобразуем поток в изображение и присваиваем его элементу PictureBox
-            pictureBox1.Image = Image.FromStream(stmBLOBData);
+        //    // 9. Преобразуем поток в изображение и присваиваем его элементу PictureBox
+        //    pictureBox1.Image = Image.FromStream(stmBLOBData);
 
-            // 10. Режим масштабирования Zoom помогает увидеть весь кадр (в целях отладки)
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-        }
+        //    // 10. Режим масштабирования Zoom помогает увидеть весь кадр (в целях отладки)
+        //    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+        //}
     }
 }
         

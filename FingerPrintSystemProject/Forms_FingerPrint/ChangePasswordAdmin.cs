@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AForge.Video;
-using AForge.Video.DirectShow;
+//using AForge.Video;
+//using AForge.Video.DirectShow;
 
 
 namespace Forms_FingerPrint
@@ -145,11 +145,15 @@ namespace Forms_FingerPrint
                         txtboxes[i].BackColor = Color.White;
                     }
                 }
-                
+
 
                 if (birthDateDateTimePicker.Value == DateTime.Today)
                 {
                     pictureBox3.Visible = true;
+                }
+                else
+                {
+                    pictureBox3.Visible = false;
                 }
                 
 

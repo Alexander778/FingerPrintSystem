@@ -51,6 +51,7 @@ namespace Forms_FingerPrint
             button4.Enabled = true;
             checkBox1.Enabled = true;
             button1.Enabled = false;
+
             
 
 
@@ -72,6 +73,7 @@ namespace Forms_FingerPrint
                 nameTextBox.BackColor = Color.White;
                 regimeTextBox.BackColor = Color.White;
                 pictureBox1.Visible = false;
+
             }
             catch (System.Data.NoNullAllowedException)
             {
