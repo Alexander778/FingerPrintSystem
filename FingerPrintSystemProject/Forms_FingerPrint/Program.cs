@@ -16,9 +16,9 @@ namespace Forms_FingerPrint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Greetins());
+            Application.Run(new Greetins());
             //Application.Run(new Form_Create_Company());
-            Application.Run(new Form_Create_Department());
+            //Application.Run(new Form_Create_Department());
         }
         
     }
