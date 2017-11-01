@@ -59,7 +59,8 @@ namespace Forms_FingerPrint
             button2.Enabled = true;
             checkBox1.Enabled = true;
             сompanyLogoPictureBox.Enabled = true;
-                tbo_CompanyBindingSource.AddNew();
+
+            tbo_CompanyBindingSource.AddNew();
 
         }
 

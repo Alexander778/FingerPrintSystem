@@ -38,7 +38,6 @@
             this.tbo_DepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -52,10 +51,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
-            this.tbo_DepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_DepartmentTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter();
-            this.tbo_RoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_RoleTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter();
+            this.tbo_DepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbo_RoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             nameLabel = new System.Windows.Forms.Label();
             сompanyLogoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).BeginInit();
@@ -133,17 +132,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Please write information about your company";
             this.label1.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(17, 259);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(358, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "If you want to create more than one company, you should write different ID";
             // 
             // button1
             // 
@@ -279,23 +267,23 @@
             this.tableAdapterManager.tbo_RoleTableAdapter = this.tbo_RoleTableAdapter;
             this.tableAdapterManager.UpdateOrder = Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // tbo_DepartmentTableAdapter
+            // 
+            this.tbo_DepartmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbo_RoleTableAdapter
+            // 
+            this.tbo_RoleTableAdapter.ClearBeforeFill = true;
+            // 
             // tbo_DepartmentBindingSource1
             // 
             this.tbo_DepartmentBindingSource1.DataMember = "tbo_Department";
             this.tbo_DepartmentBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // tbo_DepartmentTableAdapter
-            // 
-            this.tbo_DepartmentTableAdapter.ClearBeforeFill = true;
-            // 
             // tbo_RoleBindingSource1
             // 
             this.tbo_RoleBindingSource1.DataMember = "tbo_Role";
             this.tbo_RoleBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
-            // 
-            // tbo_RoleTableAdapter
-            // 
-            this.tbo_RoleTableAdapter.ClearBeforeFill = true;
             // 
             // Form_Create_Company
             // 
@@ -312,7 +300,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.b_CreateCompany);
             this.Controls.Add(this.b_LoadLogo);
@@ -343,7 +330,6 @@
         private System.Windows.Forms.BindingSource tbo_DepartmentBindingSource;
         private System.Windows.Forms.BindingSource tbo_RoleBindingSource;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

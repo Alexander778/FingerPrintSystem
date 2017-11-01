@@ -27,6 +27,8 @@ namespace Forms_FingerPrint
 
         private void Form_Create_Department_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet2.tbo_Company". При необходимости она может быть перемещена или удалена.
+            this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet2.tbo_Company);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet1.tbo_Company". При необходимости она может быть перемещена или удалена.
             this.tbo_CompanyTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Company);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Department". При необходимости она может быть перемещена или удалена.
@@ -73,6 +75,8 @@ namespace Forms_FingerPrint
                 nameTextBox.BackColor = Color.White;
                 regimeTextBox.BackColor = Color.White;
                 pictureBox1.Visible = false;
+                button2.Enabled = true;
+                button1.Enabled = true;
 
             }
             catch (System.Data.NoNullAllowedException)
@@ -141,6 +145,11 @@ namespace Forms_FingerPrint
             Form_Create_Company f1 = new Form_Create_Company();
             f1.Show();
             this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

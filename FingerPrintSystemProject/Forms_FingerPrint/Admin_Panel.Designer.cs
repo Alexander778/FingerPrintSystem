@@ -236,7 +236,8 @@
             // nameComboBox
             // 
             this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
-            this.nameComboBox.DataSource = this.tbo_CompanyBindingSource;
+            this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
+            this.nameComboBox.DataSource = this.tboCompanyBindingSource1;
             this.nameComboBox.DisplayMember = "Name";
             this.nameComboBox.FormattingEnabled = true;
             this.nameComboBox.Location = new System.Drawing.Point(66, 69);
