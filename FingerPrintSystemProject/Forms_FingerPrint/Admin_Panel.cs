@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Forms_FingerPrint
 {
@@ -42,7 +43,7 @@ namespace Forms_FingerPrint
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
 
-            
+
 
 
         }
@@ -61,49 +62,40 @@ namespace Forms_FingerPrint
         {
             Form_Create_Company f = new Form_Create_Company();
             f.Show();
-            
+
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void fillByExampleToolStripButton_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-       
 
-       
-
-        private void nameComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            
-            
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+
+            nameComboBox.Items.Clear();
+
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                nameComboBox.Items.Add(dt.Rows[i]["Name"]);
+            }
 
 
-            nameComboBox.BeginUpdate();
-            tbo_CompanyTableAdapter.Fill(_FINGERPRINTDB_MDFDataSet.tbo_Company);
-            nameComboBox.DataSource = tbo_CompanyBindingSource;
-            nameComboBox.EndUpdate();
-            
+
+
+
+
 
 
         }
@@ -119,5 +111,13 @@ namespace Forms_FingerPrint
             Form_Create_Department f1 = new Form_Create_Department();
             f1.Show();
         }
+
+        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            }
+
+       
     }
-}
+    }
+
