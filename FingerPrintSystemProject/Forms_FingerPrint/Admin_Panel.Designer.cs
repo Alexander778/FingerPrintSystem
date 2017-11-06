@@ -32,6 +32,7 @@
             System.Windows.Forms.Label nameLabel1;
             System.Windows.Forms.Label companyIDLabel;
             System.Windows.Forms.Label nameLabel;
+            System.Windows.Forms.Label nameLabel2;
             this.tboCompanyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fINGERPRINTDBMDFDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
@@ -55,10 +56,12 @@
             this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet1 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.button4 = new System.Windows.Forms.Button();
-            this.сompanyLogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
+            nameLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fINGERPRINTDBMDFDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
@@ -69,13 +72,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel1
             // 
             nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(12, 289);
+            nameLabel1.Location = new System.Drawing.Point(13, 168);
             nameLabel1.Name = "nameLabel1";
             nameLabel1.Size = new System.Drawing.Size(65, 13);
             nameLabel1.TabIndex = 10;
@@ -84,7 +87,7 @@
             // companyIDLabel
             // 
             companyIDLabel.AutoSize = true;
-            companyIDLabel.Location = new System.Drawing.Point(13, 261);
+            companyIDLabel.Location = new System.Drawing.Point(13, 141);
             companyIDLabel.Name = "companyIDLabel";
             companyIDLabel.Size = new System.Drawing.Size(68, 13);
             companyIDLabel.TabIndex = 11;
@@ -93,7 +96,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(22, 72);
+            nameLabel.Location = new System.Drawing.Point(13, 69);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 13;
@@ -208,7 +211,7 @@
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
             this.nameComboBox1.FormattingEnabled = true;
-            this.nameComboBox1.Location = new System.Drawing.Point(83, 289);
+            this.nameComboBox1.Location = new System.Drawing.Point(81, 164);
             this.nameComboBox1.Name = "nameComboBox1";
             this.nameComboBox1.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox1.TabIndex = 11;
@@ -216,18 +219,18 @@
             // companyIDLabel1
             // 
             this.companyIDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.companyIDLabel1.Location = new System.Drawing.Point(87, 261);
+            this.companyIDLabel1.Location = new System.Drawing.Point(87, 141);
             this.companyIDLabel1.Name = "companyIDLabel1";
             this.companyIDLabel1.Size = new System.Drawing.Size(100, 23);
             this.companyIDLabel1.TabIndex = 12;
-            this.companyIDLabel1.Text = "label2";
+            this.companyIDLabel1.Click += new System.EventHandler(this.companyIDLabel1_Click);
             // 
             // nameComboBox
             // 
             this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
             this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
             this.nameComboBox.FormattingEnabled = true;
-            this.nameComboBox.Location = new System.Drawing.Point(66, 69);
+            this.nameComboBox.Location = new System.Drawing.Point(81, 69);
             this.nameComboBox.Name = "nameComboBox";
             this.nameComboBox.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox.TabIndex = 14;
@@ -255,22 +258,39 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // сompanyLogoPictureBox
+            // nameLabel2
             // 
-            this.сompanyLogoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_CompanyBindingSource, "СompanyLogo", true));
-            this.сompanyLogoPictureBox.Location = new System.Drawing.Point(25, 111);
-            this.сompanyLogoPictureBox.Name = "сompanyLogoPictureBox";
-            this.сompanyLogoPictureBox.Size = new System.Drawing.Size(162, 136);
-            this.сompanyLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.сompanyLogoPictureBox.TabIndex = 16;
-            this.сompanyLogoPictureBox.TabStop = false;
+            nameLabel2.AutoSize = true;
+            nameLabel2.Location = new System.Drawing.Point(13, 121);
+            nameLabel2.Name = "nameLabel2";
+            nameLabel2.Size = new System.Drawing.Size(51, 13);
+            nameLabel2.TabIndex = 18;
+            nameLabel2.Text = "Company";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(90, 119);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 19;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(253, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 124);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 737);
-            this.Controls.Add(this.сompanyLogoPictureBox);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(nameLabel2);
             this.Controls.Add(this.button4);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameComboBox);
@@ -297,7 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +347,8 @@
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet1;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox сompanyLogoPictureBox;
         public System.Windows.Forms.ComboBox nameComboBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
