@@ -61,6 +61,7 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
+            
             //
 
 
@@ -123,7 +124,7 @@ namespace Forms_FingerPrint
 
 
             nameComboBox1.Items.Clear();
-            nameComboBox1.SelectedItem = null;
+            
             
             SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
             DataTable dt1 = new DataTable();
@@ -133,8 +134,8 @@ namespace Forms_FingerPrint
                 {
                     nameComboBox1.Items.Add(dt1.Rows[i]["Name"]);
                 }
-            
 
+            nameComboBox1.SelectedIndex = 0;
 
 
         }
