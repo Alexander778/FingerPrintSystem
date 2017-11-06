@@ -68,8 +68,8 @@ namespace Forms_FingerPrint
             label3.Text = null;
             companyIDLabel1.Text = null;
             pictureBox1.Image = null;
-            
-            
+
+
 
         }
 
@@ -116,26 +116,26 @@ namespace Forms_FingerPrint
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            
-            companyIDLabel1.Text=dt.Rows[nameComboBox.SelectedIndex]["ID"].ToString();
+
+            companyIDLabel1.Text = dt.Rows[nameComboBox.SelectedIndex]["ID"].ToString();
             label3.Text = dt.Rows[nameComboBox.SelectedIndex]["Name"].ToString();
 
-           
-
-
             nameComboBox1.Items.Clear();
-            
-            
+
+            //
             SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
-            
-                for (int i = 0; i < dt1.Rows.Count; i++)
-                {
-                    nameComboBox1.Items.Add(dt1.Rows[i]["Name"]);
-                }
+
+            for (int i = 0; i < dt1.Rows.Count; i++)
+            {
+                nameComboBox1.Items.Add(dt1.Rows[i]["Name"]);
+            }
 
             nameComboBox1.SelectedIndex = 0;
+            ///
+
+
 
 
         }
