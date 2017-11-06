@@ -78,6 +78,14 @@ namespace Forms_FingerPrint
                 button2.Enabled = true;
                 button1.Enabled = true;
 
+                nameTextBox.Enabled = false;
+                companyIDComboBox.Enabled = false;
+                regimeTextBox.Enabled = false;
+                button3.Enabled = false;
+                button4.Enabled = false;
+                checkBox1.Enabled = false;
+                
+
             }
             catch (System.Data.NoNullAllowedException)
             {

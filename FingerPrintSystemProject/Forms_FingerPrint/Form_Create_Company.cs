@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 
 namespace Forms_FingerPrint
@@ -45,7 +47,10 @@ namespace Forms_FingerPrint
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
         }
+
        
+
+
 
         private void button1_Click(object sender, EventArgs e) //Createbutton_Company_Form
         {
@@ -163,7 +168,7 @@ namespace Forms_FingerPrint
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             
 
         }

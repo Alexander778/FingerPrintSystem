@@ -63,6 +63,26 @@ namespace Forms_FingerPrint.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _179407 {
+            get {
+                object obj = ResourceManager.GetObject("179407", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24714 {
+            get {
+                object obj = ResourceManager.GetObject("24714", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Восклицательный_знак {
             get {
                 object obj = ResourceManager.GetObject("Восклицательный-знак", resourceCulture);

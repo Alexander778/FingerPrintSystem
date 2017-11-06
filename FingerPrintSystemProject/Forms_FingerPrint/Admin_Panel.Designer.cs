@@ -207,14 +207,11 @@
             // 
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.nameComboBox1.DataSource = this.tbo_DepartmentBindingSource;
-            this.nameComboBox1.DisplayMember = "Name";
             this.nameComboBox1.FormattingEnabled = true;
             this.nameComboBox1.Location = new System.Drawing.Point(83, 289);
             this.nameComboBox1.Name = "nameComboBox1";
             this.nameComboBox1.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox1.TabIndex = 11;
-            this.nameComboBox1.ValueMember = "ID";
             // 
             // companyIDLabel1
             // 
@@ -249,11 +246,12 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(297, 53);
+            this.button4.BackgroundImage = global::Forms_FingerPrint.Properties.Resources._179407;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Location = new System.Drawing.Point(66, 6);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 32);
+            this.button4.Size = new System.Drawing.Size(26, 27);
             this.button4.TabIndex = 15;
-            this.button4.Text = "Up";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -326,10 +324,10 @@
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter tbo_DepartmentTableAdapter;
         private System.Windows.Forms.ComboBox nameComboBox1;
         private System.Windows.Forms.Label companyIDLabel1;
-        private System.Windows.Forms.ComboBox nameComboBox;
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet1;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox сompanyLogoPictureBox;
+        public System.Windows.Forms.ComboBox nameComboBox;
     }
 }

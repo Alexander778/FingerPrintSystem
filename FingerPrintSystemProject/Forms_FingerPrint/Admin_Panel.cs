@@ -17,7 +17,9 @@ namespace Forms_FingerPrint
         public Admin_Panel()
         {
             InitializeComponent();
-        }
+
+            
+    }
 
         private void tbo_RoleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -43,8 +45,39 @@ namespace Forms_FingerPrint
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                 (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
 
+            //
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
 
+            nameComboBox.Items.Clear();
 
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
+
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                nameComboBox.Items.Add(dt.Rows[i]["Name"]);
+            }
+            //
+            SqlConnection con2 = new SqlConnection();
+            con2.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+
+            nameComboBox1.Items.Clear();
+
+            SqlDataAdapter da2 = new SqlDataAdapter("SELECT * FROM tbo_Department", con2);
+
+            DataTable dt2 = new DataTable();
+
+            da2.Fill(dt2);
+
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                nameComboBox1.Items.Add(dt2.Rows[i]["Name"]);
+            }
+            //
 
         }
 
@@ -75,6 +108,7 @@ namespace Forms_FingerPrint
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
 
@@ -90,14 +124,24 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
+            //
+            SqlConnection con2 = new SqlConnection();
+            con2.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
 
+            nameComboBox1.Items.Clear();
 
+            SqlDataAdapter da2 = new SqlDataAdapter("SELECT * FROM tbo_Department", con2);
 
+            DataTable dt2 = new DataTable();
 
+            da2.Fill(dt2);
 
-
-
-
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                nameComboBox1.Items.Add(dt2.Rows[i]["Name"]);
+            }
+            
+            //
         }
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -115,9 +159,9 @@ namespace Forms_FingerPrint
         private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            }
+        }
 
-       
+
     }
     }
 
