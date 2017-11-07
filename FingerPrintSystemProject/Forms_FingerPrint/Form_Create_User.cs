@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Forms_FingerPrint
 {
@@ -55,11 +56,25 @@ namespace Forms_FingerPrint
 
         private void Form_Create_User_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_LinkDepartmentUser". При необходимости она может быть перемещена или удалена.
+            this.tbo_LinkDepartmentUserTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_LinkDepartmentUser);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Role". При необходимости она может быть перемещена или удалена.
             this.tbo_RoleTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Role);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "_FINGERPRINTDB_MDFDataSet.tbo_Profile". При необходимости она может быть перемещена или удалена.
             this.tbo_ProfileTableAdapter.Fill(this._FINGERPRINTDB_MDFDataSet.tbo_Profile);
 
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+            comboBox3.Items.Clear();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                comboBox3.Items.Add(dt.Rows[i]["Name"]);
+            }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -236,6 +251,81 @@ namespace Forms_FingerPrint
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             tbo_ProfileDataGridView.Visible = checkBox2.Checked;
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedValueChanged(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            
+            
+            comboBox3.Items.Clear();
+
+            //
+            SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + dt.Rows[comboBox3.SelectedIndex]["ID"], con);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+
+            for (int i = 0; i < dt1.Rows.Count; i++)
+            {
+                comboBox4.Items.Add(dt1.Rows[i]["Name"]);
+            }
+
+            comboBox4.SelectedIndex = 0;
+            departmentIDLabel1.Text = dt.Rows[comboBox4.SelectedIndex]["ID"].ToString();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tbo_LinkDepartmentUserBindingSource.AddNew();
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        
+
+        private void tbo_ProfileDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            userIDLabel1.Text = tbo_ProfileDataGridView.CurrentCell.Value.ToString();
+        }
+
+        private void comboBox3_SelectedValueChanged_1(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+
+            comboBox3.Items.Clear();
+
+            //
+            SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + dt.Rows[comboBox3.SelectedIndex]["ID"], con);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+
+            for (int i = 0; i < dt1.Rows.Count; i++)
+            {
+                comboBox4.Items.Add(dt1.Rows[i]["Name"]);
+            }
+
+            comboBox4.SelectedIndex = 0;
         }
     }
 }

@@ -135,29 +135,7 @@ namespace Forms_FingerPrint
             nameComboBox1.SelectedIndex = 0;
             ///
             
-            //string sql="SELECT CompanyLogo FROM tbo_Company WHERE ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"];
-            // if (con.State != ConnectionState.Open)
-            // {
-            //     con.Open();
-            // }
-            // var command = new SqlCommand(sql, con);
-            // SqlDataReader reader = command.ExecuteReader();
-            // reader.Read();
-            // if (reader.HasRows)
-            // {
-            //     byte[] img = (byte[])(reader[0]);
-
-            //     if (img == null)
-            //         pictureBox1.Image = null;
-            //     else
-            //     {
-            //         MemoryStream ms = new MemoryStream(img);
-            //         pictureBox1.Image = Image.FromStream(ms);
-
-            //     }
-
-            // }
-            // con.Close();
+            
 
 
 
@@ -184,6 +162,11 @@ namespace Forms_FingerPrint
         {
             Form_Create_User f = new Form_Create_User();
             f.Show();
+        }
+
+        private void nameComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }

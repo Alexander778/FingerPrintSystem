@@ -225,6 +225,7 @@
             this.nameComboBox1.Name = "nameComboBox1";
             this.nameComboBox1.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox1.TabIndex = 11;
+            this.nameComboBox1.SelectedIndexChanged += new System.EventHandler(this.nameComboBox1_SelectedIndexChanged);
             // 
             // companyIDLabel1
             // 
