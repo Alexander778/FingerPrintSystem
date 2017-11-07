@@ -179,6 +179,12 @@ namespace Forms_FingerPrint
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form_Create_User f = new Form_Create_User();
+            f.Show();
+        }
     }
     }
 

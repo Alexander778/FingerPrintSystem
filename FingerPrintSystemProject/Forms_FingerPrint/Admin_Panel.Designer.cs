@@ -55,9 +55,9 @@
             this.nameComboBox = new System.Windows.Forms.ComboBox();
             this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet1 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
-            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -159,6 +159,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Add User";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tbo_CompanyBindingSource
             // 
@@ -256,17 +257,6 @@
             this._FINGERPRINTDB_MDFDataSet1.DataSetName = "_FINGERPRINTDB_MDFDataSet";
             this._FINGERPRINTDB_MDFDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::Forms_FingerPrint.Properties.Resources._179407;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(66, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(26, 27);
-            this.button4.TabIndex = 15;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -283,6 +273,17 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::Forms_FingerPrint.Properties.Resources._179407;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Location = new System.Drawing.Point(66, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(26, 27);
+            this.button4.TabIndex = 15;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Admin_Panel
             // 

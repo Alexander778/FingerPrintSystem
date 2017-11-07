@@ -82,6 +82,12 @@
     <Compile Include="Form_Create_Department.Designer.cs">
       <DependentUpon>Form_Create_Department.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Create_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Create_User.Designer.cs">
+      <DependentUpon>Form_Create_User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Greetins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Create_Department.resx">
       <DependentUpon>Form_Create_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Create_User.resx">
+      <DependentUpon>Form_Create_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Greetins.resx">
       <DependentUpon>Greetins.cs</DependentUpon>
