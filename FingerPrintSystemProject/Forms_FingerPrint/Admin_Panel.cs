@@ -111,15 +111,15 @@ namespace Forms_FingerPrint
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
+            //
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
-
+   
             companyIDLabel1.Text = dt.Rows[nameComboBox.SelectedIndex]["ID"].ToString();
             label3.Text = dt.Rows[nameComboBox.SelectedIndex]["Name"].ToString();
-
             nameComboBox1.Items.Clear();
 
             //
@@ -134,6 +134,30 @@ namespace Forms_FingerPrint
 
             nameComboBox1.SelectedIndex = 0;
             ///
+            
+            //string sql="SELECT CompanyLogo FROM tbo_Company WHERE ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"];
+            // if (con.State != ConnectionState.Open)
+            // {
+            //     con.Open();
+            // }
+            // var command = new SqlCommand(sql, con);
+            // SqlDataReader reader = command.ExecuteReader();
+            // reader.Read();
+            // if (reader.HasRows)
+            // {
+            //     byte[] img = (byte[])(reader[0]);
+
+            //     if (img == null)
+            //         pictureBox1.Image = null;
+            //     else
+            //     {
+            //         MemoryStream ms = new MemoryStream(img);
+            //         pictureBox1.Image = Image.FromStream(ms);
+
+            //     }
+
+            // }
+            // con.Close();
 
 
 

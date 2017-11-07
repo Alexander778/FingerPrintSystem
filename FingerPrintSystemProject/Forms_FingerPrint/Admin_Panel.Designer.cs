@@ -58,7 +58,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -102,6 +101,15 @@
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 13;
             nameLabel.Text = "Name:";
+            // 
+            // nameLabel2
+            // 
+            nameLabel2.AutoSize = true;
+            nameLabel2.Location = new System.Drawing.Point(13, 121);
+            nameLabel2.Name = "nameLabel2";
+            nameLabel2.Size = new System.Drawing.Size(51, 13);
+            nameLabel2.TabIndex = 18;
+            nameLabel2.Text = "Company";
             // 
             // tboCompanyBindingSource1
             // 
@@ -259,15 +267,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // nameLabel2
-            // 
-            nameLabel2.AutoSize = true;
-            nameLabel2.Location = new System.Drawing.Point(13, 121);
-            nameLabel2.Name = "nameLabel2";
-            nameLabel2.Size = new System.Drawing.Size(51, 13);
-            nameLabel2.TabIndex = 18;
-            nameLabel2.Text = "Company";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -285,21 +284,11 @@
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 303);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "label2";
-            // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 737);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(nameLabel2);
@@ -362,6 +351,5 @@
         public System.Windows.Forms.ComboBox nameComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
     }
 }
