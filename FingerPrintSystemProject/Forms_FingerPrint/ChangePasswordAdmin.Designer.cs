@@ -623,7 +623,7 @@
             this.tbo_ProfileDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.tbo_ProfileDataGridView.Name = "tbo_ProfileDataGridView";
             this.tbo_ProfileDataGridView.RowTemplate.Height = 28;
-            this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1143, 209);
+            this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1041, 209);
             this.tbo_ProfileDataGridView.TabIndex = 53;
             this.tbo_ProfileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellContentClick);
             // 

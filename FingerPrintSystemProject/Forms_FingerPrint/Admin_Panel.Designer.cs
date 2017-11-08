@@ -133,11 +133,12 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::Forms_FingerPrint.Properties.Resources.add1;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Location = new System.Drawing.Point(537, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 69);
+            this.button1.Size = new System.Drawing.Size(77, 75);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Create company";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -153,11 +154,12 @@
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::Forms_FingerPrint.Properties.Resources.user_add_icon;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button3.Location = new System.Drawing.Point(535, 215);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 69);
+            this.button3.Size = new System.Drawing.Size(79, 73);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Add User";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

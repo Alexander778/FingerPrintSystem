@@ -50,7 +50,7 @@ namespace Forms_FingerPrint
             button11.Enabled = true;
 
             tbo_ProfileBindingSource.AddNew();
-            tbo_LinkDepartmentUserBindingSource.AddNew();
+            
         }
 
         private void tbo_ProfileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -308,6 +308,7 @@ namespace Forms_FingerPrint
 
             ////
             comboBoxDepartment.Items.Clear();
+
             SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + dt.Rows[comboBoxCompany.SelectedIndex]["ID"], con);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
@@ -318,21 +319,31 @@ namespace Forms_FingerPrint
             }
 
             comboBoxDepartment.SelectedIndex = 0;
-            
+
+
+
         }
 
         private void comboBoxDepartment_SelectedValueChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+            
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
 
+                SqlDataAdapter da1 = new SqlDataAdapter("SELECT ID FROM tbo_Department WHERE NAME=" + "'" + comboBoxDepartment.SelectedItem.ToString() + "'", con);
+                DataTable dt1 = new DataTable();
+                da1.Fill(dt1);
 
+            // Так как запрос вытаскивает 1 запись, то индекс строки всегда должен быть 0,поэтому во втором условии мы должны получить индекс 0, если изначально не было нуля
+            if (comboBoxDepartment.SelectedIndex == 0)
+            {
+                departmentIDLabel1.Text = dt1.Rows[comboBoxDepartment.SelectedIndex]["ID"].ToString();
+            }
+            else
+            {
+                departmentIDLabel1.Text = dt1.Rows[comboBoxDepartment.SelectedIndex-comboBoxDepartment.SelectedIndex]["ID"].ToString();
+            }
 
-            SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Department", con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            departmentIDLabel1.Text = dt.Rows[comboBoxDepartment.SelectedIndex]["ID"].ToString();
         }
 
         private void button9_Click(object sender, EventArgs e)
