@@ -351,6 +351,11 @@ namespace Forms_FingerPrint
             tbo_LinkDepartmentUserTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
 
         }
+
+        private void tbo_ProfileDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 
