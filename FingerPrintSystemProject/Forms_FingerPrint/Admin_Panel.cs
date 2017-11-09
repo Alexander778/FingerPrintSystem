@@ -166,8 +166,95 @@ namespace Forms_FingerPrint
 
         private void nameComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.SetToolTip(button3, "Add User");
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip2.SetToolTip(button1, "Add Company");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (checkBoxShowOnlyCompany.Checked == true) //no division
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+                SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Company", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                var select = @"
+SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.BirthDate,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position
+ FROM tbo_LinkDepartmentUser 
+ INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+ INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
+ INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
+ WHERE tbo_Company.ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"];
+
+                var c = new SqlConnection(@"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True"); // Your Connection String here
+                var dataAdapter = new SqlDataAdapter(select, c);
+
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+                
+            }
+            else//division by departments
+            {
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+                SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Department", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                var select = @"
+SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.BirthDate,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position
+ FROM tbo_LinkDepartmentUser 
+ INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+ INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
+ INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
+ WHERE tbo_Department.ID=" + dt.Rows[nameComboBox1.SelectedIndex]["ID"];
+
+                var c = new SqlConnection(@"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True"); // Your Connection String here
+                var dataAdapter = new SqlDataAdapter(select, c);
+
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+
+
+            }
+        }
+
+        private void checkBoxShowOnlyCompany_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShowOnlyCompany.Checked == true)
+            {
+                nameComboBox1.Enabled = false;
+            }
+            else
+            {
+                nameComboBox1.Enabled = true;
+            }
         }
     }
     }
+    
+
 

@@ -41,6 +41,7 @@
             System.Windows.Forms.Label departmentIDLabel;
             System.Windows.Forms.Label userIDLabel;
             System.Windows.Forms.Label iDLabel;
+            System.Windows.Forms.Label positionLabel;
             this.button8 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -83,10 +84,6 @@
             this.fingerPrintTextBox = new System.Windows.Forms.TextBox();
             this.roleIDComboBox = new System.Windows.Forms.ComboBox();
             this.tbo_LinkDepartmentUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbo_LinkDepartmentUserDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accessTextBox = new System.Windows.Forms.TextBox();
             this.departmentIDLabel1 = new System.Windows.Forms.Label();
             this.userIDLabel1 = new System.Windows.Forms.Label();
@@ -100,6 +97,12 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.positionTextBox = new System.Windows.Forms.TextBox();
+            this.tbo_LinkDepartmentUserDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             scheduleLabel = new System.Windows.Forms.Label();
             birthDateLabel = new System.Windows.Forms.Label();
             dateCreationLabel = new System.Windows.Forms.Label();
@@ -112,6 +115,7 @@
             departmentIDLabel = new System.Windows.Forms.Label();
             userIDLabel = new System.Windows.Forms.Label();
             iDLabel = new System.Windows.Forms.Label();
+            positionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
@@ -120,10 +124,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // scheduleLabel
@@ -633,38 +637,6 @@
             this.tbo_LinkDepartmentUserBindingSource.DataMember = "tbo_LinkDepartmentUser";
             this.tbo_LinkDepartmentUserBindingSource.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
-            // tbo_LinkDepartmentUserDataGridView
-            // 
-            this.tbo_LinkDepartmentUserDataGridView.AutoGenerateColumns = false;
-            this.tbo_LinkDepartmentUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbo_LinkDepartmentUserDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
-            this.tbo_LinkDepartmentUserDataGridView.DataSource = this.tbo_LinkDepartmentUserBindingSource;
-            this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(1131, 11);
-            this.tbo_LinkDepartmentUserDataGridView.Name = "tbo_LinkDepartmentUserDataGridView";
-            this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(344, 532);
-            this.tbo_LinkDepartmentUserDataGridView.TabIndex = 122;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "DepartmentID";
-            this.dataGridViewTextBoxColumn11.HeaderText = "DepartmentID";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "UserID";
-            this.dataGridViewTextBoxColumn12.HeaderText = "UserID";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Access";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Access";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
             // accessTextBox
             // 
             this.accessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "Access", true));
@@ -790,11 +762,70 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // positionLabel
+            // 
+            positionLabel.AutoSize = true;
+            positionLabel.Location = new System.Drawing.Point(747, 270);
+            positionLabel.Name = "positionLabel";
+            positionLabel.Size = new System.Drawing.Size(47, 13);
+            positionLabel.TabIndex = 142;
+            positionLabel.Text = "Position:";
+            // 
+            // positionTextBox
+            // 
+            this.positionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "Position", true));
+            this.positionTextBox.Location = new System.Drawing.Point(800, 267);
+            this.positionTextBox.Name = "positionTextBox";
+            this.positionTextBox.Size = new System.Drawing.Size(75, 20);
+            this.positionTextBox.TabIndex = 143;
+            // 
+            // tbo_LinkDepartmentUserDataGridView
+            // 
+            this.tbo_LinkDepartmentUserDataGridView.AutoGenerateColumns = false;
+            this.tbo_LinkDepartmentUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbo_LinkDepartmentUserDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.tbo_LinkDepartmentUserDataGridView.DataSource = this.tbo_LinkDepartmentUserBindingSource;
+            this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(1113, 47);
+            this.tbo_LinkDepartmentUserDataGridView.Name = "tbo_LinkDepartmentUserDataGridView";
+            this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(448, 496);
+            this.tbo_LinkDepartmentUserDataGridView.TabIndex = 143;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "DepartmentID";
+            this.dataGridViewTextBoxColumn11.HeaderText = "DepartmentID";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "UserID";
+            this.dataGridViewTextBoxColumn12.HeaderText = "UserID";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Access";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Access";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Position";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Position";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
             // Form_Create_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1491, 591);
+            this.ClientSize = new System.Drawing.Size(1573, 591);
+            this.Controls.Add(this.tbo_LinkDepartmentUserDataGridView);
+            this.Controls.Add(positionLabel);
+            this.Controls.Add(this.positionTextBox);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
@@ -810,7 +841,6 @@
             this.Controls.Add(this.departmentIDLabel1);
             this.Controls.Add(accessLabel);
             this.Controls.Add(this.accessTextBox);
-            this.Controls.Add(this.tbo_LinkDepartmentUserDataGridView);
             this.Controls.Add(this.roleIDComboBox);
             this.Controls.Add(this.fingerPrintTextBox);
             this.Controls.Add(this.photoPictureBox1);
@@ -853,10 +883,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboDepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbo_LinkDepartmentUserDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -894,10 +924,6 @@
         private System.Windows.Forms.ComboBox roleIDComboBox;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_LinkDepartmentUserTableAdapter tbo_LinkDepartmentUserTableAdapter;
         private System.Windows.Forms.BindingSource tbo_LinkDepartmentUserBindingSource;
-        private System.Windows.Forms.DataGridView tbo_LinkDepartmentUserDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.TextBox accessTextBox;
         private System.Windows.Forms.Label departmentIDLabel1;
         private System.Windows.Forms.Label userIDLabel1;
@@ -922,5 +948,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.TextBox positionTextBox;
+        private System.Windows.Forms.DataGridView tbo_LinkDepartmentUserDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }
