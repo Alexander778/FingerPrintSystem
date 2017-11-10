@@ -61,17 +61,26 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
-            
-            //
+
+           
+        
+        //SqlDataAdapter da1 = new SqlDataAdapter("SELECT CompanyLogo FROM tbo_Company WHERE ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
+
+        //DataTable dt1 = new DataTable();
+
+        //da1.Fill(dt1);
+        //var data=(Byte[])()
+        //
 
 
-            label3.Text = null;
-            companyIDLabel1.Text = null;
-            pictureBox1.Image = null;
+
+        //label3.Text = null;
+        //companyIDLabel1.Text = null;
+        //pictureBox1.Image = null;
 
 
 
-        }
+    }
 
         
 
@@ -133,9 +142,20 @@ namespace Forms_FingerPrint
             }
 
             nameComboBox1.SelectedIndex = 0;
-            ///
-            
-            
+
+            //
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT CompanyLogo FROM tbo_Company WHERE ID="+ dt.Rows[nameComboBox.SelectedIndex]["ID"],con));
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+
+            if (dataSet.Tables[0].Rows.Count == 1)
+            {
+                Byte[] data = new Byte[0];
+                data = (Byte[])(dataSet.Tables[0].Rows[0]["CompanyLogo"]);
+                MemoryStream mem = new MemoryStream(data);
+                pictureBox1.Image = Image.FromStream(mem);
+            }
+            //
 
 
 
@@ -252,6 +272,16 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
             {
                 nameComboBox1.Enabled = true;
             }
+        }
+
+        private void tbo_CompanyDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+           
         }
     }
     }

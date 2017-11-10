@@ -48,6 +48,7 @@ namespace Forms_FingerPrint
             button9.Enabled = true;
             button10.Enabled = true;
             button11.Enabled = true;
+            positionTextBox.Enabled = true;
 
             tbo_ProfileBindingSource.AddNew();
             
@@ -287,6 +288,35 @@ namespace Forms_FingerPrint
         private void tbo_ProfileDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             userIDLabel1.Text = iDLabel1.Text;
+            photoPictureBox1.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            photoPictureBox1.Enabled = true;
+            fingerPrintTextBox.Enabled = true;
+            button3.Enabled = true;
+            nameTextBox.Enabled = true;
+            surnameTextBox.Enabled = true;
+            patronymicTextBox.Enabled = true;
+            button6.Enabled = true;
+            button5.Enabled = true;
+            checkBox2.Enabled = true;
+            roleIDComboBox.Enabled = true;
+            // scheduleTextBox.Enabled = true;
+            birthDateDateTimePicker.Enabled = true;
+            dateCreationDateTimePicker.Enabled = true;
+            button8.Enabled = true;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+            comboBoxCompany.Enabled = true;
+            comboBoxDepartment.Enabled = true;
+            accessTextBox.Enabled = true;
+            dateCreationDateTimePicker.Value = DateTime.Today;
+            birthDateDateTimePicker.Value = DateTime.Today;
+            button9.Enabled = true;
+            button10.Enabled = true;
+            button11.Enabled = true;
+            positionTextBox.Enabled = true;
+
         }
 
         private void comboBoxCompany_SelectedValueChanged(object sender, EventArgs e)

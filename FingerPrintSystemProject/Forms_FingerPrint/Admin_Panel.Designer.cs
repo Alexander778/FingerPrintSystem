@@ -43,11 +43,13 @@
             this.companyIDLabel1 = new System.Windows.Forms.Label();
             this.nameComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkBoxShowOnlyCompany = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbo_CompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_DepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,16 +63,14 @@
             this.tbo_DepartmentTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter();
             this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet1 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
-            this.checkBoxShowOnlyCompany = new System.Windows.Forms.CheckBox();
-            this.button5 = new System.Windows.Forms.Button();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             nameLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).BeginInit();
@@ -175,6 +175,7 @@
             // 
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "Name", true));
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
+            this.nameComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox1.FormattingEnabled = true;
             this.nameComboBox1.Location = new System.Drawing.Point(81, 164);
             this.nameComboBox1.Name = "nameComboBox1";
@@ -195,6 +196,7 @@
             // 
             this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
             this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
+            this.nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox.FormattingEnabled = true;
             this.nameComboBox.Location = new System.Drawing.Point(81, 69);
             this.nameComboBox.Name = "nameComboBox";
@@ -210,15 +212,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 19;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(255, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
             // 
             // button4
             // 
@@ -238,6 +231,35 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(720, 410);
             this.dataGridView1.TabIndex = 21;
+            // 
+            // checkBoxShowOnlyCompany
+            // 
+            this.checkBoxShowOnlyCompany.AutoSize = true;
+            this.checkBoxShowOnlyCompany.Location = new System.Drawing.Point(16, 211);
+            this.checkBoxShowOnlyCompany.Name = "checkBoxShowOnlyCompany";
+            this.checkBoxShowOnlyCompany.Size = new System.Drawing.Size(346, 17);
+            this.checkBoxShowOnlyCompany.TabIndex = 22;
+            this.checkBoxShowOnlyCompany.Text = "Show all employees in current company (no division by departments)";
+            this.checkBoxShowOnlyCompany.UseVisualStyleBackColor = true;
+            this.checkBoxShowOnlyCompany.CheckedChanged += new System.EventHandler(this.checkBoxShowOnlyCompany_CheckedChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(127, 234);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "Show";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(237, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 124);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // tbo_CompanyBindingSource
             // 
@@ -305,36 +327,15 @@
             this._FINGERPRINTDB_MDFDataSet1.DataSetName = "_FINGERPRINTDB_MDFDataSet";
             this._FINGERPRINTDB_MDFDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // checkBoxShowOnlyCompany
-            // 
-            this.checkBoxShowOnlyCompany.AutoSize = true;
-            this.checkBoxShowOnlyCompany.Location = new System.Drawing.Point(16, 211);
-            this.checkBoxShowOnlyCompany.Name = "checkBoxShowOnlyCompany";
-            this.checkBoxShowOnlyCompany.Size = new System.Drawing.Size(346, 17);
-            this.checkBoxShowOnlyCompany.TabIndex = 22;
-            this.checkBoxShowOnlyCompany.Text = "Show all employees in current company (no division by departments)";
-            this.checkBoxShowOnlyCompany.UseVisualStyleBackColor = true;
-            this.checkBoxShowOnlyCompany.CheckedChanged += new System.EventHandler(this.checkBoxShowOnlyCompany_CheckedChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(127, 234);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Show";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 737);
+            this.ClientSize = new System.Drawing.Size(766, 745);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBoxShowOnlyCompany);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(nameLabel2);
             this.Controls.Add(this.button4);
@@ -355,8 +356,8 @@
             this.Load += new System.EventHandler(this.Admin_Panel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).EndInit();
@@ -396,11 +397,11 @@
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.ComboBox nameComboBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox checkBoxShowOnlyCompany;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

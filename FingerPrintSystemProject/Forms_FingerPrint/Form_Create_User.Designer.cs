@@ -246,6 +246,15 @@
             iDLabel.TabIndex = 134;
             iDLabel.Text = "ID:";
             // 
+            // positionLabel
+            // 
+            positionLabel.AutoSize = true;
+            positionLabel.Location = new System.Drawing.Point(747, 270);
+            positionLabel.Name = "positionLabel";
+            positionLabel.Size = new System.Drawing.Size(47, 13);
+            positionLabel.TabIndex = 142;
+            positionLabel.Text = "Position:";
+            // 
             // button8
             // 
             this.button8.Enabled = false;
@@ -525,7 +534,8 @@
             this.tbo_ProfileDataGridView.DataSource = this.tbo_ProfileBindingSource;
             this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(23, 323);
             this.tbo_ProfileDataGridView.Name = "tbo_ProfileDataGridView";
-            this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1050, 220);
+            this.tbo_ProfileDataGridView.ReadOnly = true;
+            this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1042, 220);
             this.tbo_ProfileDataGridView.TabIndex = 119;
             this.tbo_ProfileDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellClick);
             this.tbo_ProfileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellContentClick);
@@ -542,48 +552,56 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn2.HeaderText = "Name";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Surname";
             this.dataGridViewTextBoxColumn3.HeaderText = "Surname";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Patronymic";
             this.dataGridViewTextBoxColumn4.HeaderText = "Patronymic";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.DataPropertyName = "Photo";
             this.dataGridViewImageColumn1.HeaderText = "Photo";
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "BirthDate";
             this.dataGridViewTextBoxColumn5.HeaderText = "BirthDate";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Schedule";
             this.dataGridViewTextBoxColumn6.HeaderText = "Schedule";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "FingerPrint";
             this.dataGridViewTextBoxColumn7.HeaderText = "FingerPrint";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Password";
             this.dataGridViewTextBoxColumn8.HeaderText = "Password";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Visible = false;
             // 
             // dataGridViewTextBoxColumn9
@@ -591,12 +609,14 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "RoleID";
             this.dataGridViewTextBoxColumn9.HeaderText = "RoleID";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "DateCreation";
             this.dataGridViewTextBoxColumn10.HeaderText = "DateCreation";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // photoPictureBox1
             // 
@@ -762,18 +782,10 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // positionLabel
-            // 
-            positionLabel.AutoSize = true;
-            positionLabel.Location = new System.Drawing.Point(747, 270);
-            positionLabel.Name = "positionLabel";
-            positionLabel.Size = new System.Drawing.Size(47, 13);
-            positionLabel.TabIndex = 142;
-            positionLabel.Text = "Position:";
-            // 
             // positionTextBox
             // 
             this.positionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "Position", true));
+            this.positionTextBox.Enabled = false;
             this.positionTextBox.Location = new System.Drawing.Point(800, 267);
             this.positionTextBox.Name = "positionTextBox";
             this.positionTextBox.Size = new System.Drawing.Size(75, 20);
