@@ -47,8 +47,7 @@ namespace Forms_FingerPrint
 
             //
             SqlConnection con = new SqlConnection();
-            con.ConnectionString =
-                System.Configuration.ConfigurationManager.ConnectionStrings["Forms_FingerPrint.Properties.Settings.FINGERPRINTDB_DB"].ToString();
+            con.ConnectionString = _connectionString;
             nameComboBox.Items.Clear();
 
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
@@ -83,11 +82,6 @@ namespace Forms_FingerPrint
     }
 
         
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -173,11 +167,6 @@ namespace Forms_FingerPrint
 
         }
 
-        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Form_Create_User f = new Form_Create_User();
@@ -209,7 +198,7 @@ namespace Forms_FingerPrint
             if (checkBoxShowOnlyCompany.Checked == true) //no division
             {
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+                con.ConnectionString = _connectionString; 
                 SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Company", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -222,7 +211,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
  WHERE tbo_Company.ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"];
 
-                var c = new SqlConnection(@"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True"); // Your Connection String here
+                var c = new SqlConnection(_connectionString); // Your Connection String here
                 var dataAdapter = new SqlDataAdapter(select, c);
 
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -277,11 +266,6 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
         private void tbo_CompanyDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-           
         }
     }
     }
