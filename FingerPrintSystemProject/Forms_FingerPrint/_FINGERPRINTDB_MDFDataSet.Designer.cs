@@ -451,7 +451,7 @@ namespace Forms_FingerPrint {
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnСompanyLogo;
+            private global::System.Data.DataColumn columnCompanyLogo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -504,9 +504,9 @@ namespace Forms_FingerPrint {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn СompanyLogoColumn {
+            public global::System.Data.DataColumn CompanyLogoColumn {
                 get {
-                    return this.columnСompanyLogo;
+                    return this.columnCompanyLogo;
                 }
             }
             
@@ -547,12 +547,12 @@ namespace Forms_FingerPrint {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbo_CompanyRow Addtbo_CompanyRow(string Name, byte[] СompanyLogo) {
+            public tbo_CompanyRow Addtbo_CompanyRow(string Name, byte[] CompanyLogo) {
                 tbo_CompanyRow rowtbo_CompanyRow = ((tbo_CompanyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
-                        СompanyLogo};
+                        CompanyLogo};
                 rowtbo_CompanyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtbo_CompanyRow);
                 return rowtbo_CompanyRow;
@@ -584,7 +584,7 @@ namespace Forms_FingerPrint {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnName = base.Columns["Name"];
-                this.columnСompanyLogo = base.Columns["СompanyLogo"];
+                this.columnCompanyLogo = base.Columns["CompanyLogo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -594,8 +594,8 @@ namespace Forms_FingerPrint {
                 base.Columns.Add(this.columnID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnСompanyLogo = new global::System.Data.DataColumn("СompanyLogo", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnСompanyLogo);
+                this.columnCompanyLogo = new global::System.Data.DataColumn("CompanyLogo", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompanyLogo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -606,7 +606,7 @@ namespace Forms_FingerPrint {
                 this.columnID.Unique = true;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 50;
-                this.columnСompanyLogo.AllowDBNull = false;
+                this.columnCompanyLogo.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2091,12 +2091,12 @@ namespace Forms_FingerPrint {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] СompanyLogo {
+            public byte[] CompanyLogo {
                 get {
-                    return ((byte[])(this[this.tabletbo_Company.СompanyLogoColumn]));
+                    return ((byte[])(this[this.tabletbo_Company.CompanyLogoColumn]));
                 }
                 set {
-                    this[this.tabletbo_Company.СompanyLogoColumn] = value;
+                    this[this.tabletbo_Company.CompanyLogoColumn] = value;
                 }
             }
             
@@ -2828,7 +2828,7 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
             tableMapping.DataSetTable = "tbo_Company";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("СompanyLogo", "СompanyLogo");
+            tableMapping.ColumnMappings.Add("CompanyLogo", "CompanyLogo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2839,20 +2839,20 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbo_Company] ([Name], [СompanyLogo]) VALUES (@Name, @СompanyLo" +
-                "go);\r\nSELECT ID, Name, СompanyLogo FROM tbo_Company WHERE (ID = SCOPE_IDENTITY()" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tbo_Company] ([Name], [CompanyLogo]) VALUES (@Name, @CompanyLo" +
+                "go);\r\nSELECT ID, Name, CompanyLogo FROM tbo_Company WHERE (ID = SCOPE_IDENTITY()" +
                 ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@СompanyLogo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "СompanyLogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyLogo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyLogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbo_Company] SET [Name] = @Name, [СompanyLogo] = @СompanyLogo WHERE" +
-                " (([ID] = @Original_ID) AND ([Name] = @Original_Name));\r\nSELECT ID, Name, Сompan" +
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[tbo_Company] SET [Name] = @Name, [CompanyLogo] = @CompanyLogo WHERE" +
+                " (([ID] = @Original_ID) AND ([Name] = @Original_Name));\r\nSELECT ID, Name, Compan" +
                 "yLogo FROM tbo_Company WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@СompanyLogo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "СompanyLogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompanyLogo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompanyLogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2871,7 +2871,7 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Name, СompanyLogo FROM dbo.tbo_Company";
+            this._commandCollection[0].CommandText = "SELECT ID, Name, CompanyLogo FROM dbo.tbo_Company";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2960,18 +2960,18 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, byte[] СompanyLogo) {
+        public virtual int Insert(string Name, byte[] CompanyLogo) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
             }
-            if ((СompanyLogo == null)) {
-                throw new global::System.ArgumentNullException("СompanyLogo");
+            if ((CompanyLogo == null)) {
+                throw new global::System.ArgumentNullException("CompanyLogo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(СompanyLogo));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(CompanyLogo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2993,18 +2993,18 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, byte[] СompanyLogo, int Original_ID, string Original_Name, int ID) {
+        public virtual int Update(string Name, byte[] CompanyLogo, int Original_ID, string Original_Name, int ID) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
             }
-            if ((СompanyLogo == null)) {
-                throw new global::System.ArgumentNullException("СompanyLogo");
+            if ((CompanyLogo == null)) {
+                throw new global::System.ArgumentNullException("CompanyLogo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(СompanyLogo));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(CompanyLogo));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
             if ((Original_Name == null)) {
@@ -3034,8 +3034,8 @@ namespace Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, byte[] СompanyLogo, int Original_ID, string Original_Name) {
-            return this.Update(Name, СompanyLogo, Original_ID, Original_Name, Original_ID);
+        public virtual int Update(string Name, byte[] CompanyLogo, int Original_ID, string Original_Name) {
+            return this.Update(Name, CompanyLogo, Original_ID, Original_Name, Original_ID);
         }
     }
     

@@ -95,7 +95,7 @@ namespace Forms_FingerPrint
         {
             //
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+            con.ConnectionString = _connectionString;
 
             nameComboBox.Items.Clear();
 
@@ -114,6 +114,8 @@ namespace Forms_FingerPrint
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
+           //!!!!
+            
             //
             SqlConnection con = new SqlConnection();
             con.ConnectionString = _connectionString;
@@ -136,14 +138,14 @@ namespace Forms_FingerPrint
             }
 
             //
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT СompanyLogo FROM tbo_Company WHERE ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con));
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT CompanyLogo FROM tbo_Company WHERE ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con));
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
 
             if (dataSet.Tables[0].Rows.Count == 1)
             {
                 Byte[] data = new Byte[0];
-                data = (Byte[])(dataSet.Tables[0].Rows[0]["СompanyLogo"]);
+                data = (Byte[])(dataSet.Tables[0].Rows[0]["CompanyLogo"]);
                 MemoryStream mem = new MemoryStream(data);
                 pictureBox1.Image = Image.FromStream(mem);
             }
@@ -223,7 +225,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
             {
 
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+                con.ConnectionString = _connectionString;
                 SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Department", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -264,6 +266,11 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
         private void tbo_CompanyDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }
