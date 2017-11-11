@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nameLabel;
-            System.Windows.Forms.Label сompanyLogoLabel;
             this.tbo_CompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.b_LoadLogo = new System.Windows.Forms.Button();
@@ -42,12 +41,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.tbo_CompanyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.сompanyLogoPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbo_CompanyTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter();
             this.tableAdapterManager = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager();
@@ -55,38 +48,32 @@
             this.tbo_RoleTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter();
             this.tbo_DepartmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_RoleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbo_CompanyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.companyLogoPictureBox = new System.Windows.Forms.PictureBox();
             nameLabel = new System.Windows.Forms.Label();
-            сompanyLogoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyLogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(37, 103);
-            nameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            nameLabel.Location = new System.Drawing.Point(25, 106);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new System.Drawing.Size(38, 13);
-            nameLabel.TabIndex = 17;
+            nameLabel.TabIndex = 57;
             nameLabel.Text = "Name:";
-            // 
-            // сompanyLogoLabel
-            // 
-            сompanyLogoLabel.AutoSize = true;
-            сompanyLogoLabel.Location = new System.Drawing.Point(37, 131);
-            сompanyLogoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            сompanyLogoLabel.Name = "сompanyLogoLabel";
-            сompanyLogoLabel.Size = new System.Drawing.Size(81, 13);
-            сompanyLogoLabel.TabIndex = 19;
-            сompanyLogoLabel.Text = "Сompany Logo:";
             // 
             // tbo_CompanyBindingSource
             // 
@@ -182,63 +169,6 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // tbo_CompanyDataGridView
-            // 
-            this.tbo_CompanyDataGridView.AutoGenerateColumns = false;
-            this.tbo_CompanyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbo_CompanyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewImageColumn1});
-            this.tbo_CompanyDataGridView.DataSource = this.tbo_CompanyBindingSource;
-            this.tbo_CompanyDataGridView.Location = new System.Drawing.Point(325, 31);
-            this.tbo_CompanyDataGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.tbo_CompanyDataGridView.Name = "tbo_CompanyDataGridView";
-            this.tbo_CompanyDataGridView.RowTemplate.Height = 28;
-            this.tbo_CompanyDataGridView.Size = new System.Drawing.Size(321, 160);
-            this.tbo_CompanyDataGridView.TabIndex = 15;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "СompanyLogo";
-            this.dataGridViewImageColumn1.HeaderText = "СompanyLogo";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
-            this.nameTextBox.Enabled = false;
-            this.nameTextBox.Location = new System.Drawing.Point(121, 101);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(68, 20);
-            this.nameTextBox.TabIndex = 18;
-            // 
-            // сompanyLogoPictureBox
-            // 
-            this.сompanyLogoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_CompanyBindingSource, "СompanyLogo", true));
-            this.сompanyLogoPictureBox.Enabled = false;
-            this.сompanyLogoPictureBox.Location = new System.Drawing.Point(121, 131);
-            this.сompanyLogoPictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.сompanyLogoPictureBox.Name = "сompanyLogoPictureBox";
-            this.сompanyLogoPictureBox.Size = new System.Drawing.Size(67, 60);
-            this.сompanyLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.сompanyLogoPictureBox.TabIndex = 20;
-            this.сompanyLogoPictureBox.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -285,17 +215,68 @@
             this.tbo_RoleBindingSource1.DataMember = "tbo_Role";
             this.tbo_RoleBindingSource1.DataSource = this._FINGERPRINTDB_MDFDataSet;
             // 
+            // tbo_CompanyDataGridView
+            // 
+            this.tbo_CompanyDataGridView.AutoGenerateColumns = false;
+            this.tbo_CompanyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbo_CompanyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewImageColumn2});
+            this.tbo_CompanyDataGridView.DataSource = this.tbo_CompanyBindingSource;
+            this.tbo_CompanyDataGridView.Location = new System.Drawing.Point(325, 26);
+            this.tbo_CompanyDataGridView.Name = "tbo_CompanyDataGridView";
+            this.tbo_CompanyDataGridView.Size = new System.Drawing.Size(344, 220);
+            this.tbo_CompanyDataGridView.TabIndex = 57;
+            this.tbo_CompanyDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_CompanyDataGridView_CellClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.DataPropertyName = "CompanyLogo";
+            this.dataGridViewImageColumn2.HeaderText = "CompanyLogo";
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_CompanyBindingSource, "Name", true));
+            this.nameTextBox.Location = new System.Drawing.Point(69, 103);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 58;
+            // 
+            // companyLogoPictureBox
+            // 
+            this.companyLogoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.tbo_CompanyBindingSource, "CompanyLogo", true));
+            this.companyLogoPictureBox.Location = new System.Drawing.Point(69, 129);
+            this.companyLogoPictureBox.Name = "companyLogoPictureBox";
+            this.companyLogoPictureBox.Size = new System.Drawing.Size(100, 84);
+            this.companyLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.companyLogoPictureBox.TabIndex = 59;
+            this.companyLogoPictureBox.TabStop = false;
+            // 
             // Form_Create_Company
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 341);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(689, 345);
+            this.Controls.Add(this.companyLogoPictureBox);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(сompanyLogoLabel);
-            this.Controls.Add(this.сompanyLogoPictureBox);
             this.Controls.Add(this.tbo_CompanyDataGridView);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -313,11 +294,11 @@
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.сompanyLogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_RoleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyLogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,12 +316,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox checkBox1;
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet;
-        private System.Windows.Forms.DataGridView tbo_CompanyDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.PictureBox сompanyLogoPictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_CompanyTableAdapter tbo_CompanyTableAdapter;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -348,5 +323,11 @@
         private System.Windows.Forms.BindingSource tbo_DepartmentBindingSource1;
         private _FINGERPRINTDB_MDFDataSetTableAdapters.tbo_RoleTableAdapter tbo_RoleTableAdapter;
         private System.Windows.Forms.BindingSource tbo_RoleBindingSource1;
+        private System.Windows.Forms.DataGridView tbo_CompanyDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.PictureBox companyLogoPictureBox;
     }
 }

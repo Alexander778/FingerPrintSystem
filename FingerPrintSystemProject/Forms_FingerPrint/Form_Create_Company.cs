@@ -18,7 +18,7 @@ namespace Forms_FingerPrint
         public Form_Create_Company()
         {
             InitializeComponent();
-
+            tbo_CompanyDataGridView.DataError += new DataGridViewDataErrorEventHandler(tbo_CompanyDataGridView_DataError);
         }
 
         private void tbo_CompanyBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Forms_FingerPrint
 
         private void button1_Click(object sender, EventArgs e) //Createbutton_Company_Form
         {
-            Form_Create_Company f1 = new Form_Create_Company();
+           // Form_Create_Company f1 = new Form_Create_Company();
 
            
             nameTextBox.Enabled = true;
@@ -63,7 +63,7 @@ namespace Forms_FingerPrint
             b_LoadLogo.Enabled = true;
             button2.Enabled = true;
             checkBox1.Enabled = true;
-            сompanyLogoPictureBox.Enabled = true;
+            companyLogoPictureBox.Enabled = true;
 
             tbo_CompanyBindingSource.AddNew();
 
@@ -98,7 +98,7 @@ namespace Forms_FingerPrint
                 b_LoadLogo.Enabled = false;
                 button2.Enabled = false;
                 checkBox1.Enabled = false;
-                сompanyLogoPictureBox.Enabled = false;
+                companyLogoPictureBox.Enabled = false;
                 button1.Enabled = true;
 
             }
@@ -154,9 +154,9 @@ namespace Forms_FingerPrint
                 {
                     image = new Bitmap(open_dialog.FileName);
                     //this.сompanyLogoPictureBox.Size = image.Size;
-                    сompanyLogoPictureBox.Image = image;
-                    сompanyLogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-                    сompanyLogoPictureBox.Invalidate();
+                    companyLogoPictureBox.Image = image;
+                    companyLogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                    companyLogoPictureBox.Invalidate();
                 }
                 catch
                 {
@@ -194,6 +194,31 @@ namespace Forms_FingerPrint
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbo_CompanyDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+                nameTextBox.Enabled = true;
+                button3.Enabled = true;
+                label1.Visible = true;
+                b_LoadLogo.Enabled = true;
+                button2.Enabled = true;
+                checkBox1.Enabled = true;
+                companyLogoPictureBox.Enabled = true;
+            
+            
+            
+            
+        }
+        
+        public void tbo_CompanyDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            MessageBox.Show("You did not write all information about Company!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            anError.ThrowException = false;
         }
     }
 }

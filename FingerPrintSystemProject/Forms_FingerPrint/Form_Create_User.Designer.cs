@@ -6,6 +6,8 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private string _connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Forms_FingerPrint.Properties.Settings.FINGERPRINTDB_DB"].ToString();
+
 
         /// <summary>
         /// Clean up any resources being used.
@@ -99,10 +101,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.positionTextBox = new System.Windows.Forms.TextBox();
             this.tbo_LinkDepartmentUserDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             scheduleLabel = new System.Windows.Forms.Label();
             birthDateLabel = new System.Windows.Forms.Label();
             dateCreationLabel = new System.Windows.Forms.Label();
@@ -532,13 +530,13 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.tbo_ProfileDataGridView.DataSource = this.tbo_ProfileBindingSource;
-            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(23, 323);
+            this.tbo_ProfileDataGridView.Location = new System.Drawing.Point(23, 303);
             this.tbo_ProfileDataGridView.Name = "tbo_ProfileDataGridView";
             this.tbo_ProfileDataGridView.ReadOnly = true;
             this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1042, 220);
             this.tbo_ProfileDataGridView.TabIndex = 119;
             this.tbo_ProfileDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellClick);
-            this.tbo_ProfileDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellContentClick);
+            this.tbo_ProfileDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbo_ProfileDataGridView_MouseClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -624,6 +622,7 @@
             this.photoPictureBox1.Location = new System.Drawing.Point(12, 12);
             this.photoPictureBox1.Name = "photoPictureBox1";
             this.photoPictureBox1.Size = new System.Drawing.Size(116, 137);
+            this.photoPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.photoPictureBox1.TabIndex = 120;
             this.photoPictureBox1.TabStop = false;
             // 
@@ -793,48 +792,17 @@
             // 
             // tbo_LinkDepartmentUserDataGridView
             // 
-            this.tbo_LinkDepartmentUserDataGridView.AutoGenerateColumns = false;
             this.tbo_LinkDepartmentUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbo_LinkDepartmentUserDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.tbo_LinkDepartmentUserDataGridView.DataSource = this.tbo_LinkDepartmentUserBindingSource;
             this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(1113, 47);
             this.tbo_LinkDepartmentUserDataGridView.Name = "tbo_LinkDepartmentUserDataGridView";
             this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(448, 496);
             this.tbo_LinkDepartmentUserDataGridView.TabIndex = 143;
             // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "DepartmentID";
-            this.dataGridViewTextBoxColumn11.HeaderText = "DepartmentID";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "UserID";
-            this.dataGridViewTextBoxColumn12.HeaderText = "UserID";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Access";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Access";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Position";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Position";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
             // Form_Create_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1573, 591);
+            this.ClientSize = new System.Drawing.Size(1901, 591);
             this.Controls.Add(this.tbo_LinkDepartmentUserDataGridView);
             this.Controls.Add(positionLabel);
             this.Controls.Add(this.positionTextBox);
@@ -962,9 +930,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.TextBox positionTextBox;
         private System.Windows.Forms.DataGridView tbo_LinkDepartmentUserDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }

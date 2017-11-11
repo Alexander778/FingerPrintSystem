@@ -267,6 +267,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+           
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 SurNameCard.Text = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString(); // меняем текст в Label
@@ -301,9 +302,25 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
                 dataGridView2.ReadOnly = true;
                 dataGridView2.DataSource = ds.Tables[0];
 
+                dataGridView2.Columns[0].HeaderText = "Company";
+                dataGridView2.Columns[1].HeaderText = "Department";
+
+                dataGridView1.Columns[6].HeaderText = "Department";
+                dataGridView1.Columns[4].Visible = false;
+
 
 
             }
+        }
+
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip3.SetToolTip(button2, "Add Department");
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }

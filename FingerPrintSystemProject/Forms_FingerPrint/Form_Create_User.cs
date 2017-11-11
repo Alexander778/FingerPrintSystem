@@ -378,7 +378,7 @@ namespace Forms_FingerPrint
 
         private void button9_Click(object sender, EventArgs e)
         {
-            tbo_LinkDepartmentUserBindingSource.AddNew();
+            tbo_LinkDepartmentUserDataGridView.Rows.Insert(0);
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -393,9 +393,26 @@ namespace Forms_FingerPrint
 
         }
 
-        private void tbo_ProfileDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tbo_ProfileDataGridView_MouseClick(object sender, MouseEventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = _connectionString;
+            SqlDataAdapter da = new SqlDataAdapter(@"
+SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
+  FROM tbo_LinkDepartmentUser
+  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
+  WHERE tbo_Profile.ID=" + iDLabel1.Text.ToString(), con);
 
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            var commandBuilder = new SqlCommandBuilder(da);
+            var ds = new DataSet();
+            da.Fill(ds);
+            tbo_LinkDepartmentUserDataGridView.ReadOnly = true;
+            tbo_LinkDepartmentUserDataGridView.DataSource = ds.Tables[0];
+            tbo_LinkDepartmentUserDataGridView.Columns[0].HeaderText = "Department";
+                
         }
     }
 }

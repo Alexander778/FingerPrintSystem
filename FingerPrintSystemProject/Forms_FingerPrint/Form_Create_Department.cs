@@ -15,6 +15,7 @@ namespace Forms_FingerPrint
         public Form_Create_Department()
         {
             InitializeComponent();
+            tbo_DepartmentDataGridView.DataError += new DataGridViewDataErrorEventHandler(tbo_DepartmentDataGridView_DataError);
         }
 
         private void tbo_RoleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -159,5 +160,25 @@ namespace Forms_FingerPrint
         {
             this.Close();
         }
+
+        private void tbo_DepartmentDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label1.Visible = true;
+            nameTextBox.Enabled = true;
+            companyIDComboBox.Enabled = true;
+            regimeTextBox.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            checkBox1.Enabled = true;
+            button1.Enabled = true;
+        }
+        public void tbo_DepartmentDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            MessageBox.Show("You did not write all information about Department!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            anError.ThrowException = false;
+        }
+
     }
 }

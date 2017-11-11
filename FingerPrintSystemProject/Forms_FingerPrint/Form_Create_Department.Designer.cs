@@ -37,10 +37,6 @@
             this.tbo_RoleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_ProfileBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbo_DepartmentDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tboCompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,6 +56,10 @@
             this._FINGERPRINTDB_MDFDataSet2 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tboCompanyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.companyIDComboBox = new System.Windows.Forms.ComboBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nameLabel = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             regimeLabel = new System.Windows.Forms.Label();
@@ -136,34 +136,10 @@
             this.tbo_DepartmentDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.tbo_DepartmentDataGridView.Name = "tbo_DepartmentDataGridView";
             this.tbo_DepartmentDataGridView.RowTemplate.Height = 28;
-            this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(299, 288);
+            this.tbo_DepartmentDataGridView.Size = new System.Drawing.Size(442, 288);
             this.tbo_DepartmentDataGridView.TabIndex = 8;
             this.tbo_DepartmentDataGridView.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CompanyID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CompanyID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Regime";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Regime";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.tbo_DepartmentDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_DepartmentDataGridView_CellClick);
             // 
             // button1
             // 
@@ -223,7 +199,6 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(57, 223);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
@@ -327,11 +302,36 @@
             this.companyIDComboBox.TabIndex = 67;
             this.companyIDComboBox.ValueMember = "ID";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID Department";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CompanyID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID Company";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Regime";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Regime";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // Form_Create_Department
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 326);
+            this.ClientSize = new System.Drawing.Size(676, 326);
             this.Controls.Add(this.companyIDComboBox);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameTextBox);
@@ -373,10 +373,6 @@
         private System.Windows.Forms.BindingSource tbo_ProfileBindingSource;
         private System.Windows.Forms.BindingSource tbo_DepartmentBindingSource;
         private System.Windows.Forms.DataGridView tbo_DepartmentDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet1;
@@ -396,5 +392,9 @@
         private _FINGERPRINTDB_MDFDataSet _FINGERPRINTDB_MDFDataSet2;
         private System.Windows.Forms.BindingSource tboCompanyBindingSource1;
         private System.Windows.Forms.ComboBox companyIDComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
