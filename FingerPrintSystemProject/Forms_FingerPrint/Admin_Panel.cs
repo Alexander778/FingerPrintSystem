@@ -60,25 +60,6 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
-
-           
-        
-        //SqlDataAdapter da1 = new SqlDataAdapter("SELECT CompanyLogo FROM tbo_Company WHERE ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
-
-        //DataTable dt1 = new DataTable();
-
-        //da1.Fill(dt1);
-        //var data=(Byte[])()
-        //
-
-
-
-        //label3.Text = null;
-        //companyIDLabel1.Text = null;
-        //pictureBox1.Image = null;
-
-
-
     }
 
         
@@ -136,7 +117,7 @@ namespace Forms_FingerPrint
             {
                 nameComboBox1.Items.Add(dt1.Rows[i]["Name"]);
             }
-
+            nameComboBox1.SelectedItem = nameComboBox1.Items[0];
             //
             SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT CompanyLogo FROM tbo_Company WHERE ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con));
             DataSet dataSet = new DataSet();
@@ -204,7 +185,7 @@ namespace Forms_FingerPrint
                 da.Fill(dt);
 
                 var select = @"
-SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.BirthDate,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position
+SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position,tbo_Profile.ID
  FROM tbo_LinkDepartmentUser 
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
@@ -219,7 +200,9 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataAdapter.Fill(ds);
                 dataGridView1.ReadOnly = true;
                 dataGridView1.DataSource = ds.Tables[0];
-                
+                dataGridView1.Columns[10].Visible = false;//hide id column
+
+
             }
             else//division by departments
             {
@@ -231,14 +214,14 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 da.Fill(dt);
 
                 var select = @"
-SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.BirthDate,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position
+SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position,tbo_Profile.ID
  FROM tbo_LinkDepartmentUser 
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
  WHERE tbo_Department.ID=" + dt.Rows[nameComboBox1.SelectedIndex]["ID"];
 
-                var c = new SqlConnection(@"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True"); // Your Connection String here
+                var c = new SqlConnection(_connectionString); // Your Connection String here
                 var dataAdapter = new SqlDataAdapter(select, c);
 
                 var commandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -246,7 +229,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataAdapter.Fill(ds);
                 dataGridView1.ReadOnly = true;
                 dataGridView1.DataSource = ds.Tables[0];
-
+                dataGridView1.Columns[10].Visible = false; //hide id column
 
             }
         }
@@ -268,9 +251,59 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
             
         }
 
-        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+           
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
+            
+            
+
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                SurNameCard.Text = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString(); // меняем текст в Label
+                NameCard.Text = dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
+                PatronymicCard.Text = dataGridView1[e.ColumnIndex + 2, e.RowIndex].Value.ToString();
+                BirthDateCard.Text= dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
+
+                Byte[] data = new Byte[0];
+                data = (Byte[])(dataGridView1[e.ColumnIndex+4,e.RowIndex].Value);
+                MemoryStream mem = new MemoryStream(data);
+                pictureBoxCard.Image = Image.FromStream(mem);
+
+                //photo e.ColumnIndex + 4
+                DateCreationCard.Text= dataGridView1[e.ColumnIndex + 5, e.RowIndex].Value.ToString();
+
+                ///
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = _connectionString;
+                SqlDataAdapter da = new SqlDataAdapter(@"
+SELECT tbo_Company.Name,tbo_Department.Name,tbo_LinkDepartmentUser.Position,tbo_LinkDepartmentUser.Access
+FROM tbo_LinkDepartmentUser
+INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID = tbo_Profile.ID
+INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
+INNER JOIN tbo_Company ON tbo_Department.CompanyID = tbo_Company.ID
+WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.ToString(), con);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                var commandBuilder = new SqlCommandBuilder(da);
+                var ds = new DataSet();
+                da.Fill(ds);
+                dataGridView2.ReadOnly = true;
+                dataGridView2.DataSource = ds.Tables[0];
+
+
+
+            }
         }
     }
     }

@@ -48,10 +48,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkBoxShowOnlyCompany = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCard = new System.Windows.Forms.PictureBox();
+            this.NameCard = new System.Windows.Forms.Label();
+            this.BirthDateCard = new System.Windows.Forms.Label();
+            this.PatronymicCard = new System.Windows.Forms.Label();
+            this.SurNameCard = new System.Windows.Forms.Label();
+            this.DateCreationCard = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tbo_CompanyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
             this.tbo_DepartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -65,14 +71,16 @@
             this.tbo_DepartmentTableAdapter = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSetTableAdapters.tbo_DepartmentTableAdapter();
             this.tboCompanyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this._FINGERPRINTDB_MDFDataSet1 = new Forms_FingerPrint._FINGERPRINTDB_MDFDataSet();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             nameLabel2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).BeginInit();
@@ -81,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel1
@@ -133,7 +142,7 @@
             // 
             this.button1.BackgroundImage = global::Forms_FingerPrint.Properties.Resources.add1;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(537, 30);
+            this.button1.Location = new System.Drawing.Point(463, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 75);
             this.button1.TabIndex = 0;
@@ -143,7 +152,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(537, 124);
+            this.button2.Location = new System.Drawing.Point(463, 96);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(77, 69);
             this.button2.TabIndex = 1;
@@ -155,7 +164,7 @@
             // 
             this.button3.BackgroundImage = global::Forms_FingerPrint.Properties.Resources.user_add_icon;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(535, 211);
+            this.button3.Location = new System.Drawing.Point(461, 182);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(79, 73);
             this.button3.TabIndex = 2;
@@ -204,7 +213,6 @@
             this.nameComboBox.Name = "nameComboBox";
             this.nameComboBox.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox.TabIndex = 14;
-            this.nameComboBox.SelectedIndexChanged += new System.EventHandler(this.nameComboBox_SelectedIndexChanged);
             this.nameComboBox.SelectedValueChanged += new System.EventHandler(this.nameComboBox_SelectedValueChanged);
             // 
             // label3
@@ -225,14 +233,6 @@
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 315);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(720, 410);
-            this.dataGridView1.TabIndex = 21;
             // 
             // checkBoxShowOnlyCompany
             // 
@@ -263,6 +263,69 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxCard
+            // 
+            this.pictureBoxCard.Location = new System.Drawing.Point(16, 335);
+            this.pictureBoxCard.Name = "pictureBoxCard";
+            this.pictureBoxCard.Size = new System.Drawing.Size(118, 144);
+            this.pictureBoxCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCard.TabIndex = 25;
+            this.pictureBoxCard.TabStop = false;
+            // 
+            // NameCard
+            // 
+            this.NameCard.AutoSize = true;
+            this.NameCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameCard.Location = new System.Drawing.Point(166, 335);
+            this.NameCard.Name = "NameCard";
+            this.NameCard.Size = new System.Drawing.Size(0, 22);
+            this.NameCard.TabIndex = 26;
+            // 
+            // BirthDateCard
+            // 
+            this.BirthDateCard.AutoSize = true;
+            this.BirthDateCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BirthDateCard.Location = new System.Drawing.Point(167, 432);
+            this.BirthDateCard.Name = "BirthDateCard";
+            this.BirthDateCard.Size = new System.Drawing.Size(0, 22);
+            this.BirthDateCard.TabIndex = 29;
+            // 
+            // PatronymicCard
+            // 
+            this.PatronymicCard.AutoSize = true;
+            this.PatronymicCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PatronymicCard.Location = new System.Drawing.Point(167, 400);
+            this.PatronymicCard.Name = "PatronymicCard";
+            this.PatronymicCard.Size = new System.Drawing.Size(0, 22);
+            this.PatronymicCard.TabIndex = 30;
+            // 
+            // SurNameCard
+            // 
+            this.SurNameCard.AutoSize = true;
+            this.SurNameCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SurNameCard.Location = new System.Drawing.Point(167, 366);
+            this.SurNameCard.Name = "SurNameCard";
+            this.SurNameCard.Size = new System.Drawing.Size(0, 22);
+            this.SurNameCard.TabIndex = 31;
+            // 
+            // DateCreationCard
+            // 
+            this.DateCreationCard.AutoSize = true;
+            this.DateCreationCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateCreationCard.Location = new System.Drawing.Point(167, 466);
+            this.DateCreationCard.Name = "DateCreationCard";
+            this.DateCreationCard.Size = new System.Drawing.Size(0, 22);
+            this.DateCreationCard.TabIndex = 38;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(603, 15);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(668, 718);
+            this.dataGridView1.TabIndex = 39;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // tbo_CompanyBindingSource
             // 
@@ -330,15 +393,30 @@
             this._FINGERPRINTDB_MDFDataSet1.DataSetName = "_FINGERPRINTDB_MDFDataSet";
             this._FINGERPRINTDB_MDFDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(16, 533);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(367, 200);
+            this.dataGridView2.TabIndex = 40;
+            // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 745);
+            this.ClientSize = new System.Drawing.Size(1300, 753);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DateCreationCard);
+            this.Controls.Add(this.SurNameCard);
+            this.Controls.Add(this.PatronymicCard);
+            this.Controls.Add(this.BirthDateCard);
+            this.Controls.Add(this.NameCard);
+            this.Controls.Add(this.pictureBoxCard);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.checkBoxShowOnlyCompany);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(nameLabel2);
             this.Controls.Add(this.button4);
@@ -359,8 +437,9 @@
             this.Load += new System.EventHandler(this.Admin_Panel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_CompanyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbo_DepartmentBindingSource)).EndInit();
@@ -369,6 +448,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbo_ProfileBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tboCompanyBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FINGERPRINTDB_MDFDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,9 +482,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox checkBoxShowOnlyCompany;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxCard;
+        private System.Windows.Forms.Label NameCard;
+        private System.Windows.Forms.Label BirthDateCard;
+        private System.Windows.Forms.Label PatronymicCard;
+        private System.Windows.Forms.Label SurNameCard;
+        private System.Windows.Forms.Label DateCreationCard;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
