@@ -116,7 +116,7 @@ namespace Forms_FingerPrint
         {
             //
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+            con.ConnectionString = _connectionString;
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -135,17 +135,15 @@ namespace Forms_FingerPrint
                 nameComboBox1.Items.Add(dt1.Rows[i]["Name"]);
             }
 
-            nameComboBox1.SelectedIndex = 0;
-
             //
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT CompanyLogo FROM tbo_Company WHERE ID="+ dt.Rows[nameComboBox.SelectedIndex]["ID"],con));
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT СompanyLogo FROM tbo_Company WHERE ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con));
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
 
             if (dataSet.Tables[0].Rows.Count == 1)
             {
                 Byte[] data = new Byte[0];
-                data = (Byte[])(dataSet.Tables[0].Rows[0]["CompanyLogo"]);
+                data = (Byte[])(dataSet.Tables[0].Rows[0]["СompanyLogo"]);
                 MemoryStream mem = new MemoryStream(data);
                 pictureBox1.Image = Image.FromStream(mem);
             }
