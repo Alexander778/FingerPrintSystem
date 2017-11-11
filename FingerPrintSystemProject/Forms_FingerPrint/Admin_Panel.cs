@@ -47,8 +47,8 @@ namespace Forms_FingerPrint
 
             //
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
-
+            con.ConnectionString =
+                System.Configuration.ConfigurationManager.ConnectionStrings["Forms_FingerPrint.Properties.Settings.FINGERPRINTDB_DB"].ToString();
             nameComboBox.Items.Clear();
 
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
