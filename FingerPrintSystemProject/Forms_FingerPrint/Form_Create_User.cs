@@ -287,6 +287,7 @@ namespace Forms_FingerPrint
 
         private void tbo_ProfileDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            tbo_ProfileDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
             userIDLabel1.Text = iDLabel1.Text;
             photoPictureBox1.Enabled = true;
             button1.Enabled = true;
@@ -486,6 +487,11 @@ SELECT tbo_Company.Name,tbo_Department.Name,Position,Access,DepartmentID,UserID
             {
 
             }
+        }
+
+        private void tbo_ProfileDataGridView_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            tbo_ProfileDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.White;
         }
     }
 }

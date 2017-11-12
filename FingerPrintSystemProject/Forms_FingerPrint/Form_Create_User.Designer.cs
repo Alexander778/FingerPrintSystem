@@ -535,6 +535,7 @@
             this.tbo_ProfileDataGridView.Size = new System.Drawing.Size(1042, 220);
             this.tbo_ProfileDataGridView.TabIndex = 119;
             this.tbo_ProfileDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellClick);
+            this.tbo_ProfileDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_ProfileDataGridView_CellLeave);
             this.tbo_ProfileDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tbo_ProfileDataGridView_MouseClick);
             // 
             // dataGridViewTextBoxColumn1

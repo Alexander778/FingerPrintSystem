@@ -90,8 +90,8 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
-
-
+            //
+            
         }
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -131,6 +131,24 @@ namespace Forms_FingerPrint
                 MemoryStream mem = new MemoryStream(data);
                 pictureBox1.Image = Image.FromStream(mem);
             }
+
+            if (dataGridView1.DataSource!= null && dataGridView2.DataSource != null)
+            {
+                dataGridView1.DataSource = null;
+                pictureBoxCard.Image = null;
+                NameCard.Text = null;
+                SurNameCard.Text = null;
+                PatronymicCard.Text = null;
+                BirthDateCard.Text = null;
+                DateCreationCard.Text = null;
+                dataGridView2.DataSource = null;
+                button6.Enabled = false;
+            }
+            else
+            {
+                button6.Enabled = true;
+            }
+            
             //
 
 
@@ -204,17 +222,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataGridView1.Columns[10].Visible = false;//hide id column
                 dataGridView1.Columns[6].HeaderText = "Department";
 
-                //// clear card panel
-
-                //SurNameCard.Text = "";
-                //NameCard.Text = "";
-                //PatronymicCard.Text = "";
-                //BirthDateCard.Text = "";
-                //DateCreationCard.Text = "";
-                //pictureBoxCard.Image = null;
-                //dataGridView2 = null;
-
-                //
+                
             }
             else//division by departments
             {
@@ -243,15 +251,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[10].Visible = false; //hide id column
 
-                //// clear card panel
-                //SurNameCard.Text = "";
-                //NameCard.Text = "";
-                //PatronymicCard.Text = "";
-                //BirthDateCard.Text = "";
-                //DateCreationCard.Text = "";
-                //pictureBoxCard.Image = null;
-                //dataGridView2 = null;
-                //
+                
 
             }
         }
@@ -289,7 +289,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+            dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 SurNameCard.Text = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString(); // меняем текст в Label
@@ -330,6 +330,7 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
                 dataGridView1.Columns[6].HeaderText = "Department";
                 dataGridView1.Columns[4].Visible = false;
 
+                button6.Enabled = true;
 
 
             }
@@ -361,7 +362,8 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
                 if (label1.Text == f.tbo_ProfileDataGridView[0, i].Value.ToString())
                 {
                     f.tbo_ProfileDataGridView.CurrentCell = f.tbo_ProfileDataGridView[0, i];
-
+                    f.tbo_ProfileDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
+                   
                 }
                 else
                 {
@@ -377,6 +379,11 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
 
 
 
+        }
+
+        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.White;
         }
     }
 }
