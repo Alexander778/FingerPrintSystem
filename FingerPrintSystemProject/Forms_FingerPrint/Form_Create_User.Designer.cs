@@ -98,7 +98,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.positionTextBox = new System.Windows.Forms.TextBox();
             this.tbo_LinkDepartmentUserDataGridView = new System.Windows.Forms.DataGridView();
             scheduleLabel = new System.Windows.Forms.Label();
@@ -770,17 +769,6 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
-            // 
-            this.button11.Enabled = false;
-            this.button11.Location = new System.Drawing.Point(926, 244);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(61, 23);
-            this.button11.TabIndex = 142;
-            this.button11.Text = "Save";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // positionTextBox
             // 
             this.positionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_LinkDepartmentUserBindingSource, "Position", true));
@@ -795,18 +783,18 @@
             this.tbo_LinkDepartmentUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tbo_LinkDepartmentUserDataGridView.Location = new System.Drawing.Point(1113, 47);
             this.tbo_LinkDepartmentUserDataGridView.Name = "tbo_LinkDepartmentUserDataGridView";
-            this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(448, 496);
+            this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(520, 496);
             this.tbo_LinkDepartmentUserDataGridView.TabIndex = 143;
+            this.tbo_LinkDepartmentUserDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_LinkDepartmentUserDataGridView_CellClick);
             // 
             // Form_Create_User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1901, 591);
+            this.ClientSize = new System.Drawing.Size(1863, 591);
             this.Controls.Add(this.tbo_LinkDepartmentUserDataGridView);
             this.Controls.Add(positionLabel);
             this.Controls.Add(this.positionTextBox);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.pictureBox4);
@@ -916,7 +904,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -47,7 +47,7 @@ namespace Forms_FingerPrint
             birthDateDateTimePicker.Value = DateTime.Today;
             button9.Enabled = true;
             button10.Enabled = true;
-            button11.Enabled = true;
+            //button11.Enabled = true;
             positionTextBox.Enabled = true;
 
             tbo_ProfileBindingSource.AddNew();
@@ -314,7 +314,7 @@ namespace Forms_FingerPrint
             birthDateDateTimePicker.Value = DateTime.Today;
             button9.Enabled = true;
             button10.Enabled = true;
-            button11.Enabled = true;
+            //button11.Enabled = true;
             positionTextBox.Enabled = true;
 
         }
@@ -358,7 +358,7 @@ namespace Forms_FingerPrint
         {
             
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = @"Data Source=AlexPC\SQLEXPRESS;Initial Catalog=FINGERPRINTDB.MDF;Integrated Security=True";
+                con.ConnectionString = _connectionString;
 
                 SqlDataAdapter da1 = new SqlDataAdapter("SELECT ID FROM tbo_Department WHERE NAME=" + "'" + comboBoxDepartment.SelectedItem.ToString() + "'", con);
                 DataTable dt1 = new DataTable();
@@ -378,12 +378,69 @@ namespace Forms_FingerPrint
 
         private void button9_Click(object sender, EventArgs e)
         {
-            tbo_LinkDepartmentUserDataGridView.Rows.Insert(0);
+            if (departmentIDLabel1.Text != null && userIDLabel1.Text != null && accessTextBox.Text != null && positionTextBox.Text != null)
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = _connectionString;
+                SqlCommand cmd = new SqlCommand("INSERT INTO tbo_LinkDepartmentUser (DepartmentID,UserID,Access,Position) VALUES (@depid,@userid,@access,@position)",con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@depid", departmentIDLabel1.Text);
+                cmd.Parameters.AddWithValue("@userid", userIDLabel1.Text);
+                cmd.Parameters.AddWithValue("@access", accessTextBox.Text.ToString());
+                cmd.Parameters.AddWithValue("@position", positionTextBox.Text.ToString());
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record Inserted Successfully");
+                //display
+                con.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter(@"
+SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
+  FROM tbo_LinkDepartmentUser
+  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
+  WHERE tbo_Profile.ID="+iDLabel1.Text, con);
+                adapt.Fill(dt);
+                tbo_LinkDepartmentUserDataGridView.DataSource = dt;
+                con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
+            }
+
+            
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            tbo_LinkDepartmentUserBindingSource.RemoveCurrent();
+            if(iDLabel1!=null)
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = _connectionString;
+                SqlCommand cmd = new SqlCommand("delete tbo_LinkDepartmentUser where DepartmentID=@id", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@id", departmentIDLabel1.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record Deleted Successfully!");
+                //
+                con.Open();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapt = new SqlDataAdapter(@"
+SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
+  FROM tbo_LinkDepartmentUser
+  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
+  WHERE tbo_Profile.ID=" + iDLabel1.Text, con);
+                adapt.Fill(dt);
+                tbo_LinkDepartmentUserDataGridView.DataSource = dt;
+                con.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Delete");
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -413,6 +470,18 @@ SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
             tbo_LinkDepartmentUserDataGridView.DataSource = ds.Tables[0];
             tbo_LinkDepartmentUserDataGridView.Columns[0].HeaderText = "Department";
                 
+        }
+
+        private void tbo_LinkDepartmentUserDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                departmentIDLabel1.Text = tbo_LinkDepartmentUserDataGridView[e.ColumnIndex - e.ColumnIndex+3, e.RowIndex].Value.ToString();
+            }
+            else
+            {
+
+            }
         }
     }
 }
