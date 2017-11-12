@@ -90,12 +90,13 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
+
             
         }
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-           //!!!!
+           
             
             //
             SqlConnection con = new SqlConnection();
@@ -109,7 +110,7 @@ namespace Forms_FingerPrint
             nameComboBox1.Items.Clear();
 
             //
-            SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
+            SqlDataAdapter da1 = new SqlDataAdapter("SELECT Name,ID FROM tbo_Department WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
 
@@ -201,8 +202,19 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataGridView1.ReadOnly = true;
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[10].Visible = false;//hide id column
+                dataGridView1.Columns[6].HeaderText = "Department";
 
+                //// clear card panel
+                
+                //SurNameCard.Text = "";
+                //NameCard.Text = "";
+                //PatronymicCard.Text = "";
+                //BirthDateCard.Text = "";
+                //DateCreationCard.Text = "";
+                //pictureBoxCard.Image = null;
+                //dataGridView2 = null;
 
+                //
             }
             else//division by departments
             {
@@ -219,7 +231,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
- WHERE tbo_Department.ID=" + dt.Rows[nameComboBox1.SelectedIndex]["ID"];
+ WHERE tbo_Department.Name="+ "'" + nameComboBox1.SelectedItem.ToString() + "'";
 
                 var c = new SqlConnection(_connectionString); // Your Connection String here
                 var dataAdapter = new SqlDataAdapter(select, c);
@@ -230,6 +242,16 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataGridView1.ReadOnly = true;
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[10].Visible = false; //hide id column
+
+                //// clear card panel
+                //SurNameCard.Text = "";
+                //NameCard.Text = "";
+                //PatronymicCard.Text = "";
+                //BirthDateCard.Text = "";
+                //DateCreationCard.Text = "";
+                //pictureBoxCard.Image = null;
+                //dataGridView2 = null;
+                //
 
             }
         }
@@ -282,7 +304,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
 
                 //photo e.ColumnIndex + 4
                 DateCreationCard.Text= dataGridView1[e.ColumnIndex + 5, e.RowIndex].Value.ToString();
-
+                label1.Text = dataGridView1[e.ColumnIndex+10, e.RowIndex].Value.ToString();
                 ///
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = _connectionString;
@@ -320,6 +342,25 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void nameComboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form_Create_User f = new Form_Create_User();
+            f.tbo_ProfileDataGridView.CurrentCell = f.tbo_ProfileDataGridView[0, 2];
+            f.Show();
+
+            
+
+
+            
 
         }
     }

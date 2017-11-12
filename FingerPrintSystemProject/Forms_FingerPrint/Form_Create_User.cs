@@ -89,7 +89,7 @@ namespace Forms_FingerPrint
             departmentIDLabel1.Text = null;
 
             userIDLabel1.Text = iDLabel1.Text;
-
+           
 
         }
 
@@ -395,11 +395,12 @@ namespace Forms_FingerPrint
                 con.Open();
                 DataTable dt = new DataTable();
                 SqlDataAdapter adapt = new SqlDataAdapter(@"
-SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
+SELECT tbo_Company.Name,tbo_Department.Name,Position,Access,DepartmentID,UserID
   FROM tbo_LinkDepartmentUser
   INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
   INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
-  WHERE tbo_Profile.ID="+iDLabel1.Text, con);
+  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
+  WHERE tbo_Profile.ID=" + iDLabel1.Text, con);
                 adapt.Fill(dt);
                 tbo_LinkDepartmentUserDataGridView.DataSource = dt;
                 con.Close();
@@ -428,10 +429,11 @@ SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
                 con.Open();
                 DataTable dt = new DataTable();
                 SqlDataAdapter adapt = new SqlDataAdapter(@"
-SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
+SELECT tbo_Company.Name,tbo_Department.Name,Position,Access,DepartmentID,UserID
   FROM tbo_LinkDepartmentUser
   INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
   INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
+  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
   WHERE tbo_Profile.ID=" + iDLabel1.Text, con);
                 adapt.Fill(dt);
                 tbo_LinkDepartmentUserDataGridView.DataSource = dt;
@@ -455,10 +457,11 @@ SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
             SqlConnection con = new SqlConnection();
             con.ConnectionString = _connectionString;
             SqlDataAdapter da = new SqlDataAdapter(@"
-SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
+SELECT tbo_Company.Name,tbo_Department.Name,Position,Access,DepartmentID,UserID
   FROM tbo_LinkDepartmentUser
   INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
   INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID = tbo_Department.ID
+  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
   WHERE tbo_Profile.ID=" + iDLabel1.Text.ToString(), con);
 
             DataTable dt = new DataTable();
@@ -468,15 +471,16 @@ SELECT tbo_Department.Name,Position,Access,DepartmentID,UserID
             da.Fill(ds);
             tbo_LinkDepartmentUserDataGridView.ReadOnly = true;
             tbo_LinkDepartmentUserDataGridView.DataSource = ds.Tables[0];
-            tbo_LinkDepartmentUserDataGridView.Columns[0].HeaderText = "Department";
-                
+            tbo_LinkDepartmentUserDataGridView.Columns[0].HeaderText = "Company";
+            tbo_LinkDepartmentUserDataGridView.Columns[1].HeaderText = "Department";
+
         }
 
         private void tbo_LinkDepartmentUserDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
-                departmentIDLabel1.Text = tbo_LinkDepartmentUserDataGridView[e.ColumnIndex - e.ColumnIndex+3, e.RowIndex].Value.ToString();
+                departmentIDLabel1.Text = tbo_LinkDepartmentUserDataGridView[e.ColumnIndex - e.ColumnIndex+4, e.RowIndex].Value.ToString();
             }
             else
             {

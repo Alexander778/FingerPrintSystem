@@ -886,7 +886,6 @@
         private System.Windows.Forms.DateTimePicker birthDateDateTimePicker;
         private System.Windows.Forms.TextBox scheduleTextBox;
         private System.Windows.Forms.DateTimePicker dateCreationDateTimePicker;
-        private System.Windows.Forms.DataGridView tbo_ProfileDataGridView;
         private System.Windows.Forms.PictureBox photoPictureBox1;
         private System.Windows.Forms.TextBox fingerPrintTextBox;
         private System.Windows.Forms.ComboBox roleIDComboBox;
@@ -917,5 +916,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.TextBox positionTextBox;
         private System.Windows.Forms.DataGridView tbo_LinkDepartmentUserDataGridView;
+        public System.Windows.Forms.DataGridView tbo_ProfileDataGridView;
     }
 }

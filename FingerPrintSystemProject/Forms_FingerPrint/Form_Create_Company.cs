@@ -88,7 +88,8 @@ namespace Forms_FingerPrint
             {
 
                 tbo_CompanyBindingSource.EndEdit();
-                tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
+                
+
                 nameTextBox.BackColor = Color.White;
                 pictureBox1.Visible = false;
 
@@ -100,6 +101,8 @@ namespace Forms_FingerPrint
                 checkBox1.Enabled = false;
                 companyLogoPictureBox.Enabled = false;
                 button1.Enabled = true;
+
+                tbo_CompanyTableAdapter.Update(_FINGERPRINTDB_MDFDataSet);
 
             }
             catch (System.Data.NoNullAllowedException)
@@ -117,25 +120,25 @@ namespace Forms_FingerPrint
                 }
 
             }
-           
 
-            catch (System.Data.SqlClient.SqlException)
-            {
-                MessageBox.Show("Please add company's logo",
-                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                pictureBox1.Visible = true;
-                if (nameTextBox.Text == "")
-                {
-                    nameTextBox.BackColor = Color.LightPink;
-                }
-                else
-                {
-                    nameTextBox.BackColor = Color.White;
-                }
 
-            }
+            //catch (System.Data.SqlClient.SqlException)
+            //{
+            //    MessageBox.Show("Please add company's logo",
+            //         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    pictureBox1.Visible = true;
+            //    if (nameTextBox.Text == "")
+            //    {
+            //        nameTextBox.BackColor = Color.LightPink;
+            //    }
+            //    else
+            //    {
+            //        nameTextBox.BackColor = Color.White;
+            //    }
 
-		}
+            //}
+
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {

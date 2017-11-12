@@ -72,6 +72,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -158,7 +160,7 @@
             this.nameComboBox1.Name = "nameComboBox1";
             this.nameComboBox1.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox1.TabIndex = 11;
-            this.nameComboBox1.SelectedIndexChanged += new System.EventHandler(this.nameComboBox1_SelectedIndexChanged);
+            this.nameComboBox1.SelectedValueChanged += new System.EventHandler(this.nameComboBox1_SelectedValueChanged);
             // 
             // tbo_DepartmentBindingSource
             // 
@@ -395,11 +397,32 @@
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(433, 495);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 41;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(347, 353);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "label1";
+            // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 753);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.DateCreationCard);
@@ -483,8 +506,10 @@
         private System.Windows.Forms.Label PatronymicCard;
         private System.Windows.Forms.Label SurNameCard;
         private System.Windows.Forms.Label DateCreationCard;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.Button button6;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Label label1;
     }
 }
