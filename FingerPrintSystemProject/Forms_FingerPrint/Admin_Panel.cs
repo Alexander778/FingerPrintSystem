@@ -18,8 +18,8 @@ namespace Forms_FingerPrint
         {
             InitializeComponent();
 
-            
-    }
+
+        }
 
         private void tbo_RoleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -60,9 +60,9 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
-    }
+        }
 
-        
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -91,20 +91,20 @@ namespace Forms_FingerPrint
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
 
-            
+
         }
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-           
-            
+
+
             //
             SqlConnection con = new SqlConnection();
             con.ConnectionString = _connectionString;
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM tbo_Company", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
-   
+
             companyIDLabel1.Text = dt.Rows[nameComboBox.SelectedIndex]["ID"].ToString();
             label3.Text = dt.Rows[nameComboBox.SelectedIndex]["Name"].ToString();
             nameComboBox1.Items.Clear();
@@ -157,7 +157,7 @@ namespace Forms_FingerPrint
 
         private void nameComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button3_MouseMove(object sender, MouseEventArgs e)
@@ -167,7 +167,7 @@ namespace Forms_FingerPrint
 
         private void button3_MouseHover(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_MouseMove(object sender, MouseEventArgs e)
@@ -180,7 +180,7 @@ namespace Forms_FingerPrint
             if (checkBoxShowOnlyCompany.Checked == true) //no division
             {
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = _connectionString; 
+                con.ConnectionString = _connectionString;
                 SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Company", con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -191,7 +191,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
- WHERE tbo_Company.ID="+dt.Rows[nameComboBox.SelectedIndex]["ID"];
+ WHERE tbo_Company.ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"];
 
                 var c = new SqlConnection(_connectionString); // Your Connection String here
                 var dataAdapter = new SqlDataAdapter(select, c);
@@ -205,7 +205,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 dataGridView1.Columns[6].HeaderText = "Department";
 
                 //// clear card panel
-                
+
                 //SurNameCard.Text = "";
                 //NameCard.Text = "";
                 //PatronymicCard.Text = "";
@@ -231,7 +231,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
- WHERE tbo_Department.Name="+ "'" + nameComboBox1.SelectedItem.ToString() + "'";
+ WHERE tbo_Department.Name=" + "'" + nameComboBox1.SelectedItem.ToString() + "'";
 
                 var c = new SqlConnection(_connectionString); // Your Connection String here
                 var dataAdapter = new SqlDataAdapter(select, c);
@@ -270,41 +270,41 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
 
         private void tbo_CompanyDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
-           
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
-            
-            
+
+
 
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           
+
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 SurNameCard.Text = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString(); // меняем текст в Label
                 NameCard.Text = dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
                 PatronymicCard.Text = dataGridView1[e.ColumnIndex + 2, e.RowIndex].Value.ToString();
-                BirthDateCard.Text= dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
+                BirthDateCard.Text = dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
 
                 Byte[] data = new Byte[0];
-                data = (Byte[])(dataGridView1[e.ColumnIndex+4,e.RowIndex].Value);
+                data = (Byte[])(dataGridView1[e.ColumnIndex + 4, e.RowIndex].Value);
                 MemoryStream mem = new MemoryStream(data);
                 pictureBoxCard.Image = Image.FromStream(mem);
 
                 //photo e.ColumnIndex + 4
-                DateCreationCard.Text= dataGridView1[e.ColumnIndex + 5, e.RowIndex].Value.ToString();
-                label1.Text = dataGridView1[e.ColumnIndex+10, e.RowIndex].Value.ToString();
+                DateCreationCard.Text = dataGridView1[e.ColumnIndex + 5, e.RowIndex].Value.ToString();
+                label1.Text = dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.ToString();
                 ///
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = _connectionString;
@@ -347,24 +347,40 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
 
         private void nameComboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Form_Create_User f = new Form_Create_User();
-            f.tbo_ProfileDataGridView.CurrentCell = f.tbo_ProfileDataGridView[0, 2];
             f.Show();
+           
+            for (int i = 0; i < f.tbo_ProfileDataGridView.RowCount - 1; i++)
+            {
+                if (label1.Text == f.tbo_ProfileDataGridView[0, i].Value.ToString())
+                {
+                    f.tbo_ProfileDataGridView.CurrentCell = f.tbo_ProfileDataGridView[0, i];
 
-            
+                }
+                else
+                {
+                    continue;
+                    
+
+                }
+            }
 
 
-            
+
+
+
+
 
         }
     }
-    }
+}
+    
     
 
 
