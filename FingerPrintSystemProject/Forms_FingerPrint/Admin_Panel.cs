@@ -60,6 +60,11 @@ namespace Forms_FingerPrint
             {
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
+            NameCard.Text = null;
+            SurNameCard.Text = null;
+            PatronymicCard.Text = null;
+            BirthDateCard.Text = null;
+            DateCreationCard.Text = null;
         }
 
 

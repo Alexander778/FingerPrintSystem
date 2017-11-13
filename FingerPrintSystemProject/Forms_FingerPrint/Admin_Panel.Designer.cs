@@ -228,8 +228,9 @@
             this.NameCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameCard.Location = new System.Drawing.Point(166, 335);
             this.NameCard.Name = "NameCard";
-            this.NameCard.Size = new System.Drawing.Size(0, 22);
+            this.NameCard.Size = new System.Drawing.Size(101, 22);
             this.NameCard.TabIndex = 26;
+            this.NameCard.Text = "NameCard";
             // 
             // BirthDateCard
             // 
@@ -237,8 +238,9 @@
             this.BirthDateCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BirthDateCard.Location = new System.Drawing.Point(167, 432);
             this.BirthDateCard.Name = "BirthDateCard";
-            this.BirthDateCard.Size = new System.Drawing.Size(0, 22);
+            this.BirthDateCard.Size = new System.Drawing.Size(129, 22);
             this.BirthDateCard.TabIndex = 29;
+            this.BirthDateCard.Text = "BirthDateCard";
             // 
             // PatronymicCard
             // 
@@ -246,8 +248,9 @@
             this.PatronymicCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PatronymicCard.Location = new System.Drawing.Point(167, 400);
             this.PatronymicCard.Name = "PatronymicCard";
-            this.PatronymicCard.Size = new System.Drawing.Size(0, 22);
+            this.PatronymicCard.Size = new System.Drawing.Size(145, 22);
             this.PatronymicCard.TabIndex = 30;
+            this.PatronymicCard.Text = "PatronymicCard";
             // 
             // SurNameCard
             // 
@@ -255,8 +258,9 @@
             this.SurNameCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SurNameCard.Location = new System.Drawing.Point(167, 366);
             this.SurNameCard.Name = "SurNameCard";
-            this.SurNameCard.Size = new System.Drawing.Size(0, 22);
+            this.SurNameCard.Size = new System.Drawing.Size(130, 22);
             this.SurNameCard.TabIndex = 31;
+            this.SurNameCard.Text = "SurNameCard";
             // 
             // DateCreationCard
             // 
@@ -264,8 +268,9 @@
             this.DateCreationCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DateCreationCard.Location = new System.Drawing.Point(167, 466);
             this.DateCreationCard.Name = "DateCreationCard";
-            this.DateCreationCard.Size = new System.Drawing.Size(0, 22);
+            this.DateCreationCard.Size = new System.Drawing.Size(162, 22);
             this.DateCreationCard.TabIndex = 38;
+            this.DateCreationCard.Text = "DateCreationCard";
             // 
             // dataGridView1
             // 
