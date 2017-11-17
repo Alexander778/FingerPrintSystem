@@ -465,6 +465,8 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(111, 20);
             this.nameTextBox.TabIndex = 99;
+            this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
+            this.nameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nameTextBox_KeyPress);
             // 
             // surnameTextBox
             // 
@@ -474,6 +476,7 @@
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(111, 20);
             this.surnameTextBox.TabIndex = 104;
+            this.surnameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.surnameTextBox_KeyPress);
             // 
             // patronymicTextBox
             // 
@@ -483,6 +486,7 @@
             this.patronymicTextBox.Name = "patronymicTextBox";
             this.patronymicTextBox.Size = new System.Drawing.Size(110, 20);
             this.patronymicTextBox.TabIndex = 106;
+            this.patronymicTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patronymicTextBox_KeyPress);
             // 
             // birthDateDateTimePicker
             // 
@@ -778,6 +782,7 @@
             this.positionTextBox.Name = "positionTextBox";
             this.positionTextBox.Size = new System.Drawing.Size(75, 20);
             this.positionTextBox.TabIndex = 143;
+            this.positionTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.positionTextBox_KeyPress);
             // 
             // tbo_LinkDepartmentUserDataGridView
             // 
@@ -792,7 +797,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1863, 591);
+            this.ClientSize = new System.Drawing.Size(1659, 591);
             this.Controls.Add(this.tbo_LinkDepartmentUserDataGridView);
             this.Controls.Add(positionLabel);
             this.Controls.Add(this.positionTextBox);

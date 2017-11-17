@@ -74,6 +74,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.NameLabelCard = new System.Windows.Forms.Label();
+            this.SurnameLabelCard = new System.Windows.Forms.Label();
+            this.PatronymicLabelCard = new System.Windows.Forms.Label();
+            this.BirthDateLabelCard = new System.Windows.Forms.Label();
+            this.DateCreationLabelCard = new System.Windows.Forms.Label();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -226,7 +232,7 @@
             // 
             this.NameCard.AutoSize = true;
             this.NameCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameCard.Location = new System.Drawing.Point(166, 335);
+            this.NameCard.Location = new System.Drawing.Point(261, 335);
             this.NameCard.Name = "NameCard";
             this.NameCard.Size = new System.Drawing.Size(101, 22);
             this.NameCard.TabIndex = 26;
@@ -236,7 +242,7 @@
             // 
             this.BirthDateCard.AutoSize = true;
             this.BirthDateCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BirthDateCard.Location = new System.Drawing.Point(167, 432);
+            this.BirthDateCard.Location = new System.Drawing.Point(261, 427);
             this.BirthDateCard.Name = "BirthDateCard";
             this.BirthDateCard.Size = new System.Drawing.Size(129, 22);
             this.BirthDateCard.TabIndex = 29;
@@ -246,7 +252,7 @@
             // 
             this.PatronymicCard.AutoSize = true;
             this.PatronymicCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PatronymicCard.Location = new System.Drawing.Point(167, 400);
+            this.PatronymicCard.Location = new System.Drawing.Point(261, 395);
             this.PatronymicCard.Name = "PatronymicCard";
             this.PatronymicCard.Size = new System.Drawing.Size(145, 22);
             this.PatronymicCard.TabIndex = 30;
@@ -256,7 +262,7 @@
             // 
             this.SurNameCard.AutoSize = true;
             this.SurNameCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SurNameCard.Location = new System.Drawing.Point(167, 366);
+            this.SurNameCard.Location = new System.Drawing.Point(261, 361);
             this.SurNameCard.Name = "SurNameCard";
             this.SurNameCard.Size = new System.Drawing.Size(130, 22);
             this.SurNameCard.TabIndex = 31;
@@ -266,7 +272,7 @@
             // 
             this.DateCreationCard.AutoSize = true;
             this.DateCreationCard.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateCreationCard.Location = new System.Drawing.Point(167, 466);
+            this.DateCreationCard.Location = new System.Drawing.Point(261, 461);
             this.DateCreationCard.Name = "DateCreationCard";
             this.DateCreationCard.Size = new System.Drawing.Size(162, 22);
             this.DateCreationCard.TabIndex = 38;
@@ -331,7 +337,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(16, 533);
+            this.dataGridView2.Location = new System.Drawing.Point(16, 507);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(449, 200);
             this.dataGridView2.TabIndex = 40;
@@ -340,7 +346,7 @@
             // button6
             // 
             this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(433, 495);
+            this.button6.Location = new System.Drawing.Point(481, 465);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 41;
@@ -423,11 +429,81 @@
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(327, 271);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "label2";
+            // 
+            // NameLabelCard
+            // 
+            this.NameLabelCard.AutoSize = true;
+            this.NameLabelCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NameLabelCard.Location = new System.Drawing.Point(146, 335);
+            this.NameLabelCard.Name = "NameLabelCard";
+            this.NameLabelCard.Size = new System.Drawing.Size(55, 20);
+            this.NameLabelCard.TabIndex = 44;
+            this.NameLabelCard.Text = "Name:";
+            this.NameLabelCard.Visible = false;
+            // 
+            // SurnameLabelCard
+            // 
+            this.SurnameLabelCard.AutoSize = true;
+            this.SurnameLabelCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SurnameLabelCard.Location = new System.Drawing.Point(146, 366);
+            this.SurnameLabelCard.Name = "SurnameLabelCard";
+            this.SurnameLabelCard.Size = new System.Drawing.Size(78, 20);
+            this.SurnameLabelCard.TabIndex = 45;
+            this.SurnameLabelCard.Text = "Surname:";
+            this.SurnameLabelCard.Visible = false;
+            // 
+            // PatronymicLabelCard
+            // 
+            this.PatronymicLabelCard.AutoSize = true;
+            this.PatronymicLabelCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PatronymicLabelCard.Location = new System.Drawing.Point(146, 400);
+            this.PatronymicLabelCard.Name = "PatronymicLabelCard";
+            this.PatronymicLabelCard.Size = new System.Drawing.Size(91, 20);
+            this.PatronymicLabelCard.TabIndex = 46;
+            this.PatronymicLabelCard.Text = "Patronymic:";
+            this.PatronymicLabelCard.Visible = false;
+            // 
+            // BirthDateLabelCard
+            // 
+            this.BirthDateLabelCard.AutoSize = true;
+            this.BirthDateLabelCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BirthDateLabelCard.Location = new System.Drawing.Point(146, 432);
+            this.BirthDateLabelCard.Name = "BirthDateLabelCard";
+            this.BirthDateLabelCard.Size = new System.Drawing.Size(81, 20);
+            this.BirthDateLabelCard.TabIndex = 47;
+            this.BirthDateLabelCard.Text = "BitrhDate:";
+            this.BirthDateLabelCard.Visible = false;
+            // 
+            // DateCreationLabelCard
+            // 
+            this.DateCreationLabelCard.AutoSize = true;
+            this.DateCreationLabelCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateCreationLabelCard.Location = new System.Drawing.Point(146, 461);
+            this.DateCreationLabelCard.Name = "DateCreationLabelCard";
+            this.DateCreationLabelCard.Size = new System.Drawing.Size(108, 20);
+            this.DateCreationLabelCard.TabIndex = 48;
+            this.DateCreationLabelCard.Text = "DateCreation:";
+            this.DateCreationLabelCard.Visible = false;
+            // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1572, 753);
+            this.ClientSize = new System.Drawing.Size(1626, 753);
+            this.Controls.Add(this.DateCreationLabelCard);
+            this.Controls.Add(this.BirthDateLabelCard);
+            this.Controls.Add(this.PatronymicLabelCard);
+            this.Controls.Add(this.SurnameLabelCard);
+            this.Controls.Add(this.NameLabelCard);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView2);
@@ -518,5 +594,11 @@
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label NameLabelCard;
+        private System.Windows.Forms.Label SurnameLabelCard;
+        private System.Windows.Forms.Label PatronymicLabelCard;
+        private System.Windows.Forms.Label BirthDateLabelCard;
+        private System.Windows.Forms.Label DateCreationLabelCard;
     }
 }

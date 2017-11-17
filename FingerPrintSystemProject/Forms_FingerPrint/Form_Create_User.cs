@@ -493,6 +493,51 @@ SELECT tbo_Company.Name,tbo_Department.Name,Position,Access,DepartmentID,UserID
         {
             tbo_ProfileDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.White;
         }
+
+        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void surnameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void patronymicTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void positionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
 

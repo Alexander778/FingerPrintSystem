@@ -294,21 +294,33 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //
+            NameLabelCard.Visible = true;
+            SurnameLabelCard.Visible = true;
+            PatronymicLabelCard.Visible = true;
+            BirthDateLabelCard.Visible = true;
+            DateCreationLabelCard.Visible = true;
+            //
             dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 SurNameCard.Text = dataGridView1[e.ColumnIndex, e.RowIndex].Value.ToString(); // меняем текст в Label
                 NameCard.Text = dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
                 PatronymicCard.Text = dataGridView1[e.ColumnIndex + 2, e.RowIndex].Value.ToString();
-                BirthDateCard.Text = dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
-
+                //
+                string birth_card= dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
+                birth_card = Convert.ToDateTime(birth_card).ToShortDateString();
+                BirthDateCard.Text = birth_card;
+                //
+                string creation_card = dataGridView1[e.ColumnIndex + 5, e.RowIndex].Value.ToString();
+                creation_card = Convert.ToDateTime(creation_card).ToShortDateString();
+                DateCreationCard.Text = creation_card;
+                //
                 Byte[] data = new Byte[0];
                 data = (Byte[])(dataGridView1[e.ColumnIndex + 4, e.RowIndex].Value);
                 MemoryStream mem = new MemoryStream(data);
                 pictureBoxCard.Image = Image.FromStream(mem);
-
                 //photo e.ColumnIndex + 4
-                DateCreationCard.Text = dataGridView1[e.ColumnIndex + 5, e.RowIndex].Value.ToString();
                 label1.Text = dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.ToString();
                 ///
                 SqlConnection con = new SqlConnection();
