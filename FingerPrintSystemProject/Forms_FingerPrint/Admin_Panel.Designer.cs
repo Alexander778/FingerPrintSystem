@@ -210,6 +210,7 @@
             // checkBoxShowOnlyCompany
             // 
             this.checkBoxShowOnlyCompany.AutoSize = true;
+            this.checkBoxShowOnlyCompany.Enabled = false;
             this.checkBoxShowOnlyCompany.Location = new System.Drawing.Point(16, 211);
             this.checkBoxShowOnlyCompany.Name = "checkBoxShowOnlyCompany";
             this.checkBoxShowOnlyCompany.Size = new System.Drawing.Size(346, 17);
@@ -280,6 +281,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(603, 15);
             this.dataGridView1.Name = "dataGridView1";

@@ -538,6 +538,17 @@ SELECT tbo_Company.Name,tbo_Department.Name,Position,Access,DepartmentID,UserID
                 e.Handled = true;
             }
         }
+
+        private void tbo_LinkDepartmentUserDataGridView_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            tbo_LinkDepartmentUserDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.White;
+               
+        }
+
+        private void tbo_LinkDepartmentUserDataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            tbo_LinkDepartmentUserDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
+        }
     }
 }
 

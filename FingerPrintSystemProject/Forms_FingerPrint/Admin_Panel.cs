@@ -72,7 +72,7 @@ namespace Forms_FingerPrint
         private void button1_Click_1(object sender, EventArgs e)
         {
             Form_Create_Company f = new Form_Create_Company();
-            f.Show();
+            f.ShowDialog();
 
 
         }
@@ -101,7 +101,8 @@ namespace Forms_FingerPrint
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-
+            checkBoxShowOnlyCompany.Enabled = true;
+            
 
             //
             SqlConnection con = new SqlConnection();
@@ -147,13 +148,15 @@ namespace Forms_FingerPrint
                 BirthDateCard.Text = null;
                 DateCreationCard.Text = null;
                 dataGridView2.DataSource = null;
-                button6.Enabled = false;
+                 
             }
-            else
-            {
-                button6.Enabled = true;
-            }
-            
+
+            NameLabelCard.Visible = false;
+            SurnameLabelCard.Visible = false;
+            PatronymicLabelCard.Visible = false;
+            BirthDateLabelCard.Visible = false;
+            DateCreationLabelCard.Visible=false;
+            button6.Enabled = false;
             //
 
 
@@ -164,7 +167,7 @@ namespace Forms_FingerPrint
         private void button2_Click(object sender, EventArgs e)
         {
             Form_Create_Department f1 = new Form_Create_Department();
-            f1.Show();
+            f1.ShowDialog();
         }
 
         private void companyIDLabel1_Click(object sender, EventArgs e)
@@ -175,7 +178,8 @@ namespace Forms_FingerPrint
         private void button3_Click(object sender, EventArgs e)
         {
             Form_Create_User f = new Form_Create_User();
-            f.Show();
+            f.ShowDialog();
+            
         }
 
         private void nameComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,13 +206,16 @@ namespace Forms_FingerPrint
         {
             if (checkBoxShowOnlyCompany.Checked == true) //no division
             {
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = _connectionString;
-                SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Company", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                try
+                {
 
-                var select = @"
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = _connectionString;
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Company", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    var select = @"
 SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position,tbo_Profile.ID
  FROM tbo_LinkDepartmentUser 
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
@@ -216,29 +223,33 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
  WHERE tbo_Company.ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"];
 
-                var c = new SqlConnection(_connectionString); // Your Connection String here
-                var dataAdapter = new SqlDataAdapter(select, c);
+                    var c = new SqlConnection(_connectionString); // Your Connection String here
+                    var dataAdapter = new SqlDataAdapter(select, c);
 
-                var commandBuilder = new SqlCommandBuilder(dataAdapter);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                dataGridView1.ReadOnly = true;
-                dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[10].Visible = false;//hide id column
-                dataGridView1.Columns[6].HeaderText = "Department";
-
-                
+                    var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    var ds = new DataSet();
+                    dataAdapter.Fill(ds);
+                    dataGridView1.ReadOnly = true;
+                    dataGridView1.DataSource = ds.Tables[0];
+                    dataGridView1.Columns[10].Visible = false;//hide id column
+                    dataGridView1.Columns[6].HeaderText = "Department";
+                }
+                catch (System.NullReferenceException)
+                {
+                    MessageBox.Show("Please choose company!");
+                }
             }
             else//division by departments
             {
+                try
+                {
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = _connectionString;
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Department", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = _connectionString;
-                SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Department", con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                var select = @"
+                    var select = @"
 SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position,tbo_Profile.ID
  FROM tbo_LinkDepartmentUser 
  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
@@ -246,17 +257,21 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
  WHERE tbo_Department.Name=" + "'" + nameComboBox1.SelectedItem.ToString() + "'";
 
-                var c = new SqlConnection(_connectionString); // Your Connection String here
-                var dataAdapter = new SqlDataAdapter(select, c);
+                    var c = new SqlConnection(_connectionString); // Your Connection String here
+                    var dataAdapter = new SqlDataAdapter(select, c);
 
-                var commandBuilder = new SqlCommandBuilder(dataAdapter);
-                var ds = new DataSet();
-                dataAdapter.Fill(ds);
-                dataGridView1.ReadOnly = true;
-                dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[10].Visible = false; //hide id column
+                    var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                    var ds = new DataSet();
+                    dataAdapter.Fill(ds);
+                    dataGridView1.ReadOnly = true;
+                    dataGridView1.DataSource = ds.Tables[0];
+                    dataGridView1.Columns[10].Visible = false; //hide id column
 
-                
+                }
+                catch (System.NullReferenceException)
+                {
+                    MessageBox.Show("Please choose company!");
+                }
 
             }
         }
@@ -294,12 +309,14 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+
             //
             NameLabelCard.Visible = true;
             SurnameLabelCard.Visible = true;
             PatronymicLabelCard.Visible = true;
             BirthDateLabelCard.Visible = true;
             DateCreationLabelCard.Visible = true;
+            button6.Enabled = true;
             //
             dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
@@ -308,7 +325,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
                 NameCard.Text = dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value.ToString();
                 PatronymicCard.Text = dataGridView1[e.ColumnIndex + 2, e.RowIndex].Value.ToString();
                 //
-                string birth_card= dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
+                string birth_card = dataGridView1[e.ColumnIndex + 3, e.RowIndex].Value.ToString();
                 birth_card = Convert.ToDateTime(birth_card).ToShortDateString();
                 BirthDateCard.Text = birth_card;
                 //
@@ -351,6 +368,7 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
 
 
             }
+           
         }
 
         private void button2_MouseMove(object sender, MouseEventArgs e)

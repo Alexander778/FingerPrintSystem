@@ -792,6 +792,8 @@
             this.tbo_LinkDepartmentUserDataGridView.Size = new System.Drawing.Size(520, 496);
             this.tbo_LinkDepartmentUserDataGridView.TabIndex = 143;
             this.tbo_LinkDepartmentUserDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_LinkDepartmentUserDataGridView_CellClick);
+            this.tbo_LinkDepartmentUserDataGridView.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbo_LinkDepartmentUserDataGridView_CellLeave);
+            this.tbo_LinkDepartmentUserDataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tbo_LinkDepartmentUserDataGridView_CellMouseClick);
             // 
             // Form_Create_User
             // 
