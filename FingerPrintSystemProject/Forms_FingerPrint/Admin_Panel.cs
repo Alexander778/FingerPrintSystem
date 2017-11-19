@@ -124,7 +124,15 @@ namespace Forms_FingerPrint
             {
                 nameComboBox1.Items.Add(dt1.Rows[i]["Name"]);
             }
-            nameComboBox1.SelectedItem = nameComboBox1.Items[0];
+            try
+            {
+                nameComboBox1.SelectedItem = nameComboBox1.Items[0];
+            }
+            catch (System.ArgumentOutOfRangeException)
+
+            {
+                
+            }
             //
             SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT CompanyLogo FROM tbo_Company WHERE ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con));
             DataSet dataSet = new DataSet();

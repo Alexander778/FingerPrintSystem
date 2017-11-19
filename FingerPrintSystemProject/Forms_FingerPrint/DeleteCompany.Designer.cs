@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.IDCompanyName = new System.Windows.Forms.Label();
             this.IDDepartmentDelete = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +120,20 @@
             this.IDDepartmentDelete.TabIndex = 7;
             this.IDDepartmentDelete.Text = "IDDepartment";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(181, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            // 
             // DeleteCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 268);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.IDDepartmentDelete);
             this.Controls.Add(this.IDCompanyName);
             this.Controls.Add(this.pictureBox1);
@@ -151,5 +161,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label IDCompanyName;
         private System.Windows.Forms.Label IDDepartmentDelete;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
