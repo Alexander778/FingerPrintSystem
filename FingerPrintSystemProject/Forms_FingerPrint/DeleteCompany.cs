@@ -179,51 +179,48 @@ WHERE ID=" + IDDepartmentDelete.Text.ToString(), con);//tbo_department
 
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = _connectionString;
+                //
+                SqlCommand cmd1 = new SqlCommand(@"
+                DELETE tbo_LinkDepartmentUser
+WHERE DepartmentID IN (SELECT ID FROM tbo_Department WHERE CompanyID=" + IDCompanyDelete.Text.ToString() + ")", con); //link
+
+                SqlCommand cmd2 = new SqlCommand(@"
+                DELETE tbo_Department
+                FROM tbo_Department
+                WHERE CompanyID=" + IDCompanyDelete.Text.ToString(), con);//tbo_department
+
+                SqlCommand cmd3 = new SqlCommand(@"
+                DELETE tbo_Company
+                FROM tbo_Company
+                WHERE ID=" + IDCompanyDelete.Text.ToString(), con);
+
+                con.Open();
+
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                con.Close();
+                DialogResult result = MessageBox.Show(@"Are you sure to delete this company with all departments?", "FingerPrintSystem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
 
 
-                
+                MessageBox.Show("Company with all Departments Deleted Successfully!");
+                //
+                comboBoxDeleteDepartments.Items.Clear();
 
-                SqlDataAdapter da = new SqlDataAdapter(@"
-  SELECT COUNT (ID) AS Count
-  FROM tbo_Department
-  WHERE CompanyID=" + IDCompanyDelete.Text.ToString(), con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT Name FROM tbo_Department WHERE CompanyID=" + IDCompanyDelete.Text.ToString(), con);
                 DataTable dt = new DataTable();
 
                 da.Fill(dt);
 
-                int count = Convert.ToInt32(dt.Rows[comboBoxDeleteCompany.SelectedIndex-comboBoxDeleteCompany.SelectedIndex]["Count"]);
-                //
-                SqlDataAdapter da1 = new SqlDataAdapter("SELECT ID FROM tbo_Department WHERE CompanyID=" + IDCompanyDelete.Text.ToString(), con);
-                DataTable dt1 = new DataTable();
-
-                da1.Fill(dt1);
-
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    comboBox1.Items.Add(dt1.Rows[i]["ID"]);
+                    comboBoxDeleteDepartments.Items.Add(dt.Rows[i]["Name"]);
                 }
-                //
-                //SqlCommand cmd1 = new SqlCommand(@"
-                //DELETE tbo_LinkDepartmentUser
-                //FROM tbo_LinkDepartmentUser
-                //WHERE DepartmentID=" + IDDepartmentDelete.Text.ToString(), con); //link
-
-                //SqlCommand cmd2 = new SqlCommand(@"
-                //DELETE tbo_Department
-                //FROM tbo_Department
-                //WHERE CompanyID=" + IDCompanyDelete.Text.ToString(), con);//tbo_department
-
-                //SqlCommand cmd3 = new SqlCommand(@"
-                //DELETE tbo_Company
-                //FROM tbo_Company
-                //WHERE ID=" + IDCompanyDelete.Text.ToString(), con);
-
-                //con.Open();
-
-                //cmd1.ExecuteNonQuery();
-                //cmd2.ExecuteNonQuery();
-                //cmd3.ExecuteNonQuery();
-                //con.Close();
             }
             
         }
