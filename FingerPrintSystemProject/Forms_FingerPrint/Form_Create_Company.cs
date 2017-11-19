@@ -142,7 +142,8 @@ namespace Forms_FingerPrint
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tbo_CompanyBindingSource.RemoveCurrent();
+            DeleteCompany f = new DeleteCompany();
+            f.ShowDialog();
         }
 
         private void b_LoadLogo_Click(object sender, EventArgs e)

@@ -59,6 +59,12 @@
     <Compile Include="ChangePasswordAdmin.Designer.cs">
       <DependentUpon>ChangePasswordAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteCompany.Designer.cs">
+      <DependentUpon>DeleteCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enter_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordAdmin.resx">
       <DependentUpon>ChangePasswordAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCompany.resx">
+      <DependentUpon>DeleteCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enter_Form.resx">
       <DependentUpon>Enter_Form.cs</DependentUpon>
