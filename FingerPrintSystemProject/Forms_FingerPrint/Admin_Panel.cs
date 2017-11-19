@@ -137,7 +137,25 @@ namespace Forms_FingerPrint
                 MemoryStream mem = new MemoryStream(data);
                 pictureBox1.Image = Image.FromStream(mem);
             }
+            //
+            
 
+            SqlDataAdapter da2 = new SqlDataAdapter(@"
+SELECT COUNT(*) as CountOfEmployees
+  FROM tbo_LinkDepartmentUser
+  INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+  INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
+  INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
+WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
+
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+
+            CountofEmployees.Text = dt2.Rows[nameComboBox.SelectedIndex-nameComboBox.SelectedIndex]["CountOfEmployees"].ToString();
+            
+
+
+            //
             if (dataGridView1.DataSource!= null && dataGridView2.DataSource != null)
             {
                 dataGridView1.DataSource = null;
@@ -288,25 +306,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
             }
         }
 
-        private void tbo_CompanyDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-
-
-
-        }
-
+       
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 

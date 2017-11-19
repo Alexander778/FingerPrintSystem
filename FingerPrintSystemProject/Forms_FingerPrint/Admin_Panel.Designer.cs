@@ -74,12 +74,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.NameLabelCard = new System.Windows.Forms.Label();
             this.SurnameLabelCard = new System.Windows.Forms.Label();
             this.PatronymicLabelCard = new System.Windows.Forms.Label();
             this.BirthDateLabelCard = new System.Windows.Forms.Label();
             this.DateCreationLabelCard = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CountofEmployees = new System.Windows.Forms.Label();
             nameLabel1 = new System.Windows.Forms.Label();
             companyIDLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -103,7 +104,7 @@
             // nameLabel1
             // 
             nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(13, 168);
+            nameLabel1.Location = new System.Drawing.Point(13, 198);
             nameLabel1.Name = "nameLabel1";
             nameLabel1.Size = new System.Drawing.Size(65, 13);
             nameLabel1.TabIndex = 10;
@@ -112,7 +113,7 @@
             // companyIDLabel
             // 
             companyIDLabel.AutoSize = true;
-            companyIDLabel.Location = new System.Drawing.Point(13, 141);
+            companyIDLabel.Location = new System.Drawing.Point(13, 163);
             companyIDLabel.Name = "companyIDLabel";
             companyIDLabel.Size = new System.Drawing.Size(68, 13);
             companyIDLabel.TabIndex = 11;
@@ -130,7 +131,7 @@
             // nameLabel2
             // 
             nameLabel2.AutoSize = true;
-            nameLabel2.Location = new System.Drawing.Point(13, 121);
+            nameLabel2.Location = new System.Drawing.Point(13, 107);
             nameLabel2.Name = "nameLabel2";
             nameLabel2.Size = new System.Drawing.Size(51, 13);
             nameLabel2.TabIndex = 18;
@@ -162,7 +163,7 @@
             this.nameComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tbo_DepartmentBindingSource, "CompanyID", true));
             this.nameComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox1.FormattingEnabled = true;
-            this.nameComboBox1.Location = new System.Drawing.Point(81, 164);
+            this.nameComboBox1.Location = new System.Drawing.Point(81, 194);
             this.nameComboBox1.Name = "nameComboBox1";
             this.nameComboBox1.Size = new System.Drawing.Size(121, 21);
             this.nameComboBox1.TabIndex = 11;
@@ -176,10 +177,11 @@
             // companyIDLabel1
             // 
             this.companyIDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbo_DepartmentBindingSource, "CompanyID", true));
-            this.companyIDLabel1.Location = new System.Drawing.Point(87, 141);
+            this.companyIDLabel1.Location = new System.Drawing.Point(87, 163);
             this.companyIDLabel1.Name = "companyIDLabel1";
-            this.companyIDLabel1.Size = new System.Drawing.Size(100, 23);
+            this.companyIDLabel1.Size = new System.Drawing.Size(36, 25);
             this.companyIDLabel1.TabIndex = 12;
+            this.companyIDLabel1.Text = "ID";
             this.companyIDLabel1.Click += new System.EventHandler(this.companyIDLabel1_Click);
             // 
             // nameComboBox
@@ -202,16 +204,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 119);
+            this.label3.Location = new System.Drawing.Point(70, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 19;
+            this.label3.Text = "Name";
             // 
             // checkBoxShowOnlyCompany
             // 
             this.checkBoxShowOnlyCompany.AutoSize = true;
             this.checkBoxShowOnlyCompany.Enabled = false;
-            this.checkBoxShowOnlyCompany.Location = new System.Drawing.Point(16, 211);
+            this.checkBoxShowOnlyCompany.Location = new System.Drawing.Point(16, 267);
             this.checkBoxShowOnlyCompany.Name = "checkBoxShowOnlyCompany";
             this.checkBoxShowOnlyCompany.Size = new System.Drawing.Size(346, 17);
             this.checkBoxShowOnlyCompany.TabIndex = 22;
@@ -221,7 +224,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(127, 234);
+            this.button5.Location = new System.Drawing.Point(127, 290);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 23;
@@ -431,15 +434,6 @@
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 271);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "label2";
-            // 
             // NameLabelCard
             // 
             this.NameLabelCard.AutoSize = true;
@@ -495,17 +489,36 @@
             this.DateCreationLabelCard.Text = "DateCreation:";
             this.DateCreationLabelCard.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 139);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Employees";
+            // 
+            // CountofEmployees
+            // 
+            this.CountofEmployees.AutoSize = true;
+            this.CountofEmployees.Location = new System.Drawing.Point(81, 138);
+            this.CountofEmployees.Name = "CountofEmployees";
+            this.CountofEmployees.Size = new System.Drawing.Size(35, 13);
+            this.CountofEmployees.TabIndex = 50;
+            this.CountofEmployees.Text = "Count";
+            // 
             // Admin_Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1626, 753);
+            this.Controls.Add(this.CountofEmployees);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DateCreationLabelCard);
             this.Controls.Add(this.BirthDateLabelCard);
             this.Controls.Add(this.PatronymicLabelCard);
             this.Controls.Add(this.SurnameLabelCard);
             this.Controls.Add(this.NameLabelCard);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView2);
@@ -596,11 +609,12 @@
         private System.Windows.Forms.Button button6;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label NameLabelCard;
         private System.Windows.Forms.Label SurnameLabelCard;
         private System.Windows.Forms.Label PatronymicLabelCard;
         private System.Windows.Forms.Label BirthDateLabelCard;
         private System.Windows.Forms.Label DateCreationLabelCard;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CountofEmployees;
     }
 }
