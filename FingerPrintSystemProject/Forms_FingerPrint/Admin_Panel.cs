@@ -17,8 +17,16 @@ namespace Forms_FingerPrint
         public Admin_Panel()
         {
             InitializeComponent();
+            this.dateTimePickerBirthDateFind.ValueChanged += new System.EventHandler(this.dateTimePickerBirthDateFind_ValueChanged);
+            this.dateTimePickerBirthDateFind.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerBirthDateFind.CustomFormat = " ";
 
 
+        }
+        private void dateTimePickerBirthDateFind_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.dateTimePickerBirthDateFind.Format == System.Windows.Forms.DateTimePickerFormat.Custom)
+                this.dateTimePickerBirthDateFind.Format = System.Windows.Forms.DateTimePickerFormat.Short;
         }
 
         private void tbo_RoleBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -96,13 +104,13 @@ namespace Forms_FingerPrint
                 nameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
             //
-            
+
         }
 
         private void nameComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             checkBoxShowOnlyCompany.Enabled = true;
-            
+
 
             //
             SqlConnection con = new SqlConnection();
@@ -131,7 +139,7 @@ namespace Forms_FingerPrint
             catch (System.ArgumentOutOfRangeException)
 
             {
-                
+
             }
             //
             SqlDataAdapter dataAdapter = new SqlDataAdapter(new SqlCommand("SELECT CompanyLogo FROM tbo_Company WHERE ID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con));
@@ -146,7 +154,7 @@ namespace Forms_FingerPrint
                 pictureBox1.Image = Image.FromStream(mem);
             }
             //
-            
+
 
             SqlDataAdapter da2 = new SqlDataAdapter(@"
 SELECT COUNT(*) as CountOfEmployees
@@ -159,12 +167,12 @@ WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
 
-            CountofEmployees.Text = dt2.Rows[nameComboBox.SelectedIndex-nameComboBox.SelectedIndex]["CountOfEmployees"].ToString();
-            
+            CountofEmployees.Text = dt2.Rows[nameComboBox.SelectedIndex - nameComboBox.SelectedIndex]["CountOfEmployees"].ToString();
+
 
 
             //
-            if (dataGridView1.DataSource!= null && dataGridView2.DataSource != null)
+            if (dataGridView1.DataSource != null && dataGridView2.DataSource != null)
             {
                 dataGridView1.DataSource = null;
                 pictureBoxCard.Image = null;
@@ -174,14 +182,14 @@ WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
                 BirthDateCard.Text = null;
                 DateCreationCard.Text = null;
                 dataGridView2.DataSource = null;
-                 
+
             }
 
             NameLabelCard.Visible = false;
             SurnameLabelCard.Visible = false;
             PatronymicLabelCard.Visible = false;
             BirthDateLabelCard.Visible = false;
-            DateCreationLabelCard.Visible=false;
+            DateCreationLabelCard.Visible = false;
             button6.Enabled = false;
             //
 
@@ -205,7 +213,7 @@ WHERE CompanyID=" + dt.Rows[nameComboBox.SelectedIndex]["ID"], con);
         {
             Form_Create_User f = new Form_Create_User();
             f.ShowDialog();
-            
+
         }
 
         private void nameComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -314,7 +322,7 @@ SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.B
             }
         }
 
-       
+
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
@@ -376,7 +384,7 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
 
 
             }
-           
+
         }
 
         private void button2_MouseMove(object sender, MouseEventArgs e)
@@ -399,19 +407,19 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
         {
             Form_Create_User f = new Form_Create_User();
             f.Show();
-           
+
             for (int i = 0; i < f.tbo_ProfileDataGridView.RowCount - 1; i++)
             {
                 if (label1.Text == f.tbo_ProfileDataGridView[0, i].Value.ToString())
                 {
                     f.tbo_ProfileDataGridView.CurrentCell = f.tbo_ProfileDataGridView[0, i];
                     f.tbo_ProfileDataGridView.CurrentRow.DefaultCellStyle.BackColor = Color.LightGreen;
-                   
+
                 }
                 else
                 {
                     continue;
-                    
+
 
                 }
             }
@@ -427,6 +435,73 @@ WHERE tbo_Profile.ID =" + dataGridView1[e.ColumnIndex + 10, e.RowIndex].Value.To
         private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.CurrentRow.DefaultCellStyle.BackColor = Color.White;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+            
+                try
+                {
+
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = _connectionString;
+                    SqlDataAdapter da = new SqlDataAdapter("SELECT ID FROM tbo_Company", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    var select = @"
+SELECT tbo_Profile.Name,tbo_Profile.Surname,tbo_Profile.Patronymic,tbo_Profile.BirthDate,tbo_Profile.Photo,tbo_Profile.DateCreation,tbo_Department.Name,tbo_Department.Regime,tbo_LinkDepartmentUser.Access,tbo_LinkDepartmentUser.Position,tbo_Profile.ID
+ FROM tbo_LinkDepartmentUser 
+ INNER JOIN tbo_Profile ON tbo_LinkDepartmentUser.UserID=tbo_Profile.ID
+ INNER JOIN tbo_Department ON tbo_LinkDepartmentUser.DepartmentID=tbo_Department.ID
+ INNER JOIN tbo_Company ON tbo_Department.CompanyID=tbo_Company.ID
+ WHERE tbo_Profile.Name="+"'"+textBoxFindName.Text.ToString()+"'"+"OR tbo_Profile.Surname="+"'"+textBoxFindSurname.Text.ToString()+"'" + "OR tbo_Profile.BirthDate=" + "'" + dateTimePickerBirthDateFind.Text.ToString()+ "'" + "OR tbo_LinkDepartmentUser.Position=" + "'" + textBoxPositionFind.Text.ToString() + "'";
+
+
+                var c = new SqlConnection(_connectionString); // Your Connection String here
+                var dataAdapter = new SqlDataAdapter(select, c);
+
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                var ds = new DataSet();
+                dataAdapter.Fill(ds);
+                dataGridView1.ReadOnly = true;
+                dataGridView1.DataSource = ds.Tables[0];
+                dataGridView1.Columns[10].Visible = false;//hide id column
+                dataGridView1.Columns[6].HeaderText = "Department";
+
+            }
+                catch (System.NullReferenceException)
+                {
+                    MessageBox.Show("Please enter information about user!");
+                }
+            
+            textBoxFindName.Text = null;
+            textBoxFindSurname.Text = null;
+            textBoxPositionFind.Text = null;
+            dateTimePickerBirthDateFind.Text = "";
+
+
+        }
+
+        private void textBoxFindName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxFindSurname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsLetter(number) && number != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
